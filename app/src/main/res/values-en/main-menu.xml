@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main">
+        <item>Semester Management</item>
+        <item>Role Type Managment</item>
+        <item>Professors Type Managment</item>
+        <item>Professors Managment</item>
+        <item>Locals Managment</item>
+        <item>Procedures Type Managment</item>
+        <item>Procedures Managment</item>
+        <item>Professors details Managment</item>
+        <item>Group Types Managment</item>
+        <item>Courses Managment</item>
+        <item>Courses by semester Managment</item>
+        <item>Groups Courses by semester Managment</item>
+        <item>Test Types Managment</item>
+        <item>Tests Managment</item>
+        <item>Locals details Managment </item>
+        <item>Students managment</item>
+        <item>Details for reviewed grades Managment</item>
+        <item>Details for requests managment</item>
+        <item>No avaible days Managment</item>
+        <item>Test Status Managment</item>
+        <item>Requests for printing Managment</item>
+        <item>Witnesses Managment</item>
+        <item>Fill database</item>
+
+    </string-array>
+</resources>

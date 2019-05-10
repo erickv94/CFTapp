@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main">
+        <item>Mantenimiento Ciclos</item>
+        <item>Mantenimiento Rol revision</item>
+        <item>Mantenimiento Tipo de docente</item>
+        <item>Mantenimiento Docentes</item>
+        <item>Mantenimiento Locales</item>
+        <item>Mantenimiento Tipos de Tramites</item>
+        <item>Mantenimiento Tramites</item>
+        <item>Mantenimiento Detalles Docentes</item>
+        <item>Mantenimiento Tipos Grupos</item>
+        <item>Mantenimiento Materias</item>
+        <item>Mantenimiento Materias en Ciclo</item>
+        <item>Mantenimiento Grupo de Materia en Ciclo</item>
+        <item>Mantenimiento Tipos Evaluaciones</item>
+        <item>Mantenimiento Evaluaciones</item>
+        <item>Mantenimiento Detalles de Local</item>
+        <item>Mantenimiento Estudiantes</item>
+        <item>Mantenimiento Detalles de Revision</item>
+        <item>Mantenimiento Detalles de Solicitud</item>
+        <item>Mantenimiento Dias no habiles</item>
+        <item>Mantenimiento Estados de evaluaciones</item>
+        <item>Mantenimiento Solicitudes Impresas</item>
+        <item>Mantenimiento Testigos</item>
+        <item>LLenar base de datos</item>
+
+    </string-array>
+
+    <string-array name="activities">
+        <item>CicloActivity</item>
+        <item>TipoRolActivity</item>
+        <item>TipoDocenteActivity</item>
+        <item>DocenteActivity</item>
+        <item>LocalActivity</item>
+        <item>TramiteTipoActivity</item>
+        <item>TramiteActivity</item>
+        <item>DetalleDocenteActivity</item>
+        <item>TipoGrupoActivity</item>
+        <item>MateriaActivity</item>
+        <item>MateriaCicloActivity</item>
+        <item>GrupoMateriaCicloActivity</item>
+        <item>TipoEvaluacionActivity</item>
+        <item>EvaluacionActivity</item>
+        <item>DetalleLocalActivity</item>
+        <item>EstudianteActivity</item>
+        <item>DetalleRevisionActivity</item>
+        <item>DetalleSolicitudActivity</item>
+        <item>DiasNoHabilesActivity</item>
+        <item>EstadoEvaluacionActivity</item>
+        <item>SolicitudImpresaActivity</item>
+        <item>TestigoActivity</item>
+
+    </string-array>
+</resources>
