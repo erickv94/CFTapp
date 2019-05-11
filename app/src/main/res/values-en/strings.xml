@@ -1,4 +1,142 @@
 <resources>
     <string name="app_name">CFTapp</string>
     <string name="choose">Choose an option</string>
+    <!-- activities area-->
+    <string name="ciclo">Semester Management</string>
+    <string name="rolRevision">Role Type Managment</string>
+    <string name="tipoDocente">Professors Type Managment</string>
+    <string name="docente">Professors Managment</string>
+    <string name="local">Locals Managment</string>
+    <string name="tipoTramite">Procedures Type Managment</string>
+    <string name="tramite">Procedures Managment</string>
+    <string name="detalleDocente">Professors details Managment</string>
+    <string name="tipoGrupo">Group Types Managment</string>
+    <string name="materia">Courses Managment</string>
+    <string name="materiaCiclo">Courses by semester Managment</string>
+    <string name="materiaGrupoCiclo">Groups Courses by semester Managment</string>
+    <string name="tipoEvaluacion">Test Types Managment</string>
+    <string name="evaluacion">Tests Managment</string>
+    <string name="detalleLocal">Local details Managment</string>
+    <string name="estudiante">Students managment</string>
+    <string name="detalleRevision">Details for reviewed grades Managment</string>
+    <string name="detalleSolicitud">Details for requests managment</string>
+    <string name="diasNoHabiles">No avaible days Managment</string>
+    <string name="estadoEvaluacion">Test Status Managment</string>
+    <string name="solicitudImpresa">Requests for printing Managment</string>
+    <string name="testigo">Witnesses Managment</string>
+
+    <!--titles about some crud-->
+    <string name="cicloupdate">Update Semester</string>
+    <string name="cicloinsert">Insert Semester</string>
+    <string name="cicloread">Read Semester</string>
+    <string name="ciclodelete">Delete Semester</string>
+
+    <string name="rolrevisionupdate">Update Role Type</string>
+    <string name="rolrevisioninsert">Insert Role Type</string>
+    <string name="rolrevisionread">Read Role Type</string>
+    <string name="rolrevisiondelete">Delete Role Type</string>
+
+    <string name="tipodocenteupdate">Update Professor Type</string>
+    <string name="tipodocenteinsert">Insert Professor Type</string>
+    <string name="tipodocenteread">Read Professor Type</string>
+    <string name="tipodocentedelete">Delete Professor Type</string>
+
+    <string name="docenteupdate">Update Professor</string>
+    <string name="docenteinsert">Insert Professor</string>
+    <string name="docenteread">Read Professor</string>
+    <string name="docentedelete">Delete Professor</string>
+
+    <string name="localupdate">Update Local</string>
+    <string name="localinsert">Insert Local</string>
+    <string name="localread">Read Local</string>
+    <string name="localdelete">Delete Local</string>
+
+    <string name="tipotramiteupdate">Update Procedure Type</string>
+    <string name="tipotramiteinsert">Insert Procedure Type</string>
+    <string name="tipotramiteread">Read Procedure Type</string>
+    <string name="tipotramitedelete">Delete Procedure Type</string>
+
+    <string name="tramiteupdate">Update Procedure</string>
+    <string name="tramiteinsert">Insert Procedure</string>
+    <string name="tramiteread">Read Procedure</string>
+    <string name="tramitedelete">Delete Procedure</string>
+
+    <string name="detalledocenteupdate">Update Professor Detail</string>
+    <string name="detalledocenteinsert">Insert Professor Detail</string>
+    <string name="detalledocenteread">Read Professor Detail</string>
+    <string name="detalledocentedelete">Delete Professor Detail</string>
+
+    <string name="tipogrupoupdate">Update Group Type</string>
+    <string name="tipogrupoinsert">Insert Group Type</string>
+    <string name="tipogruporead">Read Group Type</string>
+    <string name="tipogrupodelete">Delete Group Type</string>
+
+    <string name="materiaupdate">Update Course</string>
+    <string name="materiainsert">Insert Course</string>
+    <string name="materiaread">Read Course</string>
+    <string name="materiadelete">Delete Course</string>
+
+
+    <string name="materiacicloupdate">Update Courses by semester</string>
+    <string name="materiacicloinsert">Insert Courses by semester</string>
+    <string name="materiacicloread">Read Courses by semester</string>
+    <string name="materiaciclodelete">Delete Courses by semester</string>
+
+    <string name="grupomateriacicloupdate">Update Group Course by semester</string>
+    <string name="grupomateriacicloinsert">Insert Group Course by semester</string>
+    <string name="grupomateriacicloread">Read Group Course by semester</string>
+    <string name="grupomateriaciclodelete">Delete Group Course by semester</string>
+
+    <string name="tipoevaluacionupdate">Update Test Type</string>
+    <string name="tipoevaluacioninsert">Insert Test Type</string>
+    <string name="tipoevaluacionread">Read Test Type</string>
+    <string name="tipoevaluaciondelete">Delete Test Type</string>
+
+
+    <string name="evalucionupdate">Update Test</string>
+    <string name="evaluacioninsert">Insert Test</string>
+    <string name="evaluacionread">Read Test</string>
+    <string name="evaluaciondelete">Delete Test</string>
+
+    <string name="detallelocalupdate">Update Local Detail</string>
+    <string name="detallelocalinsert">Insert Local Detail</string>
+    <string name="detallelocalread">Read Local Detail</string>
+    <string name="detallelocaldelete">Delete Local Detail</string>
+
+    <string name="estudiantesupdate">Update Student</string>
+    <string name="estudiantesinsert">Insert Student</string>
+    <string name="estudiantesread">Read Student</string>
+    <string name="estudiantesdelete">Delete Student</string>
+
+    <string name="detallesolicitudupdate">Update Request Detail</string>
+    <string name="detallesolicitudinsert">Insert Request Detail</string>
+    <string name="detallesolicitudread">Read Request Detail</string>
+    <string name="detallesolicituddelete">Delete Request Detail</string>
+
+    <string name="detallerevisionupdate">Update Detail for Reviewed Grades</string>
+    <string name="detallerevisioninsert">Insert Detail for Reviewed Grades</string>
+    <string name="detallerevisionread">Read Detail for Reviewed Grades</string>
+    <string name="detallerevisiondelete">Delete Detail for Reviewed Grades</string>
+
+    <string name="diasupdate">Update No Avaible Days</string>
+    <string name="diasinsert">Insert No Avaible Days</string>
+    <string name="diasread">Read No Avaible Days</string>
+    <string name="diasdelete">Delete No Avaible Days</string>
+
+    <string name="estadoupdate">Update Test Status</string>
+    <string name="estadoinsert">Insert Test Status</string>
+    <string name="estadoread">Read Test Status</string>
+    <string name="estadodelete">Delete Test Status</string>
+
+    <string name="solicitudesupdate">Update Request for Printing</string>
+    <string name="solicitudesinsert">Insert Request for Printing</string>
+    <string name="solicitudesread">Read Request for Printing</string>
+    <string name="solicitudesdelete">Delete Request for Printing</string>
+
+    <string name="testigoupdate">Update Witness</string>
+    <string name="testigoinsert">Insert Witness</string>
+    <string name="testigoread">Read Witness</string>
+    <string name="testigodelete">Delete Witness</string>
+
+
 </resources>

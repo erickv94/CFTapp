@@ -11,5 +11,7 @@ public class DetalleLocalEliminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_local_eliminar);
+        setTitle(R.string.detallelocaldelete);
+
     }
 }

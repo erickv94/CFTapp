@@ -11,5 +11,7 @@ public class TipoTramiteConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_tramite_consultar);
+        setTitle(R.string.tipotramiteread);
+
     }
 }

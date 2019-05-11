@@ -11,5 +11,7 @@ public class RolRevisionActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rol_revision_actualizar);
+        setTitle(R.string.rolrevisionupdate);
+
     }
 }

@@ -11,5 +11,7 @@ public class DiasNoHabilesConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dias_no_habiles_consultar);
+        setTitle(R.string.diasread);
+
     }
 }

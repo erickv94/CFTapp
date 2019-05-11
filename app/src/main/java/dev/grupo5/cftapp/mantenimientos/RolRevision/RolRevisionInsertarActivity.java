@@ -11,5 +11,7 @@ public class RolRevisionInsertarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rol_revision_insertar);
+        setTitle(R.string.rolrevisioninsert);
+
     }
 }

@@ -11,5 +11,7 @@ public class TestigoInsertarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testigo_insertar);
+        setTitle(R.string.testigoinsert);
+
     }
 }

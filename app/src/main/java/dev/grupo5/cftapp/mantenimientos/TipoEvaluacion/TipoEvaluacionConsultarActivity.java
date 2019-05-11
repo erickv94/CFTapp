@@ -11,5 +11,7 @@ public class TipoEvaluacionConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_evaluacion_consultar);
+        setTitle(R.string.tipoevaluacionread);
+
     }
 }

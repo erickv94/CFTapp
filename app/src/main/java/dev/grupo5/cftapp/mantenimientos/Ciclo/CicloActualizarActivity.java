@@ -11,5 +11,7 @@ public class CicloActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ciclo_actualizar);
+        setTitle(R.string.cicloupdate);
+
     }
 }

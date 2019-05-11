@@ -11,5 +11,7 @@ public class DetalleSolicitudEliminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_solicitud_eliminar);
+        setTitle(R.string.detallesolicituddelete);
+
     }
 }

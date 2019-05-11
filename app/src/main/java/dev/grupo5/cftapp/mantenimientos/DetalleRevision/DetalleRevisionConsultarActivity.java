@@ -11,5 +11,7 @@ public class DetalleRevisionConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_revision_consultar);
+        setTitle(R.string.detallerevisionread);
+
     }
 }

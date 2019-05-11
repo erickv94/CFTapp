@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clickEventoListView(ListView listViewMain) {
-        Object obj=this;
+
         listViewMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

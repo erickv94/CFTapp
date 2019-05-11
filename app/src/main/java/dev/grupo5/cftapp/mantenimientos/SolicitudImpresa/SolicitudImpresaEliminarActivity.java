@@ -5,11 +5,13 @@ import android.os.Bundle;
 
 import dev.grupo5.cftapp.R;
 
-public class SolicitudImpresarEliminarActivity extends AppCompatActivity {
+public class SolicitudImpresaEliminarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitud_impresar_eliminar);
+        setTitle(R.string.solicitudesdelete);
+
     }
 }

@@ -11,5 +11,7 @@ public class SolicitudImpresaConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitud_impresa_consultar);
+        setTitle(R.string.solicitudesread);
+
     }
 }

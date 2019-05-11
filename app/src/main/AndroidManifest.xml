@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".mantenimientos.Testigo.TestigoConsultarActivity"></activity>
-        <activity android:name=".mantenimientos.Testigo.TestigoActualizarActividad" />
-        <activity android:name=".mantenimientos.Testigo.TestigoEliminarActividad" />
+        <activity android:name=".mantenimientos.Testigo.TestigoActualizarActivity" />
+        <activity android:name=".mantenimientos.Testigo.TestigoEliminarActivity" />
         <activity android:name=".mantenimientos.Testigo.TestigoInsertarActivity" />
         <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaActualizarActivity" />
         <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaConsultarActivity" />
-        <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresarEliminarActivity" />
+        <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaEliminarActivity" />
         <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaInsertarActivity" />
         <activity android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionActualizarActivity" />
         <activity android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionConsultarActivity" />

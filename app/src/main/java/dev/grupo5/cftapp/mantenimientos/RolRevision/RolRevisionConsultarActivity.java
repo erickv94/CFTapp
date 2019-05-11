@@ -11,5 +11,7 @@ public class RolRevisionConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rol_revision_consultar);
+        setTitle(R.string.rolrevisionread);
+
     }
 }

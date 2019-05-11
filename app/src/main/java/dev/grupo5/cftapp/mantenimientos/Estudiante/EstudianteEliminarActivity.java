@@ -11,5 +11,6 @@ public class EstudianteEliminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estudiante_eliminar);
+        setTitle(R.string.estudiantesdelete);
     }
 }

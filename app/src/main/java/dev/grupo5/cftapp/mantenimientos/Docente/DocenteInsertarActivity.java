@@ -11,5 +11,7 @@ public class DocenteInsertarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_insertar);
+        setTitle(R.string.docenteinsert);
+
     }
 }

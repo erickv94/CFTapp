@@ -11,5 +11,7 @@ public class DetalleDocenteEliminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_docente_eliminar);
+        setTitle(R.string.detalledocentedelete);
+
     }
 }

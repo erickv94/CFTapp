@@ -11,5 +11,7 @@ public class MateriaCicloEliminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_ciclo_eliminar);
+        setTitle(R.string.materiaciclodelete);
+
     }
 }

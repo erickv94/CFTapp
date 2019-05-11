@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="submenu">
+        <item>Insert Register</item>
+        <item>Read Register</item>
+        <item>Update Register</item>
+        <item>Delete Register</item>
+    </string-array>
+
+    
+</resources>

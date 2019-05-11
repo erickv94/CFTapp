@@ -11,5 +11,7 @@ public class CicloConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ciclo_consultar);
+        setTitle(R.string.cicloread);
+
     }
 }

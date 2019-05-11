@@ -11,5 +11,7 @@ public class SolicitudImpresaInsertarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitud_impresa_insertar);
+        setTitle(R.string.solicitudesinsert);
+
     }
 }

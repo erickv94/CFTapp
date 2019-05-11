@@ -11,5 +11,7 @@ public class EstudianteActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estudiante_actualizar);
+        setTitle(R.string.estudiantesupdate);
+
     }
 }

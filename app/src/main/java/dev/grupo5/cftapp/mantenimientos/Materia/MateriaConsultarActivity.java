@@ -11,5 +11,7 @@ public class MateriaConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_consultar);
+        setTitle(R.string.materiaread);
+
     }
 }

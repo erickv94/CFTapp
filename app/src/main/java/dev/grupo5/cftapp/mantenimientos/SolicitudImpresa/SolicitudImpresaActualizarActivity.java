@@ -11,5 +11,7 @@ public class SolicitudImpresaActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitud_impresa_actualizar);
+        setTitle(R.string.solicitudesupdate);
+
     }
 }

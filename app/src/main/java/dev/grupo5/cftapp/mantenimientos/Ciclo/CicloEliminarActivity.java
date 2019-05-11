@@ -11,5 +11,7 @@ public class CicloEliminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ciclo_eliminar);
+        setTitle(R.string.ciclodelete);
+
     }
 }

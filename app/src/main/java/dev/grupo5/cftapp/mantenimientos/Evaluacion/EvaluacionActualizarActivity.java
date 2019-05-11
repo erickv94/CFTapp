@@ -11,5 +11,6 @@ public class EvaluacionActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluacion_actualizar);
+        setTitle(R.string.evalucionupdate);
     }
 }

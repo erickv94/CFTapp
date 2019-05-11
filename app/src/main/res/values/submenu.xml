@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="submenu">
+        <item>Insertar Registro</item>
+        <item>Consultar Registro</item>
+        <item>Actualizar Registro</item>
+        <item>Eliminar Registro</item>
+    </string-array>
+
+    <string-array name="activitiesCiclo">
+        <item>CicloInsertarActivity</item>
+        <item>CicloConsultarActivity</item>
+        <item>CicloActualizarActivity</item>
+        <item>CicloEliminarActivity</item>
+    </string-array>
+    <string-array name="activitiesDetalleDocente">
+        <item>DetalleDocenteInsertarActivity</item>
+        <item>DetalleDocenteConsultarActivity</item>
+        <item>DetalleDocenteActualizarActivity</item>
+        <item>DetalleDocenteEliminarActivity</item>
+    </string-array>
+    <string-array name="activitiesDetalleLocal">
+        <item>DetalleLocalInsertarActivity</item>
+        <item>DetalleLocalConsultarActivity</item>
+        <item>DetalleLocalActualizarActivity</item>
+        <item>DetalleLocalEliminarActivity</item>
+    </string-array>
+    <string-array name="activitiesDetalleRevision">
+        <item>DetalleRevisionInsertarActivity</item>
+        <item>DetalleRevisionConsultarActivity</item>
+        <item>DetalleRevisionActualizarActivity</item>
+        <item>DetalleRevisionEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesDetalleSolicitud">
+        <item>DetalleSolicitudInsertarActivity</item>
+        <item>DetalleSolicitudConsultarActivity</item>
+        <item>DetalleSolicitudActualizarActivity</item>
+        <item>DetalleSolicitudEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesDiasNoHabiles">
+        <item>DiasNoHabilesInsertarActivity</item>
+        <item>DiasNoHabilesConsultarActivity</item>
+        <item>DiasNoHabilesActualizarActivity</item>
+        <item>DiasNoHabilesEliminarActivity</item>
+    </string-array>
+    <string-array name="activitiesDocente">
+        <item>DocenteInsertarActivity</item>
+        <item>DocenteConsultarActivity</item>
+        <item>DocenteActualizarActivity</item>
+        <item>DocenteEliminarActivity</item>
+    </string-array>
+    <string-array name="activitiesEstadoEvaluacion">
+        <item>EstadoEvaluacionInsertarActivity</item>
+        <item>EstadoEvaluacionConsultarActivity</item>
+        <item>EstadoEvaluacionActualizarActivity</item>
+        <item>EstadoEvaluacionEliminarActivity</item>
+    </string-array>
+    <string-array name="activitiesEstudiante">
+        <item>EstudianteInsertarActivity</item>
+        <item>EstudianteConsultarActivity</item>
+        <item>EstudianteActualizarActivity</item>
+        <item>EstudianteEliminarActivity</item>
+    </string-array>
+    <string-array name="activitiesGrupoMateriaCiclo">
+        <item>GrupoMateriaCicloInsertarActivity</item>
+        <item>GrupoMateriaCicloConsultarActivity</item>
+        <item>GrupoMateriaCicloActualizarActivity</item>
+        <item>GrupoMateriaCicloEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesLocal">
+        <item>LocalInsertarActivity</item>
+        <item>LocalConsultarActivity</item>
+        <item>LocalActualizarActivity</item>
+        <item>LocalEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesMateria">
+        <item>MateriaInsertarActivity</item>
+        <item>MateriaConsultarActivity</item>
+        <item>MateriaActualizarActivity</item>
+        <item>MateriaEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesMateriaCiclo">
+        <item>MateriaCicloInsertarActivity</item>
+        <item>MateriaCicloConsultarActivity</item>
+        <item>MateriaCicloActualizarActivity</item>
+        <item>MateriaCicloEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesRolRevision">
+        <item>RolRevisionInsertarActivity</item>
+        <item>RolRevisionConsultarActivity</item>
+        <item>RolRevisionActualizarActivity</item>
+        <item>RolRevisionEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesSolicitudImpresa">
+        <item>SolicitudImpresaInsertarActivity</item>
+        <item>SolicitudImpresaConsultarActivity</item>
+        <item>SolicitudImpresaActualizarActivity</item>
+        <item>SolicitudImpresaEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesTestigo">
+        <item>TestigoInsertarActivity</item>
+        <item>TestigoConsultarActivity</item>
+        <item>TestigoActualizarActivity</item>
+        <item>TestigoEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesTipoDocente">
+        <item>TipoDocenteInsertarActivity</item>
+        <item>TipoDocenteConsultarActivity</item>
+        <item>TipoDocenteActualizarActivity</item>
+        <item>TipoDocenteEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesTipoEvaluacion">
+        <item>TipoEvaluacionInsertarActivity</item>
+        <item>TipoEvaluacionConsultarActivity</item>
+        <item>TipoEvaluacionActualizarActivity</item>
+        <item>TipoEvaluacionEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesTipoGrupo">
+        <item>TipoGrupoInsertarActivity</item>
+        <item>TipoGrupoConsultarActivity</item>
+        <item>TipoGrupoActualizarActivity</item>
+        <item>TipoGrupoEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesTipoTramite">
+        <item>TipoTramiteInsertarActivity</item>
+        <item>TipoTramiteConsultarActivity</item>
+        <item>TipoTramiteActualizarActivity</item>
+        <item>TipoTramiteEliminarActivity</item>
+    </string-array>
+
+    <string-array name="activitiesTramite">
+        <item>TramiteInsertarActivity</item>
+        <item>TramiteConsultarActivity</item>
+        <item>TramiteActualizarActivity</item>
+        <item>TramiteEliminarActivity</item>
+    </string-array>
+    <string-array name="activitiesEvaluacion">
+        <item>EvaluacionInsertarActivity</item>
+        <item>EvaluacionConsultarActivity</item>
+        <item>EvaluacionActualizarActivity</item>
+        <item>EvaluacionEliminarActivity</item>
+    </string-array>
+
+</resources>

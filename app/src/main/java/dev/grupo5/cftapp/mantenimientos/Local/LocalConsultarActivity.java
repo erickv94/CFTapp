@@ -11,5 +11,7 @@ public class LocalConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_consultar);
+        setTitle(R.string.localread);
+
     }
 }

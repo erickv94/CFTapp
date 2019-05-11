@@ -11,5 +11,7 @@ public class TipoGrupoActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_grupo_actualizar);
+        setTitle(R.string.tipogrupoupdate);
+
     }
 }

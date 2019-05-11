@@ -11,5 +11,7 @@ public class TramiteActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tramite_actualizar);
+        setTitle(R.string.tramiteupdate);
+
     }
 }

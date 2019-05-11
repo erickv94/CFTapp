@@ -11,5 +11,7 @@ public class DetalleLocalActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_local_actualizar);
+        setTitle(R.string.detallelocalupdate);
+
     }
 }

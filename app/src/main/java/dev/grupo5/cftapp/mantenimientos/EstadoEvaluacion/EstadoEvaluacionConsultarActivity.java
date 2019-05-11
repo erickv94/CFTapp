@@ -11,5 +11,7 @@ public class EstadoEvaluacionConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estado_evaluacion_consultar);
+        setTitle(R.string.estadoread);
+
     }
 }

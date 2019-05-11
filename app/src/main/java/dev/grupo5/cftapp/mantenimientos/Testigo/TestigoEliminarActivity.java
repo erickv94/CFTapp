@@ -5,11 +5,13 @@ import android.os.Bundle;
 
 import dev.grupo5.cftapp.R;
 
-public class TestigoActualizarActividad extends AppCompatActivity {
+public class TestigoEliminarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_testigo_actualizar_actividad);
+        setContentView(R.layout.activity_testigo_eliminar_actividad);
+        setTitle(R.string.testigodelete);
+
     }
 }

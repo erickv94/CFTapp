@@ -11,5 +11,7 @@ public class TramiteEliminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tramite_eliminar);
+        setTitle(R.string.tramitedelete);
+
     }
 }

@@ -11,5 +11,7 @@ public class LocalInsertarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_insertar);
+        setTitle(R.string.localinsert);
+
     }
 }

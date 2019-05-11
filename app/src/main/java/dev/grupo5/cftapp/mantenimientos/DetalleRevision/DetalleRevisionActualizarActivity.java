@@ -11,5 +11,7 @@ public class DetalleRevisionActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_revision_actualizar);
+        setTitle(R.string.detallerevisionupdate);
+
     }
 }

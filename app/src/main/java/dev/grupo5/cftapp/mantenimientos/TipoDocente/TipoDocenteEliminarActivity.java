@@ -11,5 +11,7 @@ public class TipoDocenteEliminarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tip_docente_eliminar);
+        setTitle(R.string.tipodocentedelete);
+
     }
 }

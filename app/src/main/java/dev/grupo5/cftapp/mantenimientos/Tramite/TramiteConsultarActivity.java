@@ -11,5 +11,7 @@ public class TramiteConsultarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tramite_consultar);
+        setTitle(R.string.tramiteread);
+
     }
 }

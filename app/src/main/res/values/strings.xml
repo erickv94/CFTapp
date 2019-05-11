@@ -2,5 +2,145 @@
     <string name="app_name">CFTapp</string>
     <string name="choose"> Escoja una opcion </string>
 
+    <!--titulos de submenus-->
+    <string name="ciclo">Mantenimiento Ciclos</string>
+    <string name="rolRevision">Mantenimiento Rol revision</string>
+    <string name="tipoDocente">Mantenimiento Tipo de docente</string>
+    <string name="docente">Mantenimiento Docentes</string>
+    <string name="local">Mantenimiento Locales</string>
+    <string name="tipoTramite">Mantenimiento Tipos de Tramites</string>
+    <string name="tramite">Mantenimiento Tramites</string>
+    <string name="detalleDocente">Mantenimiento Detalles Docentes</string>
+    <string name="tipoGrupo">Mantenimiento Tipos Grupos</string>
+    <string name="materia">Mantenimiento Materias</string>
+    <string name="materiaCiclo">Mantenimiento Materias en Ciclo</string>
+    <string name="materiaGrupoCiclo">Mantenimiento Grupo de Materia en Ciclo</string>
+    <string name="tipoEvaluacion">Mantenimiento Tipos Evaluaciones</string>
+    <string name="evaluacion">Mantenimiento Evaluaciones</string>
+    <string name="detalleLocal">Mantenimiento Detalles de Local</string>
+    <string name="estudiante">Mantenimiento Estudiantes</string>
+    <string name="detalleRevision">Mantenimiento Detalles de Revision</string>
+    <string name="detalleSolicitud">Mantenimiento Detalles de solicitud</string>
+    <string name="diasNoHabiles">Mantenimiento Dias no habiles</string>
+    <string name="estadoEvaluacion">Mantenimiento Estados de evaluaciones</string>
+    <string name="solicitudImpresa">Mantenimiento solicitudes Impresas</string>
+    <string name="testigo">Mantenimiento Testigos</string>
+
+    <!--Titulos cruds-->
+
+    <string name="cicloupdate">Actualizar Ciclo</string>
+    <string name="cicloinsert">Insertar Ciclo</string>
+    <string name="cicloread">Consultar Ciclo</string>
+    <string name="ciclodelete">Eliminar Ciclo</string>
+
+    <string name="rolrevisionupdate">Actualizar Tipo Rol Revision</string>
+    <string name="rolrevisioninsert">Insertar Tipo Rol Revision</string>
+    <string name="rolrevisionread">Consultar Tipo Rol Revision</string>
+    <string name="rolrevisiondelete">Eliminar Tipo Rol Revision</string>
+
+    <string name="tipodocenteupdate">Actualizar Tipo Docente</string>
+    <string name="tipodocenteinsert">Insertar Tipo Docente</string>
+    <string name="tipodocenteread">Consultar Tipo Docente</string>
+    <string name="tipodocentedelete">Eliminar Tipo Docente</string>
+
+    <string name="docenteupdate">Actualizar Docente</string>
+    <string name="docenteinsert">Insertar Docente</string>
+    <string name="docenteread">Consultar Docente</string>
+    <string name="docentedelete">Eliminar Docente</string>
+
+    <string name="localupdate">Actualizar Local</string>
+    <string name="localinsert">Insertar Local</string>
+    <string name="localread">Consultar Local</string>
+    <string name="localdelete">Eliminar Local</string>
+
+    <string name="tipotramiteupdate">Actualizar Tipo Tramite</string>
+    <string name="tipotramiteinsert">Insertar Tipo Tramite</string>
+    <string name="tipotramiteread">Consultar Tipo Tramite</string>
+    <string name="tipotramitedelete">Eliminar Tipo Tramite</string>
+
+    <string name="tramiteupdate">Actualizar Tramite</string>
+    <string name="tramiteinsert">Insertar Tramite</string>
+    <string name="tramiteread">Consultar Tramite</string>
+    <string name="tramitedelete">Eliminar Tramite</string>
+
+    <string name="detalledocenteupdate">Actualizar Detalle Docente</string>
+    <string name="detalledocenteinsert">Insertar Detalle Docente</string>
+    <string name="detalledocenteread">Consultar Detalle Docente</string>
+    <string name="detalledocentedelete">Eliminar Detalle Docente</string>
+
+    <string name="tipogrupoupdate">Actualizar Tipo Grupo</string>
+    <string name="tipogrupoinsert">Insertar Tipo Grupo</string>
+    <string name="tipogruporead">Consultar Tipo Grupo</string>
+    <string name="tipogrupodelete">Eliminar Tipo Grupo</string>
+
+    <string name="materiaupdate">Actualizar Materia</string>
+    <string name="materiainsert">Insertar Materia</string>
+    <string name="materiaread">Consultar Materia</string>
+    <string name="materiadelete">Eliminar Materia</string>
+
+
+    <string name="materiacicloupdate">Actualizar Materia Ciclo</string>
+    <string name="materiacicloinsert">Insertar Materia Ciclo</string>
+    <string name="materiacicloread">Consultar Materia Ciclo</string>
+    <string name="materiaciclodelete">Eliminar Materia Ciclo</string>
+
+    <string name="grupomateriacicloupdate">Actualizar Grupo Materia Ciclo</string>
+    <string name="grupomateriacicloinsert">Insertar Grupo Materia Ciclo</string>
+    <string name="grupomateriacicloread">Consultar Grupo Materia Ciclo</string>
+    <string name="grupomateriaciclodelete">Eliminar Grupo Materia Ciclo</string>
+
+    <string name="tipoevaluacionupdate">Actualizar Tipo Evaluacion</string>
+    <string name="tipoevaluacioninsert">Insertar Tipo Evaluacion</string>
+    <string name="tipoevaluacionread">Consultar Tipo Evaluacion</string>
+    <string name="tipoevaluaciondelete">Eliminar Tipo Evaluacion</string>
+
+
+    <string name="evalucionupdate">Actualizar Evaluacion</string>
+    <string name="evaluacioninsert">Insertar Evaluacion</string>
+    <string name="evaluacionread">Consultar Evaluacion</string>
+    <string name="evaluaciondelete">Eliminar Evaluacion</string>
+
+    <string name="detallelocalupdate">Actualizar Detalle Local</string>
+    <string name="detallelocalinsert">Insertar Detalle Local</string>
+    <string name="detallelocalread">Consultar Detalle Local</string>
+    <string name="detallelocaldelete">Eliminar Detalle Local</string>
+
+    <string name="estudiantesupdate">Actualizar Estudiante</string>
+    <string name="estudiantesinsert">Insertar Estudiante</string>
+    <string name="estudiantesread">Consultar Estudiante</string>
+    <string name="estudiantesdelete">Eliminar Estudiante</string>
+
+    <string name="detallesolicitudupdate">Actualizar Detalle Solicitud</string>
+    <string name="detallesolicitudinsert">Insertar Detalle Solicitud</string>
+    <string name="detallesolicitudread">Consultar Detalle Solicitud</string>
+    <string name="detallesolicituddelete">Eliminar Detalle Solicitud</string>
+
+    <string name="detallerevisionupdate">Actualizar Detalle Revision</string>
+    <string name="detallerevisioninsert">Insertar Detalle Revision</string>
+    <string name="detallerevisionread">Consultar Detalle Revision</string>
+    <string name="detallerevisiondelete">Eliminar Detalle Revision</string>
+
+    <string name="diasupdate">Actualizar Dias No Habiles</string>
+    <string name="diasinsert">Insertar Dias No Habiles</string>
+    <string name="diasread">Consultar Dias No Habiles</string>
+    <string name="diasdelete">Eliminar Dias No Habiles</string>
+
+    <string name="estadoupdate">Actualizar Estado Evaluacion</string>
+    <string name="estadoinsert">Insertar Estado Evaluacion</string>
+    <string name="estadoread">Consultar Estado Evaluacion</string>
+    <string name="estadodelete">Eliminar Estado Evaluacion</string>
+
+    <string name="solicitudesupdate">Actualizar Solicitudes Impresas</string>
+    <string name="solicitudesinsert">Insertar Solicitudes Impresas</string>
+    <string name="solicitudesread">Consultar Solicitudes Impresas</string>
+    <string name="solicitudesdelete">Eliminar Solicitud Impresas</string>
+
+    <string name="testigoupdate">Actualizar Testigo</string>
+    <string name="testigoinsert">Insertar Testigo</string>
+    <string name="testigoread">Consultar Testigo</string>
+    <string name="testigodelete">Eliminar Testigo</string>
+
+
+
 
 </resources>
