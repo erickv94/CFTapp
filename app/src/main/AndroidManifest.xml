@@ -9,117 +9,361 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mantenimientos.Testigo.TestigoConsultarActivity"></activity>
-        <activity android:name=".mantenimientos.Testigo.TestigoActualizarActivity" />
-        <activity android:name=".mantenimientos.Testigo.TestigoEliminarActivity" />
-        <activity android:name=".mantenimientos.Testigo.TestigoInsertarActivity" />
-        <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaActualizarActivity" />
-        <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaConsultarActivity" />
-        <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaEliminarActivity" />
-        <activity android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaInsertarActivity" />
-        <activity android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionActualizarActivity" />
-        <activity android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionConsultarActivity" />
-        <activity android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionEliminarActivity" />
-        <activity android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionInsertarActivity" />
-        <activity android:name=".mantenimientos.DiasNoHabiles.DiasNoHabilesConsultarActivity" />
-        <activity android:name=".mantenimientos.DiasNoHabiles.DiasNoHabilesActualizarActivity" />
-        <activity android:name=".mantenimientos.DiasNoHabiles.DiasNoHabilesEliminarActivity" />
-        <activity android:name=".mantenimientos.DiasNoHabiles.DiasNoHabilesInsertarActivity" />
-        <activity android:name=".mantenimientos.DetalleSolicitud.DetalleSolicitudConsultarActivity" />
-        <activity android:name=".mantenimientos.DetalleSolicitud.DetalleSolicitudActualizarActivity" />
-        <activity android:name=".mantenimientos.DetalleSolicitud.DetalleSolicitudEliminarActivity" />
-        <activity android:name=".mantenimientos.DetalleSolicitud.DetalleSolicitudInsertarActivity" />
-        <activity android:name=".mantenimientos.DetalleRevision.DetalleRevisionConsultarActivity" />
-        <activity android:name=".mantenimientos.DetalleRevision.DetalleRevisionActualizarActivity" />
-        <activity android:name=".mantenimientos.DetalleRevision.DetalleRevisionEliminarActivity" />
-        <activity android:name=".mantenimientos.DetalleRevision.DetalleRevisionInsertarActivity" />
-        <activity android:name=".mantenimientos.Estudiante.EstudianteConsultarActivity" />
-        <activity android:name=".mantenimientos.Estudiante.EstudianteActualizarActivity" />
-        <activity android:name=".mantenimientos.Estudiante.EstudianteEliminarActivity" />
-        <activity android:name=".mantenimientos.Estudiante.EstudianteInsertarActivity" />
-        <activity android:name=".mantenimientos.DetalleLocal.DetalleLocalConsultarActivity" />
-        <activity android:name=".mantenimientos.DetalleLocal.DetalleLocalActualizarActivity" />
-        <activity android:name=".mantenimientos.DetalleLocal.DetalleLocalEliminarActivity" />
-        <activity android:name=".mantenimientos.DetalleLocal.DetalleLocalInsertarActivity" />
-        <activity android:name=".mantenimientos.Evaluacion.EvaluacionConsultarActivity" />
-        <activity android:name=".mantenimientos.Evaluacion.EvaluacionActualizarActivity" />
-        <activity android:name=".mantenimientos.Evaluacion.EvaluacionEliminarActivity" />
-        <activity android:name=".mantenimientos.Evaluacion.EvaluacionInsertarActivity" />
-        <activity android:name=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloActualizarActivity" />
-        <activity android:name=".mantenimientos.TipoEvaluacion.TipoEvaluacionActualizarActivity" />
-        <activity android:name=".mantenimientos.TipoEvaluacion.TipoEvaluacionConsultarActivity" />
-        <activity android:name=".mantenimientos.TipoEvaluacion.TipoEvaluacionEliminarActivity" />
-        <activity android:name=".mantenimientos.TipoEvaluacion.TipoEvaluacionInsertarActivity" />
-        <activity android:name=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloEliminarActivity" />
-        <activity android:name=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloConsultarActivity" />
-        <activity android:name=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloInsertarActivity" />
-        <activity android:name=".mantenimientos.MateriaCiclo.MateriaCicloActualizarActivity" />
-        <activity android:name=".mantenimientos.MateriaCiclo.MateriaCicloConsultarActivity" />
-        <activity android:name=".mantenimientos.MateriaCiclo.MateriaCicloEliminarActivity" />
-        <activity android:name=".mantenimientos.MateriaCiclo.MateriaCicloInsertarActivity" />
-        <activity android:name=".mantenimientos.Materia.MateriaActualizarActivity" />
-        <activity android:name=".mantenimientos.Materia.MateriaEliminarActivity" />
-        <activity android:name=".mantenimientos.Materia.MateriaConsultarActivity" />
-        <activity android:name=".mantenimientos.Materia.MateriaInsertarActivity" />
-        <activity android:name=".mantenimientos.TipoGrupo.TipoGrupoActualizarActivity" />
-        <activity android:name=".mantenimientos.TipoGrupo.TipoGrupoConsultarActivity" />
-        <activity android:name=".mantenimientos.TipoGrupo.TipoGrupoEliminarActivity" />
-        <activity android:name=".mantenimientos.TipoGrupo.TipoGrupoInsertarActivity" />
-        <activity android:name=".mantenimientos.DetalleDocente.DetalleDocenteConsultarActivity" />
-        <activity android:name=".mantenimientos.DetalleDocente.DetalleDocenteActualizarActivity" />
-        <activity android:name=".mantenimientos.DetalleDocente.DetalleDocenteEliminarActivity" />
-        <activity android:name=".mantenimientos.DetalleDocente.DetalleDocenteInsertarActivity" />
-        <activity android:name=".mantenimientos.Tramite.TramiteConsultarActivity" />
-        <activity android:name=".mantenimientos.Tramite.TramiteEliminarActivity" />
-        <activity android:name=".mantenimientos.Tramite.TramiteActualizarActivity" />
-        <activity android:name=".mantenimientos.Tramite.TramiteInsertarActivity" />
-        <activity android:name=".mantenimientos.TipoTramite.TipoTramiteConsultarActivity" />
-        <activity android:name=".mantenimientos.TipoTramite.TipoTramiteEliminarActivity" />
-        <activity android:name=".mantenimientos.TipoTramite.TipoTramiteActualizarActivity" />
-        <activity android:name=".mantenimientos.TipoTramite.TipoTramiteInsertarActivity" />
-        <activity android:name=".mantenimientos.Local.LocalConsultarActivity" />
-        <activity android:name=".mantenimientos.Local.LocalEliminarActivity" />
-        <activity android:name=".mantenimientos.Local.LocalActualizarActivity" />
-        <activity android:name=".mantenimientos.Local.LocalInsertarActivity" />
-        <activity android:name=".mantenimientos.Docente.DocenteActualizarActivity" />
-        <activity android:name=".mantenimientos.Docente.DocenteConsultarActivity" />
-        <activity android:name=".mantenimientos.Docente.DocenteEliminarActivity" />
-        <activity android:name=".mantenimientos.Docente.DocenteInsertarActivity" />
-        <activity android:name=".mantenimientos.TipoDocente.TipoDocenteConsultarActivity" />
-        <activity android:name=".mantenimientos.TipoDocente.TipoDocenteActualizarActivity" />
-        <activity android:name=".mantenimientos.TipoDocente.TipoDocenteEliminarActivity" />
-        <activity android:name=".mantenimientos.TipoDocente.TipoDocenteInsertarActivity" />
-        <activity android:name=".mantenimientos.RolRevision.RolRevisionEliminarActivity" />
-        <activity android:name=".mantenimientos.RolRevision.RolRevisionConsultarActivity" />
-        <activity android:name=".mantenimientos.RolRevision.RolRevisionActualizarActivity" />
-        <activity android:name=".mantenimientos.RolRevision.RolRevisionInsertarActivity" />
-        <activity android:name=".mantenimientos.Ciclo.CicloActualizarActivity" />
-        <activity android:name=".mantenimientos.Ciclo.CicloConsultarActivity" />
-        <activity android:name=".mantenimientos.Ciclo.CicloEliminarActivity" />
-        <activity android:name=".mantenimientos.Ciclo.CicloInsertarActivity" />
-        <activity android:name=".menu.TestigoActivity" />
-        <activity android:name=".menu.SolicitudImpresaActivity" />
-        <activity android:name=".menu.EstadoEvaluacionActivity" />
-        <activity android:name=".menu.DiasNoHabilesActivity" />
-        <activity android:name=".menu.DetalleSolicitudActivity" />
-        <activity android:name=".menu.DetalleRevisionActivity" />
-        <activity android:name=".menu.EstudianteActivity" />
-        <activity android:name=".menu.DetalleLocalActivity" />
-        <activity android:name=".menu.EvaluacionActivity" />
-        <activity android:name=".menu.TipoEvaluacionActivity" />
-        <activity android:name=".menu.GrupoMateriaCicloActivity" />
-        <activity android:name=".menu.MateriaCicloActivity" />
-        <activity android:name=".menu.MateriaActivity" />
-        <activity android:name=".menu.TipoGrupoActivity" />
-        <activity android:name=".menu.DetalleDocenteActivity" />
-        <activity android:name=".menu.TramiteActivity" />
-        <activity android:name=".menu.TramiteTipoActivity" />
-        <activity android:name=".menu.LocalActivity" />
-        <activity android:name=".menu.DocenteActivity" />
-        <activity android:name=".menu.TipoDocenteActivity" />
-        <activity android:name=".menu.TipoRolActivity" />
-        <activity android:name=".menu.CicloActivity" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".mantenimientos.Testigo.TestigoConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Testigo.TestigoActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Testigo.TestigoEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Testigo.TestigoInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.SolicitudImpresa.SolicitudImpresaInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DiasNoHabiles.DiasNoHabilesConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DiasNoHabiles.DiasNoHabilesActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DiasNoHabiles.DiasNoHabilesEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DiasNoHabiles.DiasNoHabilesInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleSolicitud.DetalleSolicitudConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleSolicitud.DetalleSolicitudActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleSolicitud.DetalleSolicitudEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleSolicitud.DetalleSolicitudInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleRevision.DetalleRevisionConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleRevision.DetalleRevisionActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleRevision.DetalleRevisionEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleRevision.DetalleRevisionInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Estudiante.EstudianteConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Estudiante.EstudianteActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Estudiante.EstudianteEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Estudiante.EstudianteInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleLocal.DetalleLocalConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleLocal.DetalleLocalActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleLocal.DetalleLocalEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleLocal.DetalleLocalInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Evaluacion.EvaluacionConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Evaluacion.EvaluacionActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Evaluacion.EvaluacionEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Evaluacion.EvaluacionInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoEvaluacion.TipoEvaluacionActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoEvaluacion.TipoEvaluacionConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoEvaluacion.TipoEvaluacionEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoEvaluacion.TipoEvaluacionInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.MateriaCiclo.MateriaCicloActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.MateriaCiclo.MateriaCicloConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.MateriaCiclo.MateriaCicloEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.MateriaCiclo.MateriaCicloInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Materia.MateriaActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Materia.MateriaEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Materia.MateriaConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Materia.MateriaInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoGrupo.TipoGrupoActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoGrupo.TipoGrupoConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoGrupo.TipoGrupoEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoGrupo.TipoGrupoInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleDocente.DetalleDocenteConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleDocente.DetalleDocenteActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleDocente.DetalleDocenteEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.DetalleDocente.DetalleDocenteInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Tramite.TramiteConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Tramite.TramiteEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Tramite.TramiteActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Tramite.TramiteInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoTramite.TipoTramiteConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoTramite.TipoTramiteEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoTramite.TipoTramiteActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoTramite.TipoTramiteInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Local.LocalConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Local.LocalEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Local.LocalActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Local.LocalInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Docente.DocenteActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Docente.DocenteConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Docente.DocenteEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Docente.DocenteInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoDocente.TipoDocenteConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoDocente.TipoDocenteActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoDocente.TipoDocenteEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.TipoDocente.TipoDocenteInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.RolRevision.RolRevisionEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.RolRevision.RolRevisionConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.RolRevision.RolRevisionActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.RolRevision.RolRevisionInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Ciclo.CicloActualizarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Ciclo.CicloConsultarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Ciclo.CicloEliminarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".mantenimientos.Ciclo.CicloInsertarActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".menu.TestigoActivity"
+            android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".menu.SolicitudImpresaActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.EstadoEvaluacionActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.DiasNoHabilesActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.DetalleSolicitudActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.DetalleRevisionActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.EstudianteActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.DetalleLocalActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.EvaluacionActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.TipoEvaluacionActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.GrupoMateriaCicloActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.MateriaCicloActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.MateriaActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.TipoGrupoActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.DetalleDocenteActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.TramiteActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.TramiteTipoActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.LocalActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.DocenteActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.TipoDocenteActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.TipoRolActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".menu.CicloActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/submenuActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/menuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

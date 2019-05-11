@@ -38,7 +38,6 @@ public class DetalleRevisionActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 String itemSeleccionado=activities[position];
-                Toast.makeText(DetalleRevisionActivity.this, itemSeleccionado, Toast.LENGTH_SHORT).show();
 
                 try {
                     Class<?> clase= Class.forName("dev.grupo5.cftapp.mantenimientos.DetalleRevision."+itemSeleccionado);

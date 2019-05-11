@@ -35,7 +35,6 @@ public class TipoGrupoActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 String itemSeleccionado=activities[position];
-                Toast.makeText(TipoGrupoActivity.this, itemSeleccionado, Toast.LENGTH_SHORT).show();
 
                 try {
                     Class<?> clase= Class.forName("dev.grupo5.cftapp.mantenimientos.TipoGrupo."+itemSeleccionado);

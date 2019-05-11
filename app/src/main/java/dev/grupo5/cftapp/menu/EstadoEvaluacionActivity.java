@@ -35,7 +35,6 @@ public class EstadoEvaluacionActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 String itemSeleccionado=activities[position];
-                Toast.makeText(EstadoEvaluacionActivity.this, itemSeleccionado, Toast.LENGTH_SHORT).show();
 
                 try {
                     Class<?> clase= Class.forName("dev.grupo5.cftapp.mantenimientos.EstadoEvaluacion."+itemSeleccionado);
