@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import dev.grupo5.cftapp.database.DBHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,9 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listViewMain = findViewById(R.id.main_menu);
         listViewMain.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,menu));
-
         clickEventoListView(listViewMain);
-
+        DBHelper dbHelper= new DBHelper(this);
     }
 
     private void clickEventoListView(ListView listViewMain) {
