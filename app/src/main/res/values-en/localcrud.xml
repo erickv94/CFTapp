@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="codigolocal"> Local Code </string>
+    <string name="codigoedificiolocal">Building Code</string>
+    <string name="nombrelocal">Local Name</string>
+    <string name="capacidadlocal">Local Capacitity</string>
+
+</resources>

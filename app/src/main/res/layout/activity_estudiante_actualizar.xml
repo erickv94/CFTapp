@@ -1,9 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.Estudiante.EstudianteActualizarActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    >
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+
+    <EditText
+        android:id="@+id/carnetestudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/carnetestudiante"
+        android:inputType="text"
+        android:paddingTop="45dp" />
+
+    <EditText
+        android:id="@+id/nombreestudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombresestudiante"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+    <EditText
+        android:id="@+id/apellidoestudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/apellidosestudiante"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/masculino_estudiante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/masculino"
+            android:checked="true"
+            android:onClick="radioOnclick"/>
+        <RadioButton
+            android:id="@+id/feminino_estudiante"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/femenino"
+            android:onClick="radioOnclick"/>
+    </RadioGroup>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/estudiantesupdate"
+        android:id="@+id/imageButton2"
+        android:drawableRight="@drawable/ic_edit"
+        android:onClick="actualizarEstudiante"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar"
+        android:id="@+id/imageButton3"
+        android:onClick="limpiar"
+        android:drawableRight="@drawable/ic_clean"/>
+
+</LinearLayout>

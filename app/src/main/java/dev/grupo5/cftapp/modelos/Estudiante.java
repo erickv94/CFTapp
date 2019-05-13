@@ -6,7 +6,9 @@ public class Estudiante {
     private String apellidos;
     private String carnet;
     private String sexo;
+    public Estudiante(){
 
+    }
     public Estudiante(String nombres, String apellidos, String carnet, String sexo) {
 
         this.nombres = nombres;

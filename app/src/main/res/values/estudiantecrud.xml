@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nombresestudiante">Nombre Estudiantes</string>
+    <string name="apellidosestudiante">Apellidos Estudiantes</string>
+    <string name="carnetestudiante">Carnet</string>
+    <string name="sexoestudiante">Sexo</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+</resources>

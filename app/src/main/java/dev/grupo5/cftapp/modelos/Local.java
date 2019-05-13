@@ -15,6 +15,10 @@ public class Local {
         this.capacidad = capacidad;
     }
 
+    public Local() {
+
+    }
+
     public int getIdLocal() {
         return idLocal;
     }

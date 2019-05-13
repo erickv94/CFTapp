@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-                if (position<activities.length-1){
+                if (position<menu.length-1){
                     String itemSeleccionado = activities[position];
                     try {
                         Class<?> clase = Class.forName("dev.grupo5.cftapp.menu." + itemSeleccionado);

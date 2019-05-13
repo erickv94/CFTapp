@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="consulta_no_existe">
+        El registro no existe
+    </string>
+    <string name="bd_llena">
+        La base de datos fue llenada con datos prueba
+    </string>
+    <string name="limpiar">
+        Limpiar Formulario
+    </string>
+    <string name="limpiado">
+        Formulario fue limpiado
+    </string>
+</resources>
