@@ -33,4 +33,19 @@ public class MateriaCicloDB {
 
     }
 
+    public String actualizar(MateriaCiclo materiaCiclo) {
+        int count;
+        String[] id = {String.valueOf(materiaCiclo.getIdMatCiclo())};
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("idCiclo", materiaCiclo.getIdCiclo());
+        contentValues.put("idMateria", materiaCiclo.getIdMateria());
+        db = dbHelper.getWritableDatabase();
+        count = db.update("MateriaCiclo", contentValues, "idMatCiclo=?", id);
+        dbHelper.close();
+        if (count > 0)
+                return "Regitro actualizado correctamente";
+        else
+            return "Registro con idMatCiclo" + materiaCiclo.getIdMatCiclo() + "no existe";
+    }
+
 }

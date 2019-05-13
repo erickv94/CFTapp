@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".mantenimientos.MateriaCiclo.MateriaCicloActualizarActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TableRow>
+        <TextView android:text="Id Materia Ciclo"/>
+        <EditText
+            android:id="@+id/editIdMatCiclo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLength="2"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="Id Ciclo"/>
+        <EditText
+            android:id="@+id/editIdCiclo"
+            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:inputType="text"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="Id Materia"/>
+        <EditText
+            android:id="@+id/editIdMateria"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:onClick="actualizarMateriaCiclo"
+            android:text="Actualizar"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:onClick="limpiarTextoMateriaCiclo"
+            android:text="Limpiar"/>
+    </TableRow>
+</TableLayout>

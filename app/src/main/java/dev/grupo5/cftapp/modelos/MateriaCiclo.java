@@ -6,9 +6,14 @@ public class MateriaCiclo
     private int idMateria;
     private int idCiclo;
 
+
+
     public MateriaCiclo(int idMateria, int idCiclo) {
         this.idMateria = idMateria;
         this.idCiclo = idCiclo;
+    }
+
+    public MateriaCiclo() {
     }
 
     public int getIdMatCiclo() {
