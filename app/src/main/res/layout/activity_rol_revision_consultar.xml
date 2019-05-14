@@ -7,13 +7,7 @@
     android:orientation="vertical"
     tools:context=".mantenimientos.RolRevision.RolRevisionConsultarActivity">
 
-    <EditText
-        android:id="@+id/idrolrevision"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="@string/idrolrevision"
-        android:padding="45dp"/>
+
 
     <EditText
         android:id="@+id/nombre"
@@ -43,6 +37,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/limpiar"
         android:text="@string/limpiar"
-        android:onClick=""/>
+        android:onClick="limpiarRolRevision"/>
 
 </LinearLayout>

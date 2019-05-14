@@ -53,12 +53,12 @@ public class RolRevisionDB {
     public String actualizar(RolRevision rolRevision){
         int contador = 0;
         db = dbHelper.getWritableDatabase();
-        String[] id = {String.valueOf(rolRevision.getIdRol())};
 
+        String[] id = {String.valueOf(rolRevision.getIdRol())};
         ContentValues contentValues = new ContentValues();
         contentValues.put("nombre", rolRevision.getNombre());
         contentValues.put("descripcion", rolRevision.getDescripcion());
-        contador = db.update("rolrevision", contentValues, "idrolrevision=?", id);
+        contador = db.update("rolrevision", contentValues, "idrol=?", id);
         dbHelper.close();
 
         if (contador > 0)
@@ -66,5 +66,7 @@ public class RolRevisionDB {
         else
             return "Registro con id local: " + rolRevision.getIdRol() + "no existe";
     }
+
+
 
 }

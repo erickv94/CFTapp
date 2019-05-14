@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mantenimientos.RolRevision.RolRevisionActualizarActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/nombrerolrevision"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombrerolrevision"
+        android:inputType="text"
+        android:padding="45dp"/>
+
+    <EditText
+        android:id="@+id/descripcionrolrevision"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/descripcionrolrevision"
+        android:inputType="text"
+        android:padding="45dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/actualizar"
+        android:text="@string/rolrevisionupdate"
+        android:onClick="actualizarRolRevision"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/limpiar"
+        android:text="@string/limpiar"
+        android:onClick="limpiarRolRevision"/>
+</LinearLayout>
