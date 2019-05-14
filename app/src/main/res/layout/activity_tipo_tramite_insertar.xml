@@ -11,6 +11,7 @@
         android:id="@+id/editIdTipoTramite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/idtipotramite"
         android:inputType="text"
         android:padding="45dp"/>
 
@@ -18,6 +19,7 @@
         android:id="@+id/editNombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/nombre"
         android:inputType="text"
         android:padding="45dp"/>
 
@@ -25,12 +27,14 @@
         android:id="@+id/editDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/descripcion"
         android:inputType="text"
         android:padding="45dp"/>
     
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/tipotramiteinsert"
         android:id="@+id/insertar"
         android:onClick="insertarTipoTramite"/>
 
@@ -38,6 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/limpiar"
+        android:text="@string/limpiar"
         android:onClick="limpiarTipoTramite"/>
 
 </LinearLayout>

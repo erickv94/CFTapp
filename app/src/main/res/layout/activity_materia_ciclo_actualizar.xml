@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mantenimientos.MateriaCiclo.MateriaCicloActualizarActivity">
 
-    <TableRow>
-        <TextView android:text="Id Materia Ciclo"/>
+
         <EditText
             android:id="@+id/editIdMatCiclo"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/idmatciclo"
             android:inputType="text"
-            android:maxLength="2"/>
-    </TableRow>
+            android:padding="45dp"/>
 
-    <TableRow>
-        <TextView android:text="Id Ciclo"/>
+
         <EditText
             android:id="@+id/editIdCiclo"
             android:layout_height="wrap_content"
-            android:layout_width="200dp"
-            android:inputType="text"/>
-    </TableRow>
+            android:layout_width="match_parent"
+            android:hint="@string/idciclo"
+            android:inputType="text"
+            android:padding="45dp"/>
 
-    <TableRow>
-        <TextView android:text="Id Materia"/>
+
         <EditText
             android:id="@+id/editIdMateria"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"/>
-    </TableRow>
+            android:hint="@string/idmateria"
+            android:inputType="text"
+            android:padding="45dp"/>
 
-    <TableRow>
         <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:onClick="actualizarMateriaCiclo"
-            android:text="Actualizar"/>
-    </TableRow>
+            android:id="@+id/actualizar"
+            android:text="@string/materiacicloupdate"/>
 
-    <TableRow>
         <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:onClick="limpiarTextoMateriaCiclo"
-            android:text="Limpiar"/>
-    </TableRow>
-</TableLayout>
+            android:id="@+id/limpiar"
+            android:text="@string/limpiar"/>
+
+</LinearLayout>

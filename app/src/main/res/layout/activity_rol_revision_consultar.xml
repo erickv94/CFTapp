@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:hint="@string/idrolrevision"
         android:padding="45dp"/>
 
     <EditText
@@ -19,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:hint="@string/nombrerolrevision"
         android:padding="45dp"/>
 
     <EditText
@@ -26,8 +28,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
+        android:hint="@string/descripcionrolrevision"
         android:padding="45dp"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/consultar"
+        android:text="@string/rolrevisionread"
+        android:onClick="consultarRolRevision"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/limpiar"
+        android:text="@string/limpiar"
+        android:onClick=""/>
 
 </LinearLayout>
