@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".mantenimientos.Docente.DocenteInsertarActivity">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dip"
+    android:stretchColumns="1" >
+    <TableRow>
+        <TextView android:text="@string/idDocente" />
+        <EditText
+            android:id="@+id/editIdDocente"
+            android:inputType="text"
+            android:maxLength="7" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/idTipoDocente" />
+        <EditText
+            android:id="@+id/editIdTipoDocente"
+            android:inputType="text"
+            android:maxLength="7" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/nombreDocente" />
+        <EditText
+            android:id="@+id/editNombre"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/apellidoDocente" />
+        <EditText
+            android:id="@+id/editApellido"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/codDocente" />
+        <EditText
+            android:id="@+id/editCodDocente"
+            android:inputType="text"
+            android:maxLength="2" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/sexoDocente" />
+        <EditText
+            android:id="@+id/editSexo"
+            android:inputType="text"
+            android:maxLength="1" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:onClick="eliminarDocente"
+            android:text="Insertar" />
 
-</android.support.constraint.ConstraintLayout>
+    </TableRow>
+    <TableRow>
+        <Button
+            android:onClick="limpiarTexto"
+            android:text="Limpiar" />
+    </TableRow>
+</TableLayout>
