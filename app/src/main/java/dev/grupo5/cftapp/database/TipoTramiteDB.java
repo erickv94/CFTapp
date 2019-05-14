@@ -35,10 +35,10 @@ public class TipoTramiteDB {
     public TipoTramite consultar(String idTipoTramite){
         String[] id = {idTipoTramite};
         db = dbHelper.getWritableDatabase();
-        Cursor cursor = db.query("TipoTramite", camposTipoTramite, "idTipoTramite", id, null, null, null);
+        Cursor cursor = db.query("TipoTramite", camposTipoTramite, "idTipoTramite=?", id, null, null, null);
         if (cursor.moveToFirst()) {
             TipoTramite tipoTramite = new TipoTramite();
-            tipoTramite.setIdTipoTramite(cursor.getString(0));
+            tipoTramite.setIdTipoTramite(cursor.getInt(0));
             tipoTramite.setNombre(cursor.getString(1));
             tipoTramite.setDescripcion(cursor.getString(2));
             dbHelper.close();

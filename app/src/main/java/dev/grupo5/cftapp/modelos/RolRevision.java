@@ -5,6 +5,10 @@ private int idRol;
 private String nombre;
 private String descripcion;
 
+    public RolRevision(){
+
+    }
+
     public RolRevision( String nombre, String descripcion) {
 
         this.nombre = nombre;

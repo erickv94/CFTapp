@@ -1,7 +1,7 @@
 package dev.grupo5.cftapp.modelos;
 
 public class TipoTramite {
-    private String idTipoTramite;
+    private int idTipoTramite;
     private String nombre;
     private String descripcion;
 
@@ -22,11 +22,11 @@ public class TipoTramite {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public String getIdTipoTramite() {
+    public int getIdTipoTramite() {
         return idTipoTramite;
     }
 
-    public void setIdTipoTramite(String idTipoTramite) {
+    public void setIdTipoTramite(int idTipoTramite) {
         this.idTipoTramite = idTipoTramite;
     }
 
