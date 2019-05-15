@@ -12,7 +12,7 @@ import dev.grupo5.cftapp.modelos.RolRevision;
 
 public class RolRevisionConsultarActivity extends AppCompatActivity {
     RolRevisionDB rolRevisionDB;
-    EditText idrol;
+    EditText idRolText;
     EditText nombre;
     EditText descripcion;
 
@@ -22,7 +22,7 @@ public class RolRevisionConsultarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rol_revision_consultar);
         setTitle(R.string.rolrevisionread);
 
-        idrol = (EditText) findViewById(R.id.idrolrevision);
+        idRolText = (EditText) findViewById(R.id.idbusqueda);
         nombre = (EditText) findViewById(R.id.nombre);
         descripcion = (EditText) findViewById(R.id.descripcion);
     }
@@ -30,18 +30,18 @@ public class RolRevisionConsultarActivity extends AppCompatActivity {
     public void consultarRolRevision(View v){
         rolRevisionDB = new RolRevisionDB(this);
         RolRevision rolRevision;
-        rolRevision=rolRevisionDB.consultar(idrol.getText().toString());
+        rolRevision=rolRevisionDB.consultar(idRolText.getText().toString());
         if (rolRevision != null){
             nombre.setText(rolRevision.getNombre());
             descripcion.setText(rolRevision.getDescripcion());
             return;
         }
-        Toast.makeText(this,"Rol Revision con idrol" + idrol.getText().toString() + "no existe",
+        Toast.makeText(this,"Rol Revision con idrol" + idRolText.getText().toString() + "no existe",
                 Toast.LENGTH_SHORT).show();
         }
 
         public void limpiarRolRevision(View v){
-            idrol.setText("");
+            idRolText.setText("");
             nombre.setText("");
             descripcion.setText("");
         }

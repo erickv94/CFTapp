@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="codigomateria">Subject Code</string>
+    <string name="nombremateria">Subject Name</string>
+    <string name="uvsmateria">Uvs</string>
+</resources>

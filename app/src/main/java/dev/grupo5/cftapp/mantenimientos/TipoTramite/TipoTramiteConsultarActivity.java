@@ -24,7 +24,7 @@ public class TipoTramiteConsultarActivity extends AppCompatActivity {
 
         tipoTramiteDB = new TipoTramiteDB(this);
 
-        idtipotramite = (EditText) findViewById(R.id.idtipotramite);
+        idtipotramite = (EditText) findViewById(R.id.idbusqueda);
         nombretipotramite = (EditText) findViewById(R.id.nombre);
         descripcion = (EditText) findViewById(R.id.descripcion);
     }

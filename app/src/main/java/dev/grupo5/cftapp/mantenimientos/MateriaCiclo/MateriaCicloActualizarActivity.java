@@ -13,7 +13,7 @@ import dev.grupo5.cftapp.modelos.MateriaCiclo;
 public class MateriaCicloActualizarActivity extends AppCompatActivity {
     MateriaCicloDB helper;
     EditText editIdCiclo;
-    EditText editIdMatCiclo;
+
     EditText editIdMateria;
 
     @Override
@@ -24,7 +24,7 @@ public class MateriaCicloActualizarActivity extends AppCompatActivity {
 
         helper = new MateriaCicloDB(this);
 
-        editIdMatCiclo = (EditText) findViewById(R.id.editIdMatCiclo);
+
         editIdCiclo = (EditText) findViewById(R.id.editIdCiclo);
         editIdMateria = (EditText) findViewById(R.id.editIdMateria);
     }
@@ -41,6 +41,6 @@ public class MateriaCicloActualizarActivity extends AppCompatActivity {
     public void limpiarTextoMateriaCiclo(View v){
         editIdMateria.setText("");
         editIdCiclo.setText("");
-        editIdMatCiclo.setText("");
+
     }
 }

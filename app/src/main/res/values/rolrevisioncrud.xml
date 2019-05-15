@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string name="idrolbusqueda">Busqueda</string>
     <string name="nombrerolrevision">Nombre Rol Revision</string>
     <string name="descripcionrolrevision">Descripcion de Rol Revision</string>
 </resources>
