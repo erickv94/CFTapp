@@ -12,7 +12,7 @@
         android:id="@+id/idbusqueda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/idtipotramite"
+        android:hint="@string/busqueda"
         android:inputType="text"
         android:paddingTop="20dp" />
 

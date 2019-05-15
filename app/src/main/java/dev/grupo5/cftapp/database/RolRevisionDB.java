@@ -3,6 +3,7 @@ package dev.grupo5.cftapp.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
 import dev.grupo5.cftapp.modelos.RolRevision;
@@ -67,6 +68,18 @@ public class RolRevisionDB {
             return "Registro con id local: " + rolRevision.getIdRol() + "no existe";
     }
 
-
+    public String eliminar(RolRevision rolRevision){
+        String reg = "filas afectadas";
+        int con = 0;
+        try {
+            db = dbHelper.getWritableDatabase();
+            con += db.delete("rolrevision", "idrol='" + rolRevision.getIdRol() + "'", null);
+            reg += con;
+            dbHelper.close();
+        } catch (SQLiteConstraintException e){
+            e.printStackTrace();
+        }
+        return reg;
+    }
 
 }

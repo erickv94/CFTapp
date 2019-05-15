@@ -3,6 +3,7 @@ package dev.grupo5.cftapp.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
 import dev.grupo5.cftapp.modelos.TipoTramite;
@@ -10,7 +11,7 @@ import dev.grupo5.cftapp.modelos.TipoTramite;
 public class TipoTramiteDB {
     private SQLiteDatabase db;
     private DBHelper dbHelper;
-    private String[] camposTipoTramite = new String[]{"id_TipoTramite", "nombre", "descripcion"};
+    private String[] camposTipoTramite = new String[]{"idtipotramite", "nombre", "descripcion"};
 
     public TipoTramiteDB(Context context){
         dbHelper=DBHelper.getSingleton(context);
@@ -64,4 +65,22 @@ public class TipoTramiteDB {
         else
             return "Registro con Id" + tipoTramite.getIdTipoTramite() + "no existe";
     }
+
+
+    public String eliminar(TipoTramite tipoTramite){
+        String reg = "filas afectadas";
+        int con = 0;
+
+        try {
+            db = dbHelper.getWritableDatabase();
+            con += db.delete("tipotramite", "idtipotramite='" + tipoTramite.getIdTipoTramite() + "'", null);
+            reg += con;
+            dbHelper.close();
+        } catch (SQLiteConstraintException e){
+            e.printStackTrace();
+        }
+        return reg;
+
+    }
+
 }

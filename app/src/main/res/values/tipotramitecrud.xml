@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="idtipotramite">Busqueda</string>
+    <string name="idtipotramite">Id Tipo Tramite</string>
+    <string name="busqueda">Busqueda</string>
     <string name="nombre">Nombre Tramite</string>
     <string name="descripcion">Descripcion</string>
 </resources>

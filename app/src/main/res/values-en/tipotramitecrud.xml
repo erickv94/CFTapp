@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="idtipotramite">Search</string>
+    <string name="idtipotramite">Procedure Type Code</string>
+    <string name="busqueda">Search</string>
     <string name="nombre">Procedure Name</string>
     <string name="descripcion">Procedure Description</string>
 </resources>

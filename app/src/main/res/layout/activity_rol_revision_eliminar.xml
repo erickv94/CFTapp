@@ -8,9 +8,10 @@
     tools:context=".mantenimientos.RolRevision.RolRevisionEliminarActivity">
 
     <EditText
-
+        android:id="@+id/idrol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/idrolrevision"
         android:inputType="text"
         android:paddingTop="20dp"/>
 
@@ -20,5 +21,12 @@
         android:text="@string/rolrevisiondelete"
         android:id="@+id/eliminar"
         android:onClick="eliminarRolRevision"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar"
+        android:id="@+id/limpiar"
+        android:onClick="limpiarRolRevision"/>
 
 </LinearLayout>

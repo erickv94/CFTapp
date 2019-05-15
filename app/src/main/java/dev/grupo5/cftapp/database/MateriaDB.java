@@ -3,6 +3,7 @@ package dev.grupo5.cftapp.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
 import dev.grupo5.cftapp.modelos.Materia;
@@ -72,5 +73,20 @@ public class MateriaDB {
             return "Registro actualizado correctamente";
         else
             return "Registro con id local: " + materia.getIdMateria() + "no existe";
+    }
+
+    public String eliminar(Materia materia){
+        String reg = "filas afectadas";
+        int con = 0;
+
+        try {
+            db = dbHelper.getWritableDatabase();
+            con += db.delete("materia", "codigomateria='" + materia.getCodigoMateria()+ "'", null);
+            reg += con;
+            dbHelper.close();
+        } catch (SQLiteConstraintException e){
+            e.printStackTrace();
+        }
+        return reg;
     }
 }
