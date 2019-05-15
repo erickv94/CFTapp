@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.Testigo.TestigoConsultarActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="@string/estudiante_testigo"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/busqueda1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tramite_testigo"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/busqueda2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/testigoread"
+            android:id="@+id/imageButton2"
+            android:drawableRight="@drawable/ic_show"
+            android:onClick="consultarTestigo"/>
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/idtestigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="id"
+        android:enabled="false"
+        />
+    <EditText
+        android:id="@+id/estudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/estudiante_testigo"
+        android:enabled="false"
+        />
+
+    <EditText
+        android:id="@+id/tramite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tramite_testigo"
+        android:enabled="false"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/justificacion"
+        android:hint="@string/justificacion_testigo"
+        android:enabled="false"/>
+
+</LinearLayout>

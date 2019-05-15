@@ -8,6 +8,10 @@ public class Tramite {
     private int idLocal;
     private Date fechaSolicitud;
 
+    public Tramite(){
+
+    }
+
     public Tramite(int idTipoTramite, int idLocal, Date fechaSolicitud) {
         this.idTipoTramite = idTipoTramite;
         this.idLocal = idLocal;

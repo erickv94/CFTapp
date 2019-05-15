@@ -3,7 +3,11 @@ package dev.grupo5.cftapp.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dev.grupo5.cftapp.modelos.Estudiante;
 
@@ -80,4 +84,45 @@ public class EstudianteDB {
 
     }
 
+    public String eliminar(Estudiante estudiante){
+
+        String regAfectados = "filas afectadas";
+        int contador = 0;
+
+        try {
+            db = dbHelper.getWritableDatabase();
+            contador += db.delete("estudiante", "carnet='" +estudiante.getCarnet()+ "'", null);
+            regAfectados += contador;
+            dbHelper.close();
+        }catch (SQLiteConstraintException e){
+            e.printStackTrace();
+        }
+        return regAfectados;
+    }
+
+    public List<Estudiante> getEstudiantes() {
+
+        db=dbHelper.getReadableDatabase();
+        Cursor c= db.query("estudiante",campos,null,null,null,null,null);
+
+        List<Estudiante> estudianteList = new ArrayList<Estudiante>();
+        if (c.moveToFirst()) {
+            do {
+                Estudiante estudiante = new Estudiante();
+                estudiante.setIdEstudiante(c.getInt(0));
+                estudiante.setNombres(c.getString(1));
+                estudiante.setApellidos(c.getString(2));
+                estudiante.setCarnet(c.getString(3));
+                estudiante.setSexo(c.getString(4));
+                estudianteList.add(estudiante);
+
+            } while (c.moveToNext());
+
+        }
+
+        dbHelper.close();
+
+        return estudianteList;
+
+    }
 }

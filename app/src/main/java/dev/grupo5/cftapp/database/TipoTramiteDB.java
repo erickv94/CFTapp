@@ -2,8 +2,13 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import dev.grupo5.cftapp.modelos.Local;
 import dev.grupo5.cftapp.modelos.TipoTramite;
 
 public class TipoTramiteDB {
@@ -29,4 +34,27 @@ public class TipoTramiteDB {
 
         return regInsertados;
     }
+
+    public List<TipoTramite> getTiposTramites(){
+
+        String[]camposTry= {"nombre","idtipotramite"};
+
+        db=dbHelper.getWritableDatabase();
+        Cursor c= db.query("tipotramite",camposTry,null,null,null,null,null);
+        List<TipoTramite> tipoTramites = new ArrayList<TipoTramite>();
+
+        if (c.moveToFirst()) {
+            do {
+                TipoTramite tipotramite= new TipoTramite();
+                tipotramite.setNombre(c.getString(0));
+                tipotramite.setIdTipoTramite(c.getInt(1));
+                tipoTramites.add(tipotramite);
+            } while (c.moveToNext());
+
+        }
+        dbHelper.close();
+
+        return tipoTramites;
+    }
+
 }

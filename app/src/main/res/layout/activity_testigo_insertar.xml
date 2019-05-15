@@ -1,9 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.Testigo.TestigoInsertarActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="@string/estudiante_testigo"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/estudiante_testigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tramite_testigo"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/tramite_testigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/justificacion"
+        android:hint="@string/justificacion_testigo"
+            />
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/testigoinsert"
+            android:id="@+id/imageButton2"
+            android:drawableRight="@drawable/ic_create"
+            android:onClick="insertarTestigo"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar"
+        android:drawableRight="@drawable/ic_clean"
+        android:onClick="limpiar"/>
+
+</LinearLayout>

@@ -5,7 +5,7 @@ public class Testigo {
     private int idTramite;
     private int idEstudiante;
     private String justificacion;
-
+    public Testigo(){}
     public Testigo( int idTramite, int idEstudiante, String justificacion) {
         this.idTramite = idTramite;
         this.idEstudiante = idEstudiante;

@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.Tramite.TramiteActualizarActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/idtramite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Id"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp" />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/localtramite"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/idlocaltramite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tipotramitetramite"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/idtipotramite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/fechasolicitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/fechasolicitudtramite"
+        android:inputType="text"
+        android:focusable="false"
+        android:paddingTop="20dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="actualizarTramite"
+        android:text="@string/tramiteupdate"
+        android:drawableRight="@drawable/ic_create"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="limpiar"
+        android:text="@string/limpiar"
+        android:drawableRight="@drawable/ic_clean"
+
+        />
+
+</LinearLayout>

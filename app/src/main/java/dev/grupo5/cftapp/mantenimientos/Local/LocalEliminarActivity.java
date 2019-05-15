@@ -32,4 +32,6 @@ public class LocalEliminarActivity extends AppCompatActivity {
         Toast.makeText(this,resultado,Toast.LENGTH_SHORT).show();
 
     }
+
+
 }

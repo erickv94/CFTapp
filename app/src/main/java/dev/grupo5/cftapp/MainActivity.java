@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import dev.grupo5.cftapp.database.CicloDB;
@@ -174,8 +176,14 @@ public class MainActivity extends AppCompatActivity {
                             "Revision en segunda solicitud"));
 
                     //tramites
-                    tramiteDB.insertar(new Tramite(1,5,new Date()));
-                    tramiteDB.insertar(new Tramite(1,6,new Date()));
+                    SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy");
+                    try {
+                        tramiteDB.insertar(new Tramite(1,5,simpleDateFormat.parse("11-05-2019")));
+                        tramiteDB.insertar(new Tramite(1,6,simpleDateFormat.parse("22-05-2019")));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+
 
                     //Detalle Docente
                     detalleDocenteDB.insertar(new DetalleDocente(1,1,1,
@@ -225,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
 
                     detalleLocalDB.insertar(new DetalleLocal(1,1,60));
                     detalleLocalDB.insertar(new DetalleLocal(2,2,80));
-                    detalleLocalDB.insertar(new DetalleLocal(1,1,70));
+                    detalleLocalDB.insertar(new DetalleLocal(1,3,70));
 
 
                     //estudiante
