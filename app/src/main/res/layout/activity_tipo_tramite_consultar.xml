@@ -12,7 +12,7 @@
         android:id="@+id/idbusqueda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/busqueda"
+        android:hint="@string/busquedatipotramite"
         android:inputType="text"
         android:paddingTop="20dp" />
 
@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/consultar"
-            android:text="@string/rolrevisionread"
+            android:text="@string/tipotramiteread"
             android:onClick="consultarTipoTramite"/>
 
     </LinearLayout>

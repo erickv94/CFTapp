@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="busqueda">Busqueda Parametro</string>
+    <string name="busquedaparametro">Busqueda Parametro</string>
     <string name="parametro">Parametro</string>
     <string name="diashabiles">Dias Habiles</string>
 </resources>

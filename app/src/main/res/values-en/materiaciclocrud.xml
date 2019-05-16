@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="idmatciclo">Cycle Subject Id</string>
-    <string name="busqueda">Search</string>
+    <string name="busquedamateriaciclo">Search</string>
     <string name="idciclo">Id Cycle</string>
     <string name="idmateria">Id Subject</string>
 </resources>
