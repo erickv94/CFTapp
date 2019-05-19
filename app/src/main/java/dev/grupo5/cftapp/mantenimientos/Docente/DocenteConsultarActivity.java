@@ -27,7 +27,7 @@ public class DocenteConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_consultar);
         setTitle(R.string.docenteread);
-        editIdDocente = (EditText) findViewById(R.id.editIdDocente);
+        //editIdDocente = (EditText) findViewById(R.id.editIdDocente);
         editIdTipoDocente = (EditText) findViewById(R.id.editIdTipoDocente);
         editNombre = (EditText) findViewById(R.id.editNombre);
         editApellido = (EditText) findViewById(R.id.editApellido);
@@ -37,13 +37,13 @@ public class DocenteConsultarActivity extends AppCompatActivity {
     public void consultarDocente(View v) { 
         // helper.abrir();
         Docente docente =
-                helper.consultar(editIdDocente.getText().toString());
+                helper.consultar(editIdTipoDocente.getText().toString());
         helper.cerrar();
         if(docente == null)
-            Toast.makeText(this, "Docente con id " +editIdDocente.getText().toString() +
+            Toast.makeText(this, "Docente con id " +editIdTipoDocente.getText().toString() +
                     " no encontrado", Toast.LENGTH_LONG).show();
         else{
-            editIdDocente.setText(docente.getIdDocente());
+            //editIdDocente.setText(docente.getIdDocente());
             editIdTipoDocente.setText(docente.getIdTipoDocente());
             editNombre.setText(docente.getNombre());
             editApellido.setText(docente.getApellidos());
@@ -53,14 +53,14 @@ public class DocenteConsultarActivity extends AppCompatActivity {
             
         }
     }
-    
-    
-    
-    public void limpiarTexto(View v){
+
+    public void limpiarTexto(View v) {
+        //editIdDocente.setText("");
         editIdTipoDocente.setText("");
-        editIdDocente.setText("");
         editApellido.setText("");
+        editCodDocente.setText("");
         editSexo.setText("");
         editNombre.setText("");
-}
+    }
+
 }

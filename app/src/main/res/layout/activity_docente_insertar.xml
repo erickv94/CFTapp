@@ -5,13 +5,6 @@
     android:paddingTop="10dip"
     android:stretchColumns="1" >
     <TableRow>
-        <TextView android:text="@string/idDocente" />
-        <EditText
-            android:id="@+id/editIdDocente"
-            android:inputType="text"
-            android:maxLength="7" />
-    </TableRow>
-    <TableRow>
         <TextView android:text="@string/idTipoDocente" />
         <EditText
             android:id="@+id/editIdTipoDocente"
@@ -48,7 +41,7 @@
     </TableRow>
     <TableRow>
         <Button
-            android:onClick="eliminarDocente"
+            android:onClick="insertar"
             android:text="Insertar" />
 
     </TableRow>

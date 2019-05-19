@@ -25,7 +25,7 @@ public class DocenteActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_actualizar);
         helper = new DocenteDB(this);
-        editIdDocente = (EditText) findViewById(R.id.editIdDocente);
+        //editIdDocente = (EditText) findViewById(R.id.editIdDocente);
         editIdTipoDocente = (EditText) findViewById(R.id.editIdTipoDocente);
         editNombre = (EditText) findViewById(R.id.editNombre);
         editApellido = (EditText) findViewById(R.id.editApellido);
@@ -51,8 +51,8 @@ public class DocenteActualizarActivity extends AppCompatActivity {
 */
 
     }
-    public void limpiarTextoDocente(View v) {
-        editIdDocente.setText("");
+    public void limpiarTexto(View v) {
+        //editIdDocente.setText("");
         editIdTipoDocente.setText("");
         editNombre.setText("");
         editApellido.setText("");

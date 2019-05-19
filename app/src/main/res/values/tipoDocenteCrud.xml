@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nombreTipoDocente">Nombre Docente:</string>
+    <string name="insertar">Insertar</string>
+    <string name="limpiar">Limpiar</string>
+</resources>

@@ -25,7 +25,7 @@ public class DocenteInsertarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_docente_insertar);
         helper = new DocenteDB(this);
 
-        editIdDocente = (EditText) findViewById(R.id.editIdDocente);
+       // editIdDocente = (EditText) findViewById(R.id.editIdDocente);
         editIdTipoDocente = (EditText) findViewById(R.id.editIdTipoDocente);
         editNombre = (EditText) findViewById(R.id.editNombre);
         editApellido = (EditText) findViewById(R.id.editApellido);
@@ -33,31 +33,36 @@ public class DocenteInsertarActivity extends AppCompatActivity {
         editSexo = (EditText) findViewById(R.id.editSexo);
 
     }
-    public void insertarDocente(View v) {
+    public void insertar(View v) {
 
-        Integer idDocente=Integer.parseInt(editIdDocente.getText().toString());
+        //Integer idDocente=Integer.parseInt(editIdDocente.getText().toString());
         Integer idTipoDocente=Integer.parseInt(editIdTipoDocente.getText().toString());
         String nombre=editNombre.getText().toString();
-        String apellido=editApellido.getText().toString();
+        String apellidos=editApellido.getText().toString();
+        String codDocente=editCodDocente.getText().toString();
         String sexo=editSexo.getText().toString();
         String regInsertados;
 
         Docente docente=new Docente();
-        docente.setIdDocente(idDocente);
+        //docente.setIdDocente(idDocente);
         docente.setIdTipoDocente(idTipoDocente);
         docente.setNombre(nombre);
-        docente.setApellidos(apellido);
+        docente.setApellidos(apellidos);
+        docente.setCodDocente(codDocente);
         docente.setSexo(sexo);
         //helper.abrir();
         regInsertados=helper.insertar(docente);
-        helper.cerrar();
+        //helper.cerrar();
         Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
     }
+
     public void limpiarTexto(View v) {
         editIdTipoDocente.setText("");
-        editIdDocente.setText("");
+        //editIdDocente.setText("");
         editApellido.setText("");
+        editCodDocente.setText("");
         editSexo.setText("");
         editNombre.setText("");
     }
+
 }
