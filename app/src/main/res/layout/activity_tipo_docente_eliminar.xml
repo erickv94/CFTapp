@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <EditText
         android:id="@+id/editIdTipoDocente"
         android:layout_width="match_parent"
@@ -12,30 +13,17 @@
         android:inputType="text"
         android:paddingTop="20dp" />
 
-    <EditText
-        android:id="@+id/editNombre"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/nombreDocente"
-        android:inputType="text"
-        android:paddingTop="20dp" />
+        android:orientation="vertical"
+        android:paddingTop="10dp">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/eliminar"
+            android:onClick="eliminarTipoDocente"/>
 
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="actualizarTipoDocente"
-        android:text="@string/tipodocenteupdate"
-
-        />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="limpiarTexto"
-        android:text="@string/limpiar"
-
-        />
-
+    </LinearLayout>
 </LinearLayout>

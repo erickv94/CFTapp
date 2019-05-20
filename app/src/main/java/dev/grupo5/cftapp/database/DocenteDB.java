@@ -15,31 +15,31 @@ public class DocenteDB {
     private SQLiteDatabase db;
     private DBHelper dbHelper;
     private String[] camposDocente = {"iddocente", "idtipodocente","nombre","apellidos","cod_docente","sexo"};
+
     public DocenteDB(Context context){
         dbHelper=DBHelper.getSingleton(context);
     }
 
     public String insertar(Docente docente){
-        
-        String regInsertados="Registro Insertado No: ";
+
+        String regInsertados="Registros Insertados No: ";
         long contador=0;
-        
+
         ContentValues contentValues= new ContentValues();
-        //contentValues.put("idDocente",docente.getIdDocente());
-        contentValues.put("idTipoDocente",docente.getIdTipoDocente());
+        contentValues.put("iddocente",docente.getIdDocente());
+        contentValues.put("idtipodocente",docente.getIdTipoDocente());
         contentValues.put("nombre",docente.getNombre());
         contentValues.put("apellidos",docente.getApellidos());
-        contentValues.put("codDocente",docente.getCodDocente());
+        contentValues.put("cod_docente",docente.getCodDocente());
         contentValues.put("sexo",docente.getSexo());
-        contador=db.insert("docente", null, contentValues);
-        if(contador==-1 || contador==0)
-        {
-            regInsertados= "Error al Insertar el registro, Registro Duplicado. Verificar inserción";
-        }
-        else {
-            regInsertados=regInsertados+contador;
-        }
+
+
+        db=dbHelper.getWritableDatabase();
+        contador=db.insert("docente",null,contentValues);
+        regInsertados=regInsertados+contador;
+
         return regInsertados;
+        
     }
 
     public void abrir() throws SQLException {

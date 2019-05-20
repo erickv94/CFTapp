@@ -20,12 +20,13 @@ public class DocenteInsertarActivity extends AppCompatActivity {
     EditText editApellido;
     EditText editCodDocente;
     EditText editSexo;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_insertar);
-        helper = new DocenteDB(this);
+        setTitle(R.string.docenteinsert);
 
-       // editIdDocente = (EditText) findViewById(R.id.editIdDocente);
+        //editIdDocente = (EditText) findViewById(R.id.editIdDocente);
         editIdTipoDocente = (EditText) findViewById(R.id.editIdTipoDocente);
         editNombre = (EditText) findViewById(R.id.editNombre);
         editApellido = (EditText) findViewById(R.id.editApellido);
@@ -33,32 +34,30 @@ public class DocenteInsertarActivity extends AppCompatActivity {
         editSexo = (EditText) findViewById(R.id.editSexo);
 
     }
-    public void insertar(View v) {
+    public void insertarDocente(View v) {
 
-        //Integer idDocente=Integer.parseInt(editIdDocente.getText().toString());
-        Integer idTipoDocente=Integer.parseInt(editIdTipoDocente.getText().toString());
-        String nombre=editNombre.getText().toString();
-        String apellidos=editApellido.getText().toString();
-        String codDocente=editCodDocente.getText().toString();
-        String sexo=editSexo.getText().toString();
-        String regInsertados;
-
+        DocenteDB docenteDB=new DocenteDB(this);
         Docente docente=new Docente();
-        //docente.setIdDocente(idDocente);
-        docente.setIdTipoDocente(idTipoDocente);
-        docente.setNombre(nombre);
-        docente.setApellidos(apellidos);
-        docente.setCodDocente(codDocente);
-        docente.setSexo(sexo);
-        //helper.abrir();
-        regInsertados=helper.insertar(docente);
-        //helper.cerrar();
-        Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
+        String cantidad;
+        docente.setIdTipoDocente(Integer.parseInt(editIdDocente.getText().toString()));
+        docente.setNombre(editNombre.getText().toString());
+        docente.setApellidos(editApellido.getText().toString());
+        docente.setCodDocente(editCodDocente.getText().toString());
+        docente.setSexo(editSexo.getText().toString());
+
+        cantidad=docenteDB.insertar(docente);
+        Toast.makeText(this,cantidad,Toast.LENGTH_SHORT).show();
+
+
+
+
+
     }
 
     public void limpiarTexto(View v) {
-        editIdTipoDocente.setText("");
+
         //editIdDocente.setText("");
+        editIdTipoDocente.setText("");
         editApellido.setText("");
         editCodDocente.setText("");
         editSexo.setText("");

@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.TipoDocenteDB;
 import dev.grupo5.cftapp.modelos.TipoDocente;
 
@@ -25,24 +26,22 @@ public class TipoDocenteInsertarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tipo_docente_insertar);
         setTitle(R.string.tipodocenteinsert);
 
-        helper = new TipoDocenteDB(this);
-        //editIdTipoDocente = (EditText) findViewById(R.id.editIdTipoDocente);
-        editNombre = (EditText) findViewById(R.id.editNombre);
+        editNombre = findViewById(R.id.editNombre);
+
     }
 
     public void insertarTipoDocente(View v) {
         //Integer idtipodocente= Integer.parseInt(editIdTipoDocente.getText().toString());
-        String nombre=editNombre.getText().toString();
-
-        String regInsertados;
+        TipoDocenteDB tipoDocenteDB=new TipoDocenteDB(this);
         TipoDocente tipoDocente=new TipoDocente();
-        //tipoDocente.setIdTipoDocente(idtipodocente);
-        tipoDocente.setNombre(nombre);
-        helper.abrir();
-        regInsertados=helper.insertar(tipoDocente);
-        helper.cerrar();
-        Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
+        String cantidad;
+        tipoDocente.setNombre(editNombre.getText().toString());
+
+        cantidad=tipoDocenteDB.insertar(tipoDocente);
+        Toast.makeText(this,cantidad,Toast.LENGTH_SHORT).show();
+
     }
+
     public void limpiarTexto(View v) {
         //editIdTipoDocente.setText("");
         editNombre.setText("");
