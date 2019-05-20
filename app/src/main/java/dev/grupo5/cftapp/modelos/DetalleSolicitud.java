@@ -13,6 +13,8 @@ public class DetalleSolicitud {
         this.esRechazado = esRechazado;
     }
 
+    public DetalleSolicitud(){}
+
     public int getIdTramite() {
         return idTramite;
     }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tramite_detalle_sol">Tramite</string>
+    <string name="estudiante_detalle_sol">Estudiante</string>
+    <string name="motivo_detalle_sol">Motivo</string>
+    <string name="rechazado_detalle_sol">Rechazado</string>
+</resources>
