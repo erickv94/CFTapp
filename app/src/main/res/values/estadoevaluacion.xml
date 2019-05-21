@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="estadoestudiante">Estudiante</string>
+    <string name="estadoevaluacion">Nombre Evaluacion</string>
+    <string name="estadonota">Nota</string>
+</resources>

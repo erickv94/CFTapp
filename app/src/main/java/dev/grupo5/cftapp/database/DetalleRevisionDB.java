@@ -36,9 +36,13 @@ public class DetalleRevisionDB {
 
 
         db = dbHelper.getWritableDatabase();
-        contador = db.insert("detallerevision", null, contentValues);
-        regInsertados += contador;
-
+        try {
+            contador = db.insertOrThrow("detallerevision", null, contentValues);
+            regInsertados += contador;
+        }
+        catch (SQLiteConstraintException e){
+            regInsertados=null;
+        }
 
         return regInsertados;
 
@@ -107,7 +111,7 @@ public class DetalleRevisionDB {
         try {
             db = dbHelper.getWritableDatabase();
 
-            contador += db.delete("detallesolicitud",
+            contador += db.delete("detallerevision",
                     "idestudiante='" +detalleRevision.getIdEstudiante()+
                             "' and idtramite='"+detalleRevision.getIdTramite()+"'"
                     , null);

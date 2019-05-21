@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.EstadoEvaluacion.EstadoEvaluacionConsultarActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="@string/estadoestudiante"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/busqueda1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/estadoEvaluacion"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/busqueda2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estadoread"
+            android:id="@+id/imageButton2"
+            android:drawableRight="@drawable/ic_show"
+            android:onClick="consultarEstado"/>
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/idestudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/estadoestudiante"
+        android:enabled="false"
+        />
+    <EditText
+        android:id="@+id/idevaluacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/estadoevaluacion"
+        android:enabled="false"
+        />
+
+    <EditText
+        android:id="@+id/nota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/estadonota"
+        android:enabled="false"
+        />
+
+</LinearLayout>

@@ -6,6 +6,8 @@ public class EstadoEvaluacion {
     private int idEstudiante;
     private double nota;
 
+    public EstadoEvaluacion(){}
+
     public EstadoEvaluacion(int idEvaluacion, int idEstudiante, double nota) {
 
         this.idEvaluacion = idEvaluacion;
