@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -271,6 +272,8 @@ public class MainActivity extends AppCompatActivity {
 
                     testigoDB.insertar(new Testigo(1,4,"Estudiante en funcion de testigo"));
                     testigoDB.insertar(new Testigo(2,3,"Estudiante en funcion de testigo"));
+                    Toast.makeText(MainActivity.this,getResources().getString(R.string.bd_llena),Toast.LENGTH_SHORT).show();
+
                 }
 
                 }

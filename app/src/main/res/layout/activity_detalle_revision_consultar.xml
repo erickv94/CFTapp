@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.DetalleRevision.DetalleRevisionConsultarActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tramiterevision"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/busqueda1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/estudianterevision"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp" />
+
+    <Spinner
+        android:id="@+id/busqueda2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detallerevisionread"
+            android:id="@+id/imageButton2"
+            android:drawableRight="@drawable/ic_show"
+            android:onClick="consultarDetalleRev"/>
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/idtramite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tramite_detalle_sol"
+        android:enabled="false"
+        />
+    <EditText
+        android:id="@+id/idestudiante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/estudianterevision"
+        android:enabled="false"
+        />
+
+    <EditText
+        android:id="@+id/detalle_rev_motivo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/motivorevision"
+        android:enabled="false"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/asistencia_rev"
+        android:hint="@string/asistenciarevision"
+        android:enabled="false"/>
+</LinearLayout>

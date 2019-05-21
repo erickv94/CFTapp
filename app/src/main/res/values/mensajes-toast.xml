@@ -12,4 +12,6 @@
     <string name="limpiado">
         Formulario fue limpiado
     </string>
+
+    <string name="already_exist">Registro ya ha sido insertado</string>
 </resources>

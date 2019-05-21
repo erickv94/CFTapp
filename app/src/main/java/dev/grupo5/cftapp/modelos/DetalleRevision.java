@@ -7,6 +7,8 @@ public class DetalleRevision {
     private String motivo;
     private boolean asistencia;
 
+    public DetalleRevision(){}
+
     public DetalleRevision(int idTramite, int idEstudiante, int resultado, String motivo, boolean asistencia) {
         this.idTramite = idTramite;
         this.idEstudiante = idEstudiante;

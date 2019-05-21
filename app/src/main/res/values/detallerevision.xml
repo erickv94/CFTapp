@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="motivorevision">Motivo Revision</string>
+    <string name="estudianterevision">Estudiante Revision</string>
+    <string name="tramiterevision">Tramite</string>
+    <string name="asistenciarevision">Asistencia</string>
+    <string name="resultadorevision">Resultado revision</string>
+
+</resources>

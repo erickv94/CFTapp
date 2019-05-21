@@ -87,6 +87,7 @@ public class DetalleSolicitudConsultarActivity extends AppCompatActivity {
     }
     public void consultarDetalleSol(View view){
 
+
         DetalleSolicitudDB detalleSolicitudDB= new DetalleSolicitudDB(this);
 
         String estudianteData=spinnerEstudiante.getSelectedItem().toString();
@@ -101,10 +102,13 @@ public class DetalleSolicitudConsultarActivity extends AppCompatActivity {
             tramiteText.setText(spinnerTramite.getSelectedItem().toString());
             estudianteText.setText(spinnerEstudiante.getSelectedItem().toString());
             motivoText.setText(detalleSolicitud.getMotivo().toString());
-            rechazadoText.setText(detalleSolicitud.getEsRechazado()?"No ha sido rechazado":"Rechazado");
+            rechazadoText.setText(detalleSolicitud.getEsRechazado()?"Ha sido rechazado":"No ha sido rechazado");
             return;
         }
         Toast.makeText(this,R.string.consulta_no_existe,Toast.LENGTH_SHORT).show();
 
     }
+
+
+
 }

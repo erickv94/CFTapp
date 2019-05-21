@@ -2,10 +2,12 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
+import dev.grupo5.cftapp.R;
 import dev.grupo5.cftapp.modelos.DetalleSolicitud;
 
 public class DetalleSolicitudDB {
@@ -33,9 +35,15 @@ public class DetalleSolicitudDB {
 
 
 
+
         db = dbHelper.getWritableDatabase();
-        contador = db.insert("detallesolicitud", null, contentValues);
-        regInsertados += contador;
+        try {
+            contador = db.insertOrThrow("detallesolicitud", null, contentValues);
+            regInsertados += contador;
+        }catch (SQLiteConstraintException e){
+
+            regInsertados=null;
+        }
 
 
         return regInsertados;
@@ -53,7 +61,7 @@ public class DetalleSolicitudDB {
             detalleSolicitud.setIdTramite(c.getInt(0));
             detalleSolicitud.setIdEstudiante(c.getInt(1));
             detalleSolicitud.setMotivo(c.getString(2));
-            detalleSolicitud.setEsRechazado(Boolean.valueOf(c.getString(3)));
+            detalleSolicitud.setEsRechazado(c.getInt(3)==1?true:false);
 
 
             dbHelper.close();
@@ -70,18 +78,17 @@ public class DetalleSolicitudDB {
         int contador=0;
         db = dbHelper.getWritableDatabase();
 
-/*
-        String[] id = {String.valueOf(testigo.getIdTestigo())};
+
+        String[] id = {String.valueOf(detalleSolicitud.getIdTramite()),String.valueOf(detalleSolicitud.getIdEstudiante())};
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put("idtramite",testigo.getIdTramite());
-        contentValues.put("idestudiante",testigo.getIdTramite());
-        contentValues.put("justificacion",testigo.getJustificacion());
+        contentValues.put("motivo",detalleSolicitud.getMotivo());
+        contentValues.put("esrechazado",detalleSolicitud.getEsRechazado());
 
 
-        contador = db.update("testigo", contentValues, "idtestigo=?", id);
+        contador = db.update("detallesolicitud", contentValues, "idtramite=? and idestudiante=?", id);
         dbHelper.close();
-*/
+
 
         if(contador > 0)
             return "Registro Actualizado Correctamente";
@@ -100,16 +107,19 @@ public class DetalleSolicitudDB {
         String regAfectados = "filas afectadas";
         int contador = 0;
 
-/*
+
         try {
             db = dbHelper.getWritableDatabase();
-            contador += db.delete("testigo", "idtestigo='" +testigo.getIdTestigo()+ "'", null);
+
+            contador += db.delete("detallesolicitud", "idestudiante='"
+                            +detalleSolicitud.getIdEstudiante()+
+                            "' and idtramite='"+detalleSolicitud.getIdTramite()+"'"
+                    , null);
             regAfectados += contador;
             dbHelper.close();
         }catch (SQLiteConstraintException e){
             e.printStackTrace();
         }
-*/
         return regAfectados;
     }
 
