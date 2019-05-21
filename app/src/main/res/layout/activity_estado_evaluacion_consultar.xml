@@ -51,6 +51,13 @@
 
     </LinearLayout>
     <EditText
+        android:id="@+id/idestado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Id"
+        android:enabled="false"
+        />
+    <EditText
         android:id="@+id/idestudiante"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

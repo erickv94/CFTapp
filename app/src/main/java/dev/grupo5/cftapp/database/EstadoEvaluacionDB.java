@@ -67,18 +67,18 @@ public class EstadoEvaluacionDB {
         int contador=0;
         db = dbHelper.getWritableDatabase();
 
-/*
-        String[] id = {String.valueOf(testigo.getIdTestigo())};
+
+        String[] id = {String.valueOf(estadoEvaluacion.getIdEstado())};
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put("idtramite",testigo.getIdTramite());
-        contentValues.put("idestudiante",testigo.getIdTramite());
-        contentValues.put("justificacion",testigo.getJustificacion());
+        contentValues.put("idevaluacion",estadoEvaluacion.getIdEvaluacion());
+        contentValues.put("idestudiante",estadoEvaluacion.getIdEstudiante());
+        contentValues.put("nota",estadoEvaluacion.getNota());
 
 
-        contador = db.update("testigo", contentValues, "idtestigo=?", id);
+        contador = db.update("estadoevaluacion", contentValues, "idestado=?", id);
         dbHelper.close();
-*/
+
 
         if(contador > 0)
             return "Registro Actualizado Correctamente";
@@ -97,16 +97,15 @@ public class EstadoEvaluacionDB {
         String regAfectados = "filas afectadas";
         int contador = 0;
 
-/*
         try {
             db = dbHelper.getWritableDatabase();
-            contador += db.delete("testigo", "idtestigo='" +testigo.getIdTestigo()+ "'", null);
+            contador += db.delete("estadoevaluacion", "idestado='" +estadoEvaluacion.getIdEstado()+ "'", null);
             regAfectados += contador;
             dbHelper.close();
         }catch (SQLiteConstraintException e){
             e.printStackTrace();
         }
-*/
+
         return regAfectados;
     }
 

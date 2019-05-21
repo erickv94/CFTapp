@@ -29,6 +29,7 @@ public class EstadoEvaluacionConsultarActivity extends AppCompatActivity {
     EditText notaText;
     EditText estudianteText;
     EditText evaluacionText;
+    EditText idtext;
 
     //mapeo para los arrayadapters
     List<String> nombresEstudiantes= new ArrayList<String>();
@@ -49,6 +50,7 @@ public class EstadoEvaluacionConsultarActivity extends AppCompatActivity {
         notaText= findViewById(R.id.nota);
         estudianteText=findViewById(R.id.idestudiante);
         evaluacionText=findViewById(R.id.idevaluacion);
+        idtext= findViewById(R.id.idestado);
 
         EstudianteDB estudianteDB= new EstudianteDB(this);
         List<Estudiante> estudiantes=estudianteDB.getEstudiantes();
@@ -91,7 +93,7 @@ public class EstadoEvaluacionConsultarActivity extends AppCompatActivity {
             estudianteText.setText(spinnerEstudiante.getSelectedItem().toString());
             evaluacionText.setText(spinnerEvaluacion.getSelectedItem().toString());
             notaText.setText(String.valueOf(estadoEvaluacion.getNota()));
-
+            idtext.setText(String.valueOf(estadoEvaluacion.getIdEstado()));
             return;
         }
         Toast.makeText(this,R.string.consulta_no_existe,Toast.LENGTH_SHORT).show();
