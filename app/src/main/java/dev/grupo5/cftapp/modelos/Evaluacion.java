@@ -9,6 +9,7 @@ public class Evaluacion {
     private String nombreEvaluacion;
     private Date fecha;
 
+    public Evaluacion(){}
     public Evaluacion( int idGrupo, int idTipoEvaluacion, String nombreEvaluacion, Date fecha) {
 
         this.idGrupo = idGrupo;

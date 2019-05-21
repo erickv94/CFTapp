@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".mantenimientos.Materia.MateriaActualizarActivity">
 
+
     <EditText
         android:id="@+id/codigomateria"
         android:layout_width="match_parent"

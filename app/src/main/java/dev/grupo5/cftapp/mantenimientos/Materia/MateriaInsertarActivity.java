@@ -22,6 +22,7 @@ public class MateriaInsertarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_materia_insertar);
         setTitle(R.string.materiainsert);
 
+        materiaDB = new MateriaDB(this);
         codigomateriaText = (EditText) findViewById(R.id.codigomateria);
         nombremateriaText = (EditText) findViewById(R.id.nombremateria);
         uvsText = (EditText) findViewById(R.id.uvs);

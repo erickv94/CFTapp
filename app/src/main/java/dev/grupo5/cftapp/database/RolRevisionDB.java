@@ -11,7 +11,7 @@ import dev.grupo5.cftapp.modelos.RolRevision;
 public class RolRevisionDB {
     private SQLiteDatabase db;
     private DBHelper dbHelper;
-    private String[] camposRolRevision = {"idrolrevision", "nombrerolrevision", "descripcionrolrevision"};
+    private String[] camposRolRevision = {"idrol", "nombre", "descripcion"};
 
     public RolRevisionDB(Context context){
         dbHelper=DBHelper.getSingleton(context);
@@ -33,10 +33,10 @@ public class RolRevisionDB {
         return regInsertados;
     }
 
-    public RolRevision consultar(String idrolrevision){
-        String[] id = {idrolrevision};
+    public RolRevision consultar(String idrol){
+        String[] id = {idrol};
         db = dbHelper.getWritableDatabase();
-        Cursor c = db.query("rolrevision", camposRolRevision, "idrolrevision=?", id, null, null, null);
+        Cursor c = db.query("rolrevision", camposRolRevision, "idrol=?", id, null, null, null);
         if (c.moveToFirst()){
             RolRevision rolRevision = new RolRevision();
             rolRevision.setIdRol(c.getInt(0));
@@ -55,17 +55,17 @@ public class RolRevisionDB {
         int contador = 0;
         db = dbHelper.getWritableDatabase();
 
-        String[] id = {String.valueOf(rolRevision.getIdRol())};
+        String[] id = {String.valueOf(rolRevision.getNombre())};
         ContentValues contentValues = new ContentValues();
         contentValues.put("nombre", rolRevision.getNombre());
         contentValues.put("descripcion", rolRevision.getDescripcion());
-        contador = db.update("rolrevision", contentValues, "idrol=?", id);
+        contador = db.update("rolrevision", contentValues, "nombre=?", id);
         dbHelper.close();
 
         if (contador > 0)
             return "Registro actualizado correctamente";
         else
-            return "Registro con id local: " + rolRevision.getIdRol() + "no existe";
+            return "Registro con nombre rol revision: " + rolRevision.getNombre() + "no existe";
     }
 
     public String eliminar(RolRevision rolRevision){

@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mantenimientos.Evaluacion.EvaluacionInsertarActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/grupoevaluacion"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"/>
+    
+    <Spinner
+        android:id="@+id/idgrupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tipoevaluacionevaluacion"
+        android:paddingLeft="10dp"
+        android:paddingTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/idtipoevaluacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+
+    <EditText
+        android:id="@+id/nombreevaluacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombreevaluacion"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+
+    <EditText
+        android:id="@+id/fecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/fecha"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/evaluacioninsert"
+        android:id="@+id/insertar"
+        android:onClick="insertarEvaluacion" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar"
+        android:id="@+id/limpiar"
+        android:onClick="limpiarEvaluacion"/>
+</LinearLayout>

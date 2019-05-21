@@ -5,6 +5,7 @@ public class TipoEvaluacion {
     private String nombre;
     private String descripcion;
 
+    public TipoEvaluacion(){}
 
     public TipoEvaluacion( String nombre, String descripcion) {
         this.nombre = nombre;

@@ -12,7 +12,7 @@ import dev.grupo5.cftapp.modelos.Materia;
 
 public class MateriaConsultarActivity extends AppCompatActivity {
     MateriaDB materiaDB;
-    EditText idmateriaText;
+    EditText codigomateriaTargetText;
     EditText nombremateriaText;
     EditText codigomateriaText;
     EditText uvsText;
@@ -23,28 +23,29 @@ public class MateriaConsultarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_materia_consultar);
         setTitle(R.string.materiaread);
 
-        idmateriaText = (EditText) findViewById(R.id.idbusqueda);
-        nombremateriaText = (EditText) findViewById(R.id.nombremateria);
+        codigomateriaTargetText = (EditText) findViewById(R.id.idbusqueda);
+
         codigomateriaText = (EditText) findViewById(R.id.codigomateria);
+        nombremateriaText = (EditText) findViewById(R.id.nombremateria);
         uvsText = (EditText) findViewById(R.id.uvs);
     }
 
     public void consultarMateria(View v){
-        MateriaDB materiaDB = new MateriaDB(this);
+        materiaDB = new MateriaDB(this);
         Materia materia;
-        materia = materiaDB.consultar(idmateriaText.getText().toString());
+        materia = materiaDB.consultar(codigomateriaTargetText.getText().toString());
         if (materia != null){
-            materia.setCodigoMateria(codigomateriaText.getText().toString());
-            materia.setNombre(nombremateriaText.getText().toString());
-            materia.setUvs(Integer.parseInt(uvsText.getText().toString()));
+            codigomateriaText.setText(materia.getCodigoMateria());
+            nombremateriaText.setText(materia.getNombre());
+            uvsText.setText(String.valueOf(materia.getUvs()));
             return;
         }
-        Toast.makeText(this, "Materia con id materia" + idmateriaText.getText().toString()
+        Toast.makeText(this, "Materia con codigo materia" + codigomateriaTargetText.getText().toString()
         + "no existe", Toast.LENGTH_SHORT).show();
     }
 
     public void limpiarMateria(View v){
-        idmateriaText.setText("");
+        codigomateriaTargetText.setText("");
         nombremateriaText.setText("");
         codigomateriaText.setText("");
         uvsText.setText("");

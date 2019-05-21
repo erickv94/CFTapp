@@ -38,13 +38,17 @@
         android:inputType="text"
         android:paddingTop="20dp"/>
 
-    <EditText
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/materiaCiclo"
+        android:paddingTop="20dp"/>
+
+    <Spinner
         android:id="@+id/editIdMateria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/idmateria"
-        android:inputType="text"
-        android:paddingTop="20dp"/>
+        android:paddingTop="10dp"/>
 
     <Button
         android:layout_width="wrap_content"

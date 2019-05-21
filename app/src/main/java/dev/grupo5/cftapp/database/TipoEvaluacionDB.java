@@ -2,7 +2,11 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dev.grupo5.cftapp.modelos.TipoEvaluacion;
 
@@ -33,5 +37,24 @@ public class TipoEvaluacionDB {
 
     }
 
+    public List<TipoEvaluacion> getTiposEvaluaciones(){
+        String[] camposTry = {"idtipoevaluacion", "nombre"};
+
+        db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.query("tipoevaluacion", camposTry, null, null, null, null, null);
+        List<TipoEvaluacion> tipoEvaluaciones = new ArrayList<TipoEvaluacion>();
+        if (cursor.moveToFirst()){
+            do {
+                TipoEvaluacion tipoEvaluacion = new TipoEvaluacion();
+                tipoEvaluacion.setIdTipoEvaluacion(cursor.getInt(0));
+                tipoEvaluacion.setNombre(cursor.getString(1));
+                tipoEvaluaciones.add(tipoEvaluacion);
+            } while (cursor.moveToNext());
+
+
+        }
+        dbHelper.close();
+        return tipoEvaluaciones;
+    }
 
 }

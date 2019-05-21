@@ -30,7 +30,6 @@
 
     </LinearLayout>
 
-
     <EditText
         android:id="@+id/nombremateria"
         android:layout_width="match_parent"
@@ -38,6 +37,15 @@
         android:hint="@string/nombremateria"
         android:inputType="text"
         android:paddingTop="20dp"/>
+
+    <EditText
+        android:id="@+id/codigomateria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/codigomateria"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+
     <EditText
         android:id="@+id/uvs"
         android:layout_width="match_parent"
