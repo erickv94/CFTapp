@@ -6,10 +6,12 @@
     android:stretchColumns="1" >
     <TableRow>
         <TextView android:text="@string/idTipoDocente" />
-        <EditText
+        <Spinner
             android:id="@+id/editIdTipoDocente"
-            android:inputType="text"
-            android:maxLength="7" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            />
     </TableRow>
     <TableRow>
         <TextView android:text="@string/nombreDocente" />

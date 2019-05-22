@@ -34,6 +34,10 @@ public class DocenteEliminarActivity extends AppCompatActivity {
         Toast.makeText(this, resultado, Toast.LENGTH_SHORT).show();
 
     }
+
+    public void limpiarTexto(View v) {
+        editIdDocente.setText("");
+    }
 }
 
 

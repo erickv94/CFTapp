@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.Ciclo.CicloActualizarActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/editIdCiclo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idCiclo"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+    <EditText
+        android:id="@+id/editCiclo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/Ciclo"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+    <EditText
+        android:id="@+id/editAnio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/year"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="actualizarCiclo"
+        android:text="@string/cicloupdate"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="limpiarTexto"
+        android:text="@string/limpiar"
+
+        />
+
+</LinearLayout>

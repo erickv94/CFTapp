@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.util.HashMap;
 
 import dev.grupo5.cftapp.modelos.Docente;
 
@@ -17,6 +19,7 @@ public class DocenteDB {
     private String[] camposDocente = {"iddocente", "idtipodocente","nombre","apellidos","cod_docente","sexo"};
 
     public DocenteDB(Context context){
+
         dbHelper=DBHelper.getSingleton(context);
     }
 
@@ -26,7 +29,7 @@ public class DocenteDB {
         long contador=0;
 
         ContentValues contentValues= new ContentValues();
-        contentValues.put("iddocente",docente.getIdDocente());
+        //contentValues.put("iddocente",docente.getIdDocente());
         contentValues.put("idtipodocente",docente.getIdTipoDocente());
         contentValues.put("nombre",docente.getNombre());
         contentValues.put("apellidos",docente.getApellidos());
@@ -50,7 +53,27 @@ public class DocenteDB {
         dbHelper.close();
     }
 
-    public void actualizar(Docente docente) {
+    public String actualizar(Docente docente) {
+        int contador=0;
+        db = dbHelper.getWritableDatabase();
+
+        String[] id = {String.valueOf(docente.getIdDocente())};
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("idtipodocente",docente.getIdTipoDocente());
+        contentValues.put("nombre", docente.getNombre());
+        contentValues.put("apellidos",docente.getApellidos());
+        contentValues.put("cod_docente",docente.getCodDocente());
+        contentValues.put("sexo",docente.getSexo());
+
+
+        contador = db.update("docente", contentValues, "iddocente=?", id);
+        dbHelper.close();
+
+        if(contador > 0)
+            return "Registro Actualizado Correctamente";
+
+        else
+            return "Registro con codigo local: " + docente.getIdDocente() + " no existe";
 
     }
 
@@ -70,112 +93,65 @@ public class DocenteDB {
         }
         return regAfectados;
     }
-    public Docente consultar(String idDocente){
-        String[] id = {idDocente};
-        Cursor cursor = db.query("docente",camposDocente , "iddocente = ?", id,
+    public Docente consultar(String idtipodocente) throws ParseException {
+        db=dbHelper.getWritableDatabase();
+        String[] id = {idtipodocente};
+        Cursor cursor = db.query("docente",camposDocente , "idtipodocente=?", id,
                 null, null, null);
         if(cursor.moveToFirst()){
             Docente docente= new Docente();
-            //docente.setIdDocente(Integer.parseInt(cursor.getString(0)));
-            docente.setIdTipoDocente(Integer.parseInt(cursor.getString(0)));
-            docente.setCodDocente(cursor.getString(1));
+            docente.setIdDocente(Integer.parseInt(cursor.getString(0)));
+            docente.setIdTipoDocente(Integer.parseInt(cursor.getString(1)));
             docente.setNombre(cursor.getString(2));
-            docente.setSexo(cursor.getString(3));
-            docente.setApellidos(cursor.getString(4));
+            docente.setApellidos(cursor.getString(3));
+            docente.setCodDocente(cursor.getString(4));
+            docente.setSexo(cursor.getString(5));
 
+            dbHelper.close();
             return docente;
         }else{
+            dbHelper.close();
             return null;
         }
     }
 
-  /*  private boolean verificarIntegridad(Object dato, int relacion) throws SQLException{
-        switch(relacion){case 1:
-        {
-//verificar que al insertar docente exista carnet del alumno y el codigo de materia
-            Docente docente = (Docente)dato;
-            String[] id1 = {Integer.parseInt(docente.getIdDocente())};
-            String[] id2 = {docente.getIdTipoDocente()};
-//abrir();
-            Cursor cursor1 = db.query("docente", null, "iddocente = ?", id1, null,
-                    null, null);
-            Cursor cursor2 = db.query("materia", null, "codmateria = ?", id2,
-                    null, null, null);
-            if(cursor1.moveToFirst() && cursor2.moveToFirst()){
-//Se encontraron datos
-                return true;
-            }
-            return false;
+    public HashMap<Integer,String> getDocentes() {
+        db=dbHelper.getReadableDatabase();
+        Cursor c= db.query("docente",camposDocente,null,null,null,null,null);
+        Cursor tipo;
+
+        HashMap<Integer,String> mapeo= new HashMap<Integer, String>();
+        String informacion;
+
+        if (c.moveToFirst()) {
+            do {
+                Docente docente = new Docente();
+                informacion="";
+                informacion=c.getString(0);
+                informacion+=" - ";
+
+
+                //tipo Docente
+                tipo=db.query("tipodocente",new String[]{"nombre"},"idtipodocente=?"
+                        ,new String[]{String.valueOf(c.getInt(1))},null,null,null);
+
+                if(tipo.moveToFirst()){
+                    informacion+=tipo.getString(0);
+                }
+                //informacion += " - ";
+                //has
+                mapeo.put(c.getInt(2),informacion);
+
+            } while (c.moveToNext());
+
         }
-            case 2:
-            {
-//verificar que al modificar docente exista carnet del alumno, el
-                codigo de materia y el ciclo
-                Docente docente1 = (Docente)dato;
-                String[] ids = {docente1.getCarnet(), docente1.getCodmateria(),
-                        docente1.getCiclo()};
-                abrir();
-                Cursor c = db.query("docente", null, "carnet = ? AND codmateria = ? AND
-                        ciclo = ?", ids, null, null, null);
-                if(c.moveToFirst()){
-//Se encontraron datos
-                    return true;
-                }
-                return false;
-            }
-            case 3:
-            {
-                Alumno alumno = (Alumno)dato;
-                Cursor c=db.query(true, "docente", new String[] {
-                                "carnet" }, "carnet='"+alumno.getCarnet()+"'",null,
-                        null, null, null, null);
-                if(c.moveToFirst())
-                    return true;
-                else
-                    return false;
-            }
-            case 4:
-            {
-                Materia materia = (Materia)dato;
-                Cursor cmat=db.query(true, "docente", new String[] {
-                                "codmateria" },
-                        "codmateria='"+materia.getCodmateria()+"'",null, null, null, null, null);
-                if(cmat.moveToFirst())
-                    return true;
-                else
-                    return false;
-            }
-            case 5:
-            {
-//verificar que exista alumno
-                Alumno alumno2 = (Alumno)dato;
-                String[] id = {alumno2.getCarnet()};
-                abrir();
-                Cursor c2 = db.query("alumno", null, "carnet = ?", id, null, null,
-                        null);
-                if(c2.moveToFirst()){
-//Se encontro Alumno
-                    return true;
-                }
-                return false;
-            }
-            case 6:
-            {
-//verificar que exista Materia
-                Materia materia2 = (Materia)dato;
-                String[] idm = {materia2.getCodmateria()};
-                abrir();
-                Cursor cm = db.query("materia", null, "codmateria = ?", idm, null,
-                        null, null);
-                if(cm.moveToFirst()){
-//Se encontro Materia
-                    return true;
-                }
-                return false;
-            }
-            default:
-                return false;
-        }
-    }  */
+
+        dbHelper.close();
+
+        return mapeo;
+
+
+    }
+
 
 }

@@ -50,7 +50,8 @@ public class TipoDocenteDB {
             TipoDocente tipoDocente = new TipoDocente();
 
             tipoDocente.setIdTipoDocente(c.getInt(0));
-            tipoDocente.setNombre(c.getString(1)); dbHelper.close();
+            tipoDocente.setNombre(c.getString(1));
+            dbHelper.close();
             return tipoDocente;
         } else {
             dbHelper.close();

@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.TipoGrupo.TipoGrupoActualizarActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/editIdTipoGrupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idGrupo"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombreTipoGrupo"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="actualizarTipoGrupo"
+        android:text="@string/tipogrupoupdate"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="limpiarTexto"
+        android:text="@string/limpiar"
+
+        />
+
+</LinearLayout>
