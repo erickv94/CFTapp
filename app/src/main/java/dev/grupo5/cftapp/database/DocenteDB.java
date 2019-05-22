@@ -8,7 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import dev.grupo5.cftapp.modelos.Docente;
 
@@ -113,6 +115,27 @@ public class DocenteDB {
             dbHelper.close();
             return null;
         }
+    }
+
+    public List<Docente> getListaDocentes(){
+
+        db=dbHelper.getWritableDatabase();
+        Cursor c= db.query("docente",camposDocente,null,null,null,null,null);
+        List<Docente> docenteList = new ArrayList<Docente>();
+        if (c.moveToFirst()) {
+            do {
+                Docente tipoDocente = new Docente();
+                tipoDocente.setIdDocente(c.getInt(0));
+                tipoDocente.setNombre(c.getString(1));
+
+                docenteList.add(tipoDocente);
+            } while (c.moveToNext());
+
+        }
+        dbHelper.close();
+
+        return docenteList;
+
     }
 
     public HashMap<Integer,String> getDocentes() {

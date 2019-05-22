@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cantidadImpresa"> Cantidad Impresa:</string>
+    <string name="asunto"> Asunto: </string>
+    <string name="justificacion"> Justificación: </string>
+    <string name="aprobado"> Aprobado: </string>
+    <string name="fechaSoli"> Fecha Solicitud: </string>
+    <string name="paginasAnexas">Páginas Anexas:</string>
+    <string name="codimpresion">Código de Impresion:</string>
+</resources>
