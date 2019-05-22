@@ -17,6 +17,10 @@ public class Docente {
         this.sexo = sexo;
     }
 
+    public Docente() {
+
+    }
+
     public int getIdDocente() {
         return idDocente;
     }

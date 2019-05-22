@@ -15,6 +15,10 @@ public class DetalleDocente {
         this.motivoInasistencia = motivoInasistencia;
     }
 
+    public DetalleDocente() {
+
+    }
+
     public int getIdRol() {
         return idRol;
     }
