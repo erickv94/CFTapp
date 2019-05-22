@@ -19,6 +19,7 @@ import dev.grupo5.cftapp.database.DocenteDB;
 import dev.grupo5.cftapp.database.RolRevisionDB;
 import dev.grupo5.cftapp.database.TramiteDB;
 import dev.grupo5.cftapp.modelos.DetalleDocente;
+
 import dev.grupo5.cftapp.modelos.Docente;
 import dev.grupo5.cftapp.modelos.RolRevision;
 
@@ -129,4 +130,6 @@ public class DetalleDocenteInsertarActivity extends AppCompatActivity {
         motivoTxt.setText("");
         asisCheckBox.setChecked(false);
     }
+
+
 }
