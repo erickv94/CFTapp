@@ -91,6 +91,7 @@ public class EstadoEvaluacionActualizarActivity extends AppCompatActivity {
 
         if(!notaText.getText().toString().isEmpty()) {
             estad.setNota(Double.valueOf(notaText.getText().toString()));
+
         }
 
         try {
@@ -105,6 +106,6 @@ public class EstadoEvaluacionActualizarActivity extends AppCompatActivity {
     }
 
     public void limpiar(View view){
-
+        notaText.setText("");
     }
 }

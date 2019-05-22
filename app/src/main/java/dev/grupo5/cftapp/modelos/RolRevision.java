@@ -11,6 +11,10 @@ private String descripcion;
         this.descripcion = descripcion;
     }
 
+    public RolRevision() {
+
+    }
+
     public int getIdRol() {
         return idRol;
     }

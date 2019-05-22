@@ -2,7 +2,11 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dev.grupo5.cftapp.modelos.Docente;
 
@@ -32,5 +36,32 @@ public class DocenteDB {
 
 
         return regInsertados;
+    }
+
+
+
+    public List<Docente> getDocentes(){
+
+
+        db=dbHelper.getReadableDatabase();
+        Cursor c= db.query("docente",new String[]{"nombre","apellidos","iddocente"},null,null,null,null,null);
+
+        List<Docente> docentesList = new ArrayList<Docente>();
+        if (c.moveToFirst()) {
+            do {
+                Docente docente = new Docente();
+
+                docente.setNombre(c.getString(0));
+                docente.setApellidos(c.getString(1));
+                docente.setIdDocente(c.getInt(2));
+                docentesList.add(docente);
+
+            } while (c.moveToNext());
+
+        }
+
+        dbHelper.close();
+
+        return docentesList;
     }
 }
