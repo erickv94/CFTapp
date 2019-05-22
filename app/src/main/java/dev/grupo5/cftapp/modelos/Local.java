@@ -7,6 +7,8 @@ public class Local {
     private String codigoLocal;
     private int capacidad;
 
+    public Local(){}
+
     public Local( String codigoEdificio, String nombreLocal, String codigoLocal, int capacidad) {
 
         this.codigoEdificio = codigoEdificio;

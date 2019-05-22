@@ -28,6 +28,7 @@ public class MateriaCicloConsultarActivity extends AppCompatActivity {
     EditText materiaText;
 
 
+
     ArrayList<String> nombresmaterias = new ArrayList<String>();
     HashMap<String,String> nombresmateriasMapeo = new HashMap<String, String>();
 
@@ -37,9 +38,10 @@ public class MateriaCicloConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_ciclo_consultar);
         setTitle(R.string.materiacicloread);
-        idmatcText = findViewById(R.id.idbusqueda);
+        idmatcText = findViewById(R.id.idmatciclo);
         idcText = findViewById(R.id.editIdCiclo);
-        materiaSpinner = findViewById(R.id.editIdMateria);
+        materiaText = findViewById(R.id.editIdMateria);
+        materiaSpinner = findViewById(R.id.idbusqueda);
 
         materias = new MateriaDB(this).getMaterias();
         for (Materia materia : materias){
@@ -53,24 +55,29 @@ public class MateriaCicloConsultarActivity extends AppCompatActivity {
     }
 
     public void consultarMateriaCiclo(View v){
+        String materiaselecionada = materiaSpinner.getSelectedItem().toString();
+        String idmateria;
+
+        idmateria = nombresmateriasMapeo.get(materiaselecionada);
         MateriaCicloDB materiaCicloDB = new MateriaCicloDB(this);
-        String idmatciclo = idmatcText.getText().toString();
-        MateriaCiclo materiaCiclo = materiaCicloDB.consultar(idmatciclo);
+        MateriaCiclo materiaCiclo = materiaCicloDB.consultar(idmateria);
         if (materiaCiclo != null){
             SQLiteDatabase db = DBHelper.getSingleton(this).getReadableDatabase();
             String[] campo = {"nombre"};
             String[] toWhere = {String.valueOf(materiaCiclo.getIdMateria())};
             Cursor cursor = db.query("materiaciclo", campo, "idmateria=?", toWhere, null, null, null);
             cursor.moveToFirst();
-            materiaCiclo.setIdCiclo(Integer.valueOf(idcText.getText().toString()));
-            materiaCiclo.setIdMatCiclo(Integer.valueOf(idmatciclo));
-            materiaText.setText(materiaSpinner.getSelectedItem().toString());
+            idcText.setText(String.valueOf(materiaCiclo.getIdCiclo()));
+            idmatcText.setText(String.valueOf(materiaCiclo.getIdMatCiclo()));
+            materiaText.setText(cursor.getString(0));
             return;
         }
-        Toast.makeText(this, "Materia Ciclo con id: " + materiaCiclo.getIdMatCiclo() + " no existe", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Materia Ciclo con id materia: " + materiaCiclo.getIdMateria() + " no existe", Toast.LENGTH_SHORT).show();
     }
 
     public void limpiarMateriaCiclo(View v){
+
         idmatcText.setText("");
+        idcText.setText("");
     }
 }

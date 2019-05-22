@@ -5,6 +5,8 @@ public class DetalleLocal {
     private int idEvaluacion;
     private int cantidadAlumnos;
 
+    public DetalleLocal(){}
+
     public DetalleLocal(int idLocal, int idEvaluacion, int cantidadAlumnos) {
         this.idLocal = idLocal;
         this.idEvaluacion = idEvaluacion;

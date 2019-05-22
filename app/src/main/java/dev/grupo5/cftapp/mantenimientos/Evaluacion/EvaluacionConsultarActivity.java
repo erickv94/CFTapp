@@ -109,9 +109,9 @@ public class EvaluacionConsultarActivity extends AppCompatActivity {
             Cursor cursor = db.query("evaluacion", campo, "idtipoevaluacion=?", toWhere, null, null, null);
             cursor.moveToFirst();
             tipoevaluacionText.setText(spinnerTipo.getSelectedItem().toString());
-            idgrupoText.setText(String.valueOf(evaluacion.getIdGrupo()));
+            idgrupoText.setText(cursor.getString(0));
             idText.setText(String.valueOf(evaluacion.getIdEvaluacion()));
-            nombreText.setText(cursor.getString(0));
+            nombreText.setText(cursor.getString(1));
             fechaText.setText(simpleDateFormat.format(evaluacion.getFecha()));
             return;
         }

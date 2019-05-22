@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mantenimientos.DetalleLocal.DetalleLocalInsertarActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/localdetallelocal"
+        android:paddingTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/local_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/evaluacionlocal"
+        android:paddingTop="20dp"/>
+    <Spinner
+        android:id="@+id/evaluacion_detalle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+    <EditText
+        android:id="@+id/cantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cantidadalumnos"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/insertar"
+        android:text="@string/detallelocalinsert"
+        android:onClick="insertarDetalleLocal"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/limpiar"
+        android:text="@string/limpiar"
+        android:onClick="limpiarDetalleLocal"/>
+</LinearLayout>

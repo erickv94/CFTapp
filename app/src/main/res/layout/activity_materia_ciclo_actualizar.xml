@@ -9,21 +9,31 @@
 
 
         <EditText
+            android:id="@+id/idmatciclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/idmatciclo"
+            android:inputType="number"
+            android:paddingTop="20dp"/>
+        <EditText
             android:id="@+id/editIdCiclo"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:hint="@string/idciclo"
-            android:inputType="text"
-            android:padding="45dp"/>
+            android:inputType="number"
+            android:paddingTop="20dp"/>
 
 
-        <EditText
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/materiaCiclo"
+            android:paddingTop="20dp"/>
+        <Spinner
             android:id="@+id/editIdMateria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/idmateria"
-            android:inputType="text"
-            android:padding="45dp"/>
+            android:paddingTop="10dp"/>
 
         <Button
             android:layout_width="wrap_content"

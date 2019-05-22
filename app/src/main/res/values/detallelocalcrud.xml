@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="idlocal">Id Local</string>
+    <string name="idevaluacion">Id Evaluacion</string>
+    <string name="cantidadalumnos">Cantidad alumnos</string>
+    <string name="localdetallelocal">Detalle local</string>
+    <string name="evaluacionlocal">Evaluacion Local</string>
+</resources>

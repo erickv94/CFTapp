@@ -15,5 +15,17 @@
         android:inputType="text"
         android:paddingTop="20dp"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/materiaciclodelete"
+        android:id="@+id/eliminar"
+        android:onClick="eliminarMateriaCiclo"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar"
+        android:id="@+id/limpiar"
+        android:onClick="limpiarMateriaCiclo"/>
 </LinearLayout>

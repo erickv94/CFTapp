@@ -38,11 +38,11 @@ public class MateriaCicloDB {
 
     }
 
-    public MateriaCiclo consultar(String idmatciclo){
+    public MateriaCiclo consultar(String idmateria){
         db = dbHelper.getWritableDatabase();
-        String[] id = {idmatciclo};
+        String[] id = {idmateria};
 
-        Cursor cursor = db.query("materiaciclo", campos, "idmatciclo=?", id, null, null, null);
+        Cursor cursor = db.query("materiaciclo", campos, "idmateria=?", id, null, null, null);
         if (cursor.moveToFirst()){
             MateriaCiclo materiaCiclo = new MateriaCiclo();
             materiaCiclo.setIdMatCiclo(cursor.getInt(0));
@@ -58,7 +58,7 @@ public class MateriaCicloDB {
     }
 
     public String actualizar(MateriaCiclo materiaCiclo) {
-        int count;
+        int count = 0;
         String[] id = {String.valueOf(materiaCiclo.getIdMatCiclo())};
         ContentValues contentValues = new ContentValues();
         contentValues.put("idCiclo", materiaCiclo.getIdCiclo());
@@ -69,7 +69,7 @@ public class MateriaCicloDB {
         if (count > 0)
                 return "Regitro actualizado correctamente";
         else
-            return "Registro con idMatCiclo" + materiaCiclo.getIdMatCiclo() + "no existe";
+            return "Registro con id materia ciclo: " + materiaCiclo.getIdMatCiclo() + " no existe";
     }
 
     public String eliminar(MateriaCiclo materiaCiclo){
@@ -96,6 +96,7 @@ public class MateriaCicloDB {
         String informacion;
         if (cursor.moveToFirst()){
             do {
+                MateriaCiclo materiaCiclo = new MateriaCiclo();
                 informacion = " ";
                 informacion = cursor.getString(0);
                 informacion += " - ";
