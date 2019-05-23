@@ -55,17 +55,17 @@ public class RolRevisionDB {
         int contador = 0;
         db = dbHelper.getWritableDatabase();
 
-        String[] id = {String.valueOf(rolRevision.getNombre())};
+        String[] id = {String.valueOf(rolRevision.getIdRol())};
         ContentValues contentValues = new ContentValues();
         contentValues.put("nombre", rolRevision.getNombre());
         contentValues.put("descripcion", rolRevision.getDescripcion());
-        contador = db.update("rolrevision", contentValues, "nombre=?", id);
+        contador = db.update("rolrevision", contentValues, "idrol=?", id);
         dbHelper.close();
 
         if (contador > 0)
             return "Registro actualizado correctamente";
         else
-            return "Registro con nombre rol revision: " + rolRevision.getNombre() + "no existe";
+            return "Registro con nombre rol revision: " + rolRevision.getIdRol() + "no existe";
     }
 
     public String eliminar(RolRevision rolRevision){

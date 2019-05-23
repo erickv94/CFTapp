@@ -12,7 +12,7 @@ import dev.grupo5.cftapp.modelos.RolRevision;
 
 public class RolRevisionActualizarActivity extends AppCompatActivity {
     RolRevisionDB rolRevisionDB;
-
+    EditText idrolText;
     EditText nombreText;
     EditText descripcionText;
 
@@ -22,7 +22,7 @@ public class RolRevisionActualizarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_rol_revision_actualizar);
         setTitle(R.string.rolrevisionupdate);
 
-
+        idrolText = findViewById(R.id.idrol);
         nombreText = (EditText) findViewById(R.id.nombrerolrevision);
         descripcionText = (EditText) findViewById(R.id.descripcionrolrevision);
     }
@@ -31,6 +31,7 @@ public class RolRevisionActualizarActivity extends AppCompatActivity {
         RolRevision rolRevision = new RolRevision();
         rolRevisionDB = new RolRevisionDB(this);
         String resultado;
+        rolRevision.setIdRol(Integer.parseInt(idrolText.getText().toString()));
         rolRevision.setNombre(nombreText.getText().toString());
         rolRevision.setDescripcion(descripcionText.getText().toString());
 

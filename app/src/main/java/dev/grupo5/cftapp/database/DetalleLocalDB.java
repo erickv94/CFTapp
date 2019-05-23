@@ -79,7 +79,8 @@ public class DetalleLocalDB {
         int contador = 0;
         try {
             db = dbHelper.getWritableDatabase();
-            contador += db.delete("detallelocal","idlocal=' and idevaluacion='" + detalleLocal.getIdLocal() + detalleLocal.getIdEvaluacion() + "'" + "'",null);
+            contador += db.delete("detallelocal","idlocal='" + detalleLocal.getIdLocal() +
+                    "' and idevaluacion='" + detalleLocal.getIdEvaluacion(),null);
             regafectadas += contador;
             dbHelper.close();
         } catch (SQLiteConstraintException e){
@@ -88,43 +89,5 @@ public class DetalleLocalDB {
         return regafectadas;
     }
 
-    public HashMap<Integer,String> getDetalleLocales(){
-        db = dbHelper.getWritableDatabase();
-        Cursor cursor = db.query("detallelocal", campos, null, null, null, null, null);
-        Cursor local, evaluacion;
 
-        HashMap<Integer, String> map = new HashMap<Integer, String>();
-
-        String informacion;
-        if (cursor.moveToFirst()){
-            do {
-                DetalleLocal detalleLocal = new DetalleLocal();
-                informacion = "";
-                informacion = cursor.getString(0);
-                informacion += " - ";
-
-                //local
-                local = db.query("local", new String[]{"nombrelocal"},"idlocal=?",
-                        new String[]{String.valueOf(cursor.getInt(1))}, null, null, null);
-
-                if (local.moveToFirst()){
-                    informacion += local.getString(0);
-                }
-                informacion += " - ";
-                //evaluacion
-                evaluacion = db.query("evaluacion", new String[]{"nombreevaluacion"}, "idevaluacion=?",
-                        new String[]{String.valueOf(cursor.getInt(2))}, null, null, null);
-
-                if (evaluacion.moveToFirst()){
-                    informacion += evaluacion.getString(0);
-                }
-
-                //has
-                map.put(cursor.getInt(3), informacion);
-            } while (cursor.moveToNext());
-        }
-
-        dbHelper.close();
-        return map;
-    }
 }

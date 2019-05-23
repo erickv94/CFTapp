@@ -15,14 +15,17 @@
             android:hint="@string/idmatciclo"
             android:inputType="number"
             android:paddingTop="20dp"/>
-        <EditText
-            android:id="@+id/editIdCiclo"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:hint="@string/idciclo"
-            android:inputType="number"
-            android:paddingTop="20dp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/materia_ciclo"
+            android:paddingTop="20dp"/>
+        <Spinner
+            android:id="@+id/editIdCiclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"/>
 
         <TextView
             android:layout_width="match_parent"

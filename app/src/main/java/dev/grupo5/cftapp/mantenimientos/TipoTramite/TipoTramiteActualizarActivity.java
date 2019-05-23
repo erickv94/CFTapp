@@ -13,7 +13,7 @@ import dev.grupo5.cftapp.modelos.TipoTramite;
 public class TipoTramiteActualizarActivity extends AppCompatActivity {
 
     TipoTramiteDB tipoTramiteDB;
-
+    EditText idtipotText;
     EditText nombretipotramite;
     EditText descripcion;
 
@@ -23,7 +23,7 @@ public class TipoTramiteActualizarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tipo_tramite_actualizar);
         setTitle(R.string.tipotramiteupdate);
 
-
+        idtipotText = findViewById(R.id.idtipotramite);
         nombretipotramite = (EditText) findViewById(R.id.nombre);
         descripcion = (EditText) findViewById(R.id.descripcion);
     }
@@ -32,6 +32,7 @@ public class TipoTramiteActualizarActivity extends AppCompatActivity {
         tipoTramiteDB = new TipoTramiteDB(this);
         TipoTramite tipoTramite = new TipoTramite();
         String resul;
+        tipoTramite.setIdTipoTramite(Integer.parseInt(idtipotText.getText().toString()));
         tipoTramite.setNombre(nombretipotramite.getText().toString());
         tipoTramite.setDescripcion(descripcion.getText().toString());
 

@@ -8,6 +8,8 @@ public class Docente {
     private String codDocente;
     private  String sexo;
 
+    public Docente(){}
+
     public Docente(int idTipoDocente, String nombre, String apellidos, String codDocente, String sexo) {
 
         this.idTipoDocente = idTipoDocente;

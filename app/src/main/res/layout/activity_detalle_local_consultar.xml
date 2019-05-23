@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mantenimientos.DetalleLocal.DetalleLocalConsultarActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/localdetallelocal"
+        android:paddingTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/busquedalocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/evaluacionlocal"
+        android:paddingTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/busquedaeval"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detallelocalread"
+            android:id="@+id/consultar"
+            android:onClick="consultarDetalleLocal"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/idlocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idlocal"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+
+    <EditText
+        android:id="@+id/idevaluacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idevaluacion"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+
+    <EditText
+        android:id="@+id/cantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="@string/cantidadalumnos"
+        android:paddingTop="20dp"/>
+
+</LinearLayout>

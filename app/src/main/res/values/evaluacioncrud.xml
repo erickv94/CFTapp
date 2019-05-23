@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="idevaluacion">Id Evaluacion</string>
-    <string name="idgrupo">Id Grupo</string>
-    <string name="idtipoevaluacion">Id Tipo Evaluacion</string>
+    <string name="id_evaluacion">Id Evaluacion</string>
+    <string name="id_grupo">Id Grupo</string>
+    <string name="id_tipoevaluacion">Id Tipo Evaluacion</string>
     <string name="nombreevaluacion">Nombre Evaluacion</string>
     <string name="fecha">Fecha</string>
     <string name="grupoevaluacion">Grupo Evaluacion</string>

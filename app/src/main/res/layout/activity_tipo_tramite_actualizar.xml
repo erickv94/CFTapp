@@ -9,12 +9,19 @@
 
 
     <EditText
+        android:id="@+id/idtipotramite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idtipotramite"
+        android:inputType="number"
+        android:padding="20dp"/>
+    <EditText
         android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/nombre"
         android:inputType="text"
-        android:padding="45dp"/>
+        android:padding="20dp"/>
 
     <EditText
         android:id="@+id/descripcion"
@@ -22,7 +29,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/descripcion"
         android:inputType="text"
-        android:padding="45dp"/>
+        android:padding="20dp"/>
 
     <Button
         android:layout_width="wrap_content"

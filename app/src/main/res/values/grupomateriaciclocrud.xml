@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="idgrupo">Id Grupo</string>
+    <string name="iddocente">Id Docente</string>
+    <string name="id_mat_ciclo">Id Materia Ciclo</string>
+    <string name="idtipogrupo">Id Tipo Grupo</string>
+    <string name="codgrupo">Codigo Grupo</string>
+    <string name="cantidad_alumnos">Cantidad Alumnos</string>
+    <string name="capacidadalumnos">Capacidad Alumnos</string>
+    <string name="grupo_docente">Grupo Docente</string>
+    <string name="grupo_materia">Grupo Materia Ciclo</string>
+    <string name="grupo_tipo">Tipo Grupo</string>
+</resources>

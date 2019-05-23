@@ -4,4 +4,5 @@
     <string name="busquedamateriaciclo">Busqueda</string>
     <string name="idciclo">Id Ciclo</string>
     <string name="idmateria">Id Materia</string>
+    <string name="materia_ciclo">Materia Ciclo</string>
 </resources>

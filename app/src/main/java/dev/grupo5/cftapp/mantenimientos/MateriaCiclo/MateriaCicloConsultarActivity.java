@@ -15,69 +15,58 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.database.CicloDB;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.MateriaCicloDB;
 import dev.grupo5.cftapp.database.MateriaDB;
+import dev.grupo5.cftapp.modelos.Ciclo;
 import dev.grupo5.cftapp.modelos.Materia;
 import dev.grupo5.cftapp.modelos.MateriaCiclo;
 
 public class MateriaCicloConsultarActivity extends AppCompatActivity {
     EditText idmatcText;
-    EditText idcText;
-    Spinner materiaSpinner;
+    EditText idtargetText;
+
     EditText materiaText;
+    EditText cicloText;
 
 
-
-    ArrayList<String> nombresmaterias = new ArrayList<String>();
+    /*ArrayList<String> nombresmaterias = new ArrayList<String>();
     HashMap<String,String> nombresmateriasMapeo = new HashMap<String, String>();
+    List<String> numerociclos = new ArrayList<String>();
+    HashMap<String,Integer> numerociclosMapeo = new HashMap<String, Integer>();
 
     List<Materia> materias;
+    List<Ciclo> ciclos; */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_ciclo_consultar);
         setTitle(R.string.materiacicloread);
-        idmatcText = findViewById(R.id.idmatciclo);
-        idcText = findViewById(R.id.editIdCiclo);
+        cicloText = findViewById(R.id.editIdCiclo);
         materiaText = findViewById(R.id.editIdMateria);
-        materiaSpinner = findViewById(R.id.idbusqueda);
+        idmatcText = findViewById(R.id.idmatciclo);
+        idtargetText = findViewById(R.id.busqueda_mat);
 
-        materias = new MateriaDB(this).getMaterias();
-        for (Materia materia : materias){
-            nombresmaterias.add(materia.getNombre());
-            nombresmateriasMapeo.put(materia.getNombre(),String.valueOf(materia.getIdMateria()));
-        }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nombresmaterias);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        materiaSpinner.setAdapter(adapter);
     }
 
     public void consultarMateriaCiclo(View v){
-        String materiaselecionada = materiaSpinner.getSelectedItem().toString();
-        String idmateria;
 
-        idmateria = nombresmateriasMapeo.get(materiaselecionada);
         MateriaCicloDB materiaCicloDB = new MateriaCicloDB(this);
-        MateriaCiclo materiaCiclo = materiaCicloDB.consultar(idmateria);
+        MateriaCiclo materiaCiclo = materiaCicloDB.consultar(idtargetText.getText().toString());
         if (materiaCiclo != null){
-            SQLiteDatabase db = DBHelper.getSingleton(this).getReadableDatabase();
-            String[] campo = {"nombre"};
-            String[] toWhere = {String.valueOf(materiaCiclo.getIdMateria())};
-            Cursor cursor = db.query("materiaciclo", campo, "idmateria=?", toWhere, null, null, null);
-            cursor.moveToFirst();
-            idcText.setText(String.valueOf(materiaCiclo.getIdCiclo()));
+            cicloText.setText(String.valueOf(materiaCiclo.getIdCiclo()));
+            materiaText.setText(String.valueOf(materiaCiclo.getIdMateria()));
             idmatcText.setText(String.valueOf(materiaCiclo.getIdMatCiclo()));
-            materiaText.setText(cursor.getString(0));
             return;
         }
-        Toast.makeText(this, "Materia Ciclo con id materia: " + materiaCiclo.getIdMateria() + " no existe", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Materia Ciclo con id materia ciclo: " +materiaCiclo.getIdMatCiclo() + " no existe", Toast.LENGTH_SHORT).show();
     }
 
     public void limpiarMateriaCiclo(View v){
-
+        idtargetText.setText("");
         idmatcText.setText("");
-        idcText.setText("");
+        cicloText.setText("");
+        materiaText.setText(" ");
     }
 }

@@ -13,49 +13,69 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.database.CicloDB;
 import dev.grupo5.cftapp.database.MateriaCicloDB;
 import dev.grupo5.cftapp.database.MateriaDB;
+import dev.grupo5.cftapp.modelos.Ciclo;
 import dev.grupo5.cftapp.modelos.Materia;
 import dev.grupo5.cftapp.modelos.MateriaCiclo;
 
 public class MateriaCicloInsertarActivity extends AppCompatActivity {
-    EditText idcicloText;
+    Spinner spinnerciclo;
     Spinner materiaSpinner;
 
     ArrayList<String> nombresmaterias = new ArrayList<String>();
-    HashMap<String,String> nombresmateriasMapeo = new HashMap<String, String>();
+    HashMap<String,Integer> nombresmateriasMapeo = new HashMap<String, Integer>();
+    List<String> numerosciclos =  new ArrayList<String>();
+    HashMap<String,Integer> numeroscicloMapeo = new HashMap<String, Integer>();
 
     List<Materia> materias = new ArrayList<Materia>();
+    List<Ciclo> ciclos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_ciclo_insertar);
         setTitle(R.string.materiacicloinsert);
-        idcicloText = findViewById(R.id.editIdCiclo);
+        spinnerciclo = findViewById(R.id.editIdCiclo);
         materiaSpinner = findViewById(R.id.editIdMateria);
 
+        CicloDB cicloDB = new CicloDB(this);
+        ciclos = cicloDB.getCiclos();
         materias = new MateriaDB(this).getMaterias();
         for (Materia materia : materias){
             nombresmaterias.add(materia.getNombre());
-            nombresmateriasMapeo.put(materia.getNombre(),String.valueOf(materia.getIdMateria()));
+            nombresmateriasMapeo.put(materia.getNombre(),materia.getIdMateria());
+        }
+
+        for (Ciclo ciclo : ciclos){
+            numerosciclos.add(String.valueOf(ciclo.getCiclo()));
+            numeroscicloMapeo.put(String.valueOf(ciclo.getCiclo()),ciclo.getIdCiclo());
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nombresmaterias);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         materiaSpinner.setAdapter(adapter);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,numerosciclos);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerciclo.setAdapter(adapter2);
+
     }
 
-    public void limpiarTextoMateriaCiclo(View v){
-        idcicloText.setText("");
-    }
+
 
     public void insertarMateriaCiclo(View v){
         MateriaCicloDB materiaCicloDB = new MateriaCicloDB(this);
         MateriaCiclo materiaCiclo = new MateriaCiclo();
+
+        String ciclodata = spinnerciclo.getSelectedItem().toString();
+        Integer idciclo = numeroscicloMapeo.get(ciclodata);
+
+        String materiadata = materiaSpinner.getSelectedItem().toString();
+        Integer idmateria = nombresmateriasMapeo.get(materiadata);
         String reginsertado;
 
-        materiaCiclo.setIdCiclo(Integer.parseInt(idcicloText.getText().toString()));
-        materiaCiclo.setIdMateria(Integer.valueOf(nombresmateriasMapeo.get(materiaSpinner.getSelectedItem().toString())));
+        materiaCiclo.setIdCiclo(idciclo);
+        materiaCiclo.setIdMateria(idmateria);
 
         reginsertado = materiaCicloDB.insertar(materiaCiclo);
         Toast.makeText(this,reginsertado,Toast.LENGTH_SHORT).show();

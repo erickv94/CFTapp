@@ -33,10 +33,10 @@ public class TipoTramiteDB {
         return regInsertados;
     }
 
-    public TipoTramite consultar(String idTipoTramite){
-        String[] id = {idTipoTramite};
+    public TipoTramite consultar(String idtipotramite){
+        String[] id = {idtipotramite};
         db = dbHelper.getWritableDatabase();
-        Cursor cursor = db.query("TipoTramite", camposTipoTramite, "idTipoTramite=?", id, null, null, null);
+        Cursor cursor = db.query("tipotramite", camposTipoTramite, "idtipotramite=?", id, null, null, null);
         if (cursor.moveToFirst()) {
             TipoTramite tipoTramite = new TipoTramite();
             tipoTramite.setIdTipoTramite(cursor.getInt(0));
@@ -57,7 +57,7 @@ public class TipoTramiteDB {
         contentValues.put("nombre", tipoTramite.getNombre());
         contentValues.put("descripcion", tipoTramite.getDescripcion());
         db = dbHelper.getWritableDatabase();
-        contador = db.update("TipoTramite", contentValues, "idTipoTramite=?", id);
+        contador = db.update("TipoTramite", contentValues, "idtipotramite=?", id);
         dbHelper.close();
 
         if (contador > 0)

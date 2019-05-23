@@ -5,6 +5,8 @@ public class TipoGrupo {
     private int idTipoGrupo;
     private String nombre;
 
+    public TipoGrupo(){}
+
     public TipoGrupo(String nombre) {
 
         this.nombre = nombre;

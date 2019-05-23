@@ -2,7 +2,11 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dev.grupo5.cftapp.modelos.TipoGrupo;
 
@@ -32,4 +36,21 @@ public class TipoGrupoDB {
 
     }
 
+    public List<TipoGrupo> getTipoGrupos(){
+        String[] camposTry = {"idtipogrupo", "nombre"};
+
+        db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.query("tipogrupo", camposTry, null, null, null, null, null);
+        List<TipoGrupo> tipoGrupos = new ArrayList<TipoGrupo>();
+        if (cursor.moveToFirst()){
+            do {
+                TipoGrupo tipoGrupo = new TipoGrupo();
+                tipoGrupo.setIdTipoGrupo(cursor.getInt(0));
+                tipoGrupo.setNombre(cursor.getString(1));
+                tipoGrupos.add(tipoGrupo);
+            } while (cursor.moveToNext());
+        }
+        dbHelper.close();
+        return tipoGrupos;
+    }
 }
