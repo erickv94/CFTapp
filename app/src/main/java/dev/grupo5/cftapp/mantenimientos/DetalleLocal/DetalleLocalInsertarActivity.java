@@ -79,6 +79,9 @@ public class DetalleLocalInsertarActivity extends AppCompatActivity {
         detalleLocal.setCantidadAlumnos(Integer.parseInt(cantidadText.getText().toString()));
 
         String registro = detalleLocalDB.insertar(detalleLocal);
+        if (registro == null)
+            Toast.makeText(this,"Este registro existe",Toast.LENGTH_SHORT).show();
+        else
         Toast.makeText(this,registro,Toast.LENGTH_SHORT).show();
     }
 
