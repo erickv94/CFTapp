@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
@@ -71,7 +72,30 @@ public class DiasNoHabilesDB {
 
     }
 
+    public DiasNoHabiles consultar(String id_dias) throws ParseException {
+        db=dbHelper.getWritableDatabase();
+        String[] id = {id_dias};
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        
+        Cursor cursor = db.query("diasnohabiles",campos , "id_dias =? ", id,
+                null, null, null);
+        if(cursor.moveToFirst()){
+            DiasNoHabiles diasNoHabiles= new DiasNoHabiles();
 
+            diasNoHabiles.setIdDias(cursor.getInt(0));
+            diasNoHabiles.setIdCiclo(cursor.getInt(1));
+            diasNoHabiles.setNombre(cursor.getString(2));
+            diasNoHabiles.setDescripcion(cursor.getString(3));
+            diasNoHabiles.setFecha(simpleDateFormat.parse(cursor.getString(4)));
+
+            dbHelper.close();
+            return diasNoHabiles;
+        }else{
+            dbHelper.close();
+            return null;
+        }
+    }
     public String eliminar(DiasNoHabiles diasNoHabiles){
 
 

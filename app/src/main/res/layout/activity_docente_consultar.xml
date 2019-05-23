@@ -6,9 +6,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/idTipoDocente"/>
-    <Spinner
-        android:id="@+id/busqueda1"
+        android:text="@string/idDocente"/>
+    <EditText
+        android:id="@+id/editIdDocente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
@@ -33,6 +33,7 @@
             android:onClick="limpiarTexto"
             android:text="Limpiar" />
     </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"

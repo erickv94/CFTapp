@@ -95,19 +95,25 @@ public class DocenteDB {
         }
         return regAfectados;
     }
-    public Docente consultar(String idtipodocente) throws ParseException {
+
+    public Docente consultar(String idtipodocente) {
         db=dbHelper.getWritableDatabase();
         String[] id = {idtipodocente};
-        Cursor cursor = db.query("docente",camposDocente , "idtipodocente=?", id,
+        Cursor cursor = db.query("docente",camposDocente , "iddocente=?", id,
                 null, null, null);
         if(cursor.moveToFirst()){
             Docente docente= new Docente();
-            docente.setIdDocente(Integer.parseInt(cursor.getString(0)));
-            docente.setIdTipoDocente(Integer.parseInt(cursor.getString(1)));
+
+            docente.setIdDocente(cursor.getInt(0));
+            docente.setIdTipoDocente(cursor.getInt(1));
             docente.setNombre(cursor.getString(2));
             docente.setApellidos(cursor.getString(3));
             docente.setCodDocente(cursor.getString(4));
             docente.setSexo(cursor.getString(5));
+
+            /*ciclo.setIdCiclo(c.getInt(0));
+            ciclo.setCiclo(c.getInt(1));
+            ciclo.setAnio(c.getInt(2)); */
 
             dbHelper.close();
             return docente;

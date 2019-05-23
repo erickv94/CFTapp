@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
@@ -78,6 +79,35 @@ public class SolicitudImpresaDB {
 
     }
 
+    public SolicitudImpresa consultar(String idsolicitudimp) throws ParseException {
+        db=dbHelper.getWritableDatabase();
+        String[] id = {idsolicitudimp};
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        Cursor cursor = db.query("solicitudimpresa",campos , "idsolicitudimp =? ", id,
+                null, null, null);
+        if(cursor.moveToFirst()){
+            SolicitudImpresa solicitudImpresa= new SolicitudImpresa();
+
+            solicitudImpresa.setIdSolicitudImp(cursor.getInt(0));
+            solicitudImpresa.setIdDocente(cursor.getInt(1));
+            solicitudImpresa.setCantidadImpresiones(cursor.getInt(2));
+            solicitudImpresa.setAsunto(cursor.getString(3));
+            solicitudImpresa.setJustificacion(cursor.getString(4));
+            solicitudImpresa.setAprobado(cursor.getInt(5)==1?true:false);
+            solicitudImpresa.setPaginasAnexas(cursor.getInt(6));
+            solicitudImpresa.setCodigoImpresion(cursor.getString(7));
+            //solicitudImpresa.setFechasolicitud(simpleDateFormat.parse(cursor.getString(8)));
+
+            dbHelper.close();
+            return solicitudImpresa;
+        }else{
+            dbHelper.close();
+            return null;
+        }
+    }
+
 
     public String eliminar(SolicitudImpresa solicitudImpresa){
 
@@ -113,8 +143,8 @@ public class SolicitudImpresaDB {
                 informacion+=" - ";
 
 
-                //Docente
-                idDocente=db.query("docente",new String[]{"nombre"},"iddocente=?"
+                //SolicitudImpresa
+                idDocente=db.query("solicitudImpresa",new String[]{"nombre"},"iddocente=?"
                         ,new String[]{String.valueOf(c.getInt(1))},null,null,null);
 
                 if(idDocente.moveToFirst()){
