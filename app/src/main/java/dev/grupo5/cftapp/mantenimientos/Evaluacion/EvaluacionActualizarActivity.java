@@ -120,6 +120,8 @@ public class EvaluacionActualizarActivity extends AppCompatActivity {
     }
 
     public void limpiarEvaluacion(View v){
+        idText.setText("");
         fechaText.setText("");
+        nombreText.setText("");
     }
 }

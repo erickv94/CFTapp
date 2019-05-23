@@ -23,9 +23,7 @@ import dev.grupo5.cftapp.modelos.TipoGrupo;
 
 public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
     GrupoMateriaCicloDB grupoMateriaCicloDB;
-    Spinner spinnerdocente;
-    Spinner spinnermatc;
-    Spinner spinnertipo;
+
     EditText idtargetText;
     EditText idText;
     EditText docentetext;
@@ -47,11 +45,9 @@ public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grupo_materia_ciclo_consultar);
         setTitle(R.string.grupomateriacicloread);
-        spinnertipo = findViewById(R.id.busquedatipo);
+
         idtargetText = findViewById(R.id.busquedagrupo);
         idText = findViewById(R.id.idgrupo);
-        spinnerdocente = findViewById(R.id.grupo_docente_id);
-        spinnermatc = findViewById(R.id.grupo_materia_id);
         docentetext = findViewById(R.id.iddocente);
         matcText = findViewById(R.id.idmatciclo);
         tipoText = findViewById(R.id.idtipogrupo);
@@ -59,36 +55,6 @@ public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
         cantidadText = findViewById(R.id.cantidad);
         capacidadText = findViewById(R.id.capacidad);
 
-        MateriaCicloDB materiaCicloDB = new MateriaCicloDB(this);
-        DocenteDB docenteDB = new DocenteDB(this);
-
-        List<TipoGrupo> tipoGrupos = new TipoGrupoDB(this).getTipoGrupos();
-        HashMap<Integer, String> matciclos = materiaCicloDB.getMateriaCiclos();
-        List<Docente> docentes = docenteDB.getDocentes();
-
-        for (TipoGrupo tipoGrupo : tipoGrupos) {
-            nombretipo.add(tipoGrupo.getNombre());
-            nombretipoMapeo.put(tipoGrupo.getNombre(), tipoGrupo.getIdTipoGrupo());
-        }
-
-        for (HashMap.Entry<Integer, String> entry : matciclos.entrySet()) {
-            informacionmatc.add(entry.getValue());
-            informacionmatcMapeo.put(entry.getValue(), entry.getKey());
-        }
-        for (Docente docente : docentes) {
-            nombredocente.add(docente.getNombre()+" "+docente.getApellidos());
-            nombredocenteMapeo.put(docente.getNombre()+" "+docente.getApellidos(), docente.getIdDocente());
-        }
-
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nombredocente);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerdocente.setAdapter(adapter1);
-        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, informacionmatc);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnermatc.setAdapter(adapter2);
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nombretipo);
-        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnertipo.setAdapter(adapter3);
     }
 
     public void consultarGrupoMatCiclo(View v){
@@ -96,13 +62,11 @@ public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
 
         String idgrupo = idtargetText.getText().toString();
 
-        String tipodata = spinnertipo.getSelectedItem().toString();
-        Integer idtipo = nombretipoMapeo.get(tipodata);
-        GrupoMateriaCiclo grupoMateriaCiclo = grupoMateriaCicloDB.consultar(String.valueOf(idtipo),idgrupo);
+        GrupoMateriaCiclo grupoMateriaCiclo = grupoMateriaCicloDB.consultar(idgrupo);
         if (grupoMateriaCiclo!=null){
-            matcText.setText(spinnermatc.getSelectedItem().toString());
-            tipoText.setText(spinnertipo.getSelectedItem().toString());
-            docentetext.setText(spinnerdocente.getSelectedItem().toString());
+            matcText.setText(String.valueOf(grupoMateriaCiclo.getIdMatCiclo()));
+            tipoText.setText(String.valueOf(grupoMateriaCiclo.getIdTipoGrupo()));
+            docentetext.setText(String.valueOf(grupoMateriaCiclo.getIdDocente()));
             idText.setText(String.valueOf(grupoMateriaCiclo.getIdGrupo()));
             codText.setText(grupoMateriaCiclo.getCodgrupo());
             capacidadText.setText(String.valueOf(grupoMateriaCiclo.getCapacidadAlumnos()));

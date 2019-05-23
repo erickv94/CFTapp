@@ -12,8 +12,8 @@
         android:id="@+id/idbusqueda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/busquedatipotramite"
-        android:inputType="text"
+        android:hint="@string/idtipotramite"
+        android:inputType="number"
         android:paddingTop="20dp" />
 
     <LinearLayout

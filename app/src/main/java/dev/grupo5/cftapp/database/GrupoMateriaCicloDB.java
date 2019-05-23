@@ -43,11 +43,11 @@ public class GrupoMateriaCicloDB {
 
     }
 
-    public GrupoMateriaCiclo consultar(String tipo,String grupo){
+    public GrupoMateriaCiclo consultar(String grupo){
         db = dbHelper.getWritableDatabase();
-        String[] id = {tipo, grupo};
+        String[] id = {grupo};
 
-        Cursor cursor = db.query("grupomateriaciclo", campos, "idgrupo=? and idtipogrupo=?",id,null,null,null);
+        Cursor cursor = db.query("grupomateriaciclo", campos, "idgrupo=?",id,null,null,null);
         if (cursor.moveToFirst()){
             GrupoMateriaCiclo grupoMateriaCiclo = new GrupoMateriaCiclo();
             grupoMateriaCiclo.setIdGrupo(cursor.getInt(0));
