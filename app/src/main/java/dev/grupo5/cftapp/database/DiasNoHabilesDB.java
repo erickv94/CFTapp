@@ -87,7 +87,7 @@ public class DiasNoHabilesDB {
             diasNoHabiles.setIdCiclo(cursor.getInt(1));
             diasNoHabiles.setNombre(cursor.getString(2));
             diasNoHabiles.setDescripcion(cursor.getString(3));
-            diasNoHabiles.setFecha(simpleDateFormat.parse(cursor.getString(4)));
+            //diasNoHabiles.setFecha(simpleDateFormat.parse(cursor.getString(6)));
 
             dbHelper.close();
             return diasNoHabiles;

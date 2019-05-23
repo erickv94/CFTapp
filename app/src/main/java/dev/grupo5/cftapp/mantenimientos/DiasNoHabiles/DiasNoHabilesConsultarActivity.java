@@ -100,7 +100,7 @@ public class DiasNoHabilesConsultarActivity extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         //Date date= simpleDateFormat.parse(fechaSeleccionada);
         //fechaSeleccionada= simpleDateFormat.format(date);
-       //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         //Date d = dateFormat.parse(datestring);
 
        DiasNoHabilesDB diasNoHabilesDB=new DiasNoHabilesDB(this);
@@ -132,7 +132,7 @@ public class DiasNoHabilesConsultarActivity extends AppCompatActivity {
 
            editNombreDia.setText(diasNoHabiles.getNombre());
             editDescripcion.setText(diasNoHabiles.getDescripcion());
-           // editFecha.setText(simpleDateFormat.format(diasNoHabiles.getFecha()));
+            //editFecha.setText(simpleDateFormat.format(diasNoHabiles.getFecha()));
 
 
             return; }

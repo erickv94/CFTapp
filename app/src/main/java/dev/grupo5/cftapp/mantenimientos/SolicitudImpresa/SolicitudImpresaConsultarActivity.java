@@ -1,5 +1,8 @@
 package dev.grupo5.cftapp.mantenimientos.SolicitudImpresa;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.SolicitudImpresaDB;
 import dev.grupo5.cftapp.modelos.SolicitudImpresa;
 
@@ -54,13 +58,16 @@ public class SolicitudImpresaConsultarActivity extends AppCompatActivity {
         if(solicitudImpresa!=null){
 
 
+
+
+
             //editIdSoli.setText(solicitudImpresa.getIdSolicitudImp());
-            //editIdDocente.setText(solicitudImpresa.getIdDocente());
-            //editCantidadImp.setText(solicitudImpresa.getCantidadImpresiones());
+            //editIdDocente.setText(String.valueOf(solicitudImpresa.getIdDocente()));
+            editCantidadImp.setText(String.valueOf(solicitudImpresa.getCantidadImpresiones()));
             editAsunto.setText(solicitudImpresa.getAsunto());
             editJustificacion.setText(solicitudImpresa.getJustificacion());
             //editAprobadoCheck.setText(solicitudImpresa.getAprobado()?"Ha sido aprobado":"No ha sido aprobado");
-            //editPaginasAnexas.setText(solicitudImpresa.getPaginasAnexas());
+            editPaginasAnexas.setText(String.valueOf(solicitudImpresa.getPaginasAnexas()));
             editCodImpresion.setText(solicitudImpresa.getCodigoImpresion());
             //editFecha.setText(simpleDateFormat.format(solicitudImpresa.getFechasolicitud()));
             return;

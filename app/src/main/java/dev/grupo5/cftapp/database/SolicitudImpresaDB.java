@@ -96,9 +96,9 @@ public class SolicitudImpresaDB {
             solicitudImpresa.setAsunto(cursor.getString(3));
             solicitudImpresa.setJustificacion(cursor.getString(4));
             solicitudImpresa.setAprobado(cursor.getInt(5)==1?true:false);
-            solicitudImpresa.setPaginasAnexas(cursor.getInt(6));
-            solicitudImpresa.setCodigoImpresion(cursor.getString(7));
-            //solicitudImpresa.setFechasolicitud(simpleDateFormat.parse(cursor.getString(8)));
+            solicitudImpresa.setPaginasAnexas(cursor.getInt(7));
+            solicitudImpresa.setCodigoImpresion(cursor.getString(8));
+            //solicitudImpresa.setFechasolicitud(simpleDateFormat.parse(cursor.getString(6)));
 
             dbHelper.close();
             return solicitudImpresa;
