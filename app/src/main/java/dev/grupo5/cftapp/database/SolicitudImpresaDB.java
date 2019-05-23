@@ -3,6 +3,7 @@ package dev.grupo5.cftapp.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.text.SimpleDateFormat;
@@ -22,7 +23,8 @@ public class SolicitudImpresaDB {
     public String insertar(SolicitudImpresa solicitudImpresa) {
         String regInsertados = "Registro Insertado No: ";
         long contador = 0;
-        SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy");
+        //SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         ContentValues contentValues = new ContentValues();
 
         contentValues.put("iddocente",solicitudImpresa.getIdDocente());
@@ -43,6 +45,57 @@ public class SolicitudImpresaDB {
         return regInsertados;
 
     }
+
+    public String actualizar(SolicitudImpresa solicitudImpresa){
+
+        int contador=0;
+        db = dbHelper.getWritableDatabase();
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        String[] id = {String.valueOf(solicitudImpresa.getIdSolicitudImp())};
+        ContentValues contentValues = new ContentValues();
+
+        //contentValues.put("idsolicitudimp",solicitudImpresa.getIdSolicitudImp());
+        contentValues.put("iddocente",solicitudImpresa.getIdDocente());
+        contentValues.put("cantidadimpresiones", solicitudImpresa.getCantidadImpresiones());
+        contentValues.put("asunto", solicitudImpresa.getAsunto());
+        contentValues.put("justificacion", solicitudImpresa.getJustificacion());
+        contentValues.put("aprobado", solicitudImpresa.getAprobado());
+        contentValues.put("paginasanexas", solicitudImpresa.getPaginasAnexas());
+        contentValues.put("codigoimpresion", solicitudImpresa.getCodigoImpresion());
+        contentValues.put("fechasolicitud", simpleDateFormat.format(solicitudImpresa.getFechasolicitud()));
+
+
+        contador = db.update("solicitudimpresa", contentValues, "idsolicitudimp=?", id);
+        dbHelper.close();
+
+        if(contador > 0)
+            return "Registro Actualizado Correctamente";
+        else
+            return "Registro con codigo de solicitud: " + solicitudImpresa.getIdSolicitudImp() + " no existe";
+
+
+    }
+
+
+    public String eliminar(SolicitudImpresa solicitudImpresa){
+
+
+        String regAfectados = "filas afectadas";
+        int contador = 0;
+
+        try {
+            db = dbHelper.getWritableDatabase();
+            contador += db.delete("solicitudimpresa", "idsolicitudimp='" +solicitudImpresa.getIdSolicitudImp()+ "'", null);
+            regAfectados += contador;
+            dbHelper.close();
+        }catch (SQLiteConstraintException e){
+            e.printStackTrace();
+        }
+        return regAfectados;
+    }
+
 
     public HashMap<Integer,String> getSolicitudesImpresas() {
         db=dbHelper.getReadableDatabase();

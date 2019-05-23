@@ -36,8 +36,8 @@
     </TableRow>
     <TableRow>
         <TextView android:text="@string/aprobado" />
-        <EditText
-            android:id="@+id/editAprobado"
+        <CheckBox
+            android:id="@+id/checkbox"
             android:inputType="text"
             android:maxLength="1" />
     </TableRow>

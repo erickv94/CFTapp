@@ -1,9 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".mantenimientos.SolicitudImpresa.SolicitudImpresaActualizarActivity">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dip"
+    android:stretchColumns="1" >
 
-</android.support.constraint.ConstraintLayout>
+    <TableRow>
+        <TextView android:text="@string/idSolicitudes" />
+        <EditText
+            android:id="@+id/idSolicitudes"
+            android:inputType="text"
+            android:maxLength="7" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/idDocente" />
+        <Spinner
+            android:id="@+id/idDocente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/cantidadImpresa" />
+        <EditText
+            android:id="@+id/editCantidadImp"
+            android:inputType="text"
+            android:maxLength="4" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/asunto" />
+        <EditText
+            android:id="@+id/editAsunto"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/justificacion" />
+        <EditText
+            android:id="@+id/editJustificacion"
+            android:inputType="text"
+            android:maxLength="20" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/aprobado" />
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:inputType="text"
+            android:maxLength="1" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/fechaSoli" />
+        <EditText
+            android:id="@+id/editFechaSolicitud"
+            android:inputType="text"
+            android:maxLength="10" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/paginasAnexas" />
+        <EditText
+            android:id="@+id/editPaginasAnexas"
+            android:inputType="text"
+            android:maxLength="3" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/codimpresion" />
+        <EditText
+            android:id="@+id/editCodImpresion"
+            android:inputType="text"
+            android:maxLength="3" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:onClick="actualizarSolicitudImpresa"
+            android:text="@string/solicitudesupdate" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:onClick="limpiarTexto"
+            android:text="Limpiar" />
+    </TableRow>
+</TableLayout>

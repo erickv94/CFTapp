@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import dev.grupo5.cftapp.modelos.Ciclo;
 
 public class CicloDB {
@@ -74,7 +77,7 @@ public class CicloDB {
 
     }
 
-    public String eliminar(Ciclo tipoDocente){
+    public String eliminar(Ciclo ciclo){
 
 
         String regAfectados = "filas afectadas";
@@ -82,12 +85,33 @@ public class CicloDB {
 
         try {
             db = dbHelper.getWritableDatabase();
-            contador += db.delete("ciclo", "idciclo'" +tipoDocente.getIdCiclo()+ "'", null);
+            contador += db.delete("ciclo", "idciclo'" +ciclo.getIdCiclo()+ "'", null);
             regAfectados += contador;
             dbHelper.close();
         }catch (SQLiteConstraintException e){
             e.printStackTrace();
         }
         return regAfectados;
+    }
+
+    public List<Ciclo> getCiclos(){
+
+        db=dbHelper.getWritableDatabase();
+        Cursor c= db.query("ciclo",camposCiclo,null,null,null,null,null);
+        List<Ciclo> cicloList = new ArrayList<Ciclo>();
+        if (c.moveToFirst()) {
+            do {
+                Ciclo ciclo = new Ciclo();
+                ciclo.setIdCiclo(c.getInt(0));
+                ciclo.setCiclo(c.getInt(1));
+
+                cicloList.add(ciclo);
+            } while (c.moveToNext());
+
+        }
+        dbHelper.close();
+
+        return cicloList;
+
     }
 }

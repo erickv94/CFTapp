@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -33,7 +34,7 @@ public class SolicitudImpresaInsertarActivity extends AppCompatActivity {
     EditText editCantidadImp;
     EditText editAsunto;
     EditText editJustificacion;
-    EditText editAprobado;
+    CheckBox editAprobadoCheck;
     EditText editFechaSolicitud;
     EditText editPaginasAnexas;
     EditText editCodImpresion;
@@ -53,7 +54,7 @@ public class SolicitudImpresaInsertarActivity extends AppCompatActivity {
         editCantidadImp=findViewById(R.id.editCantidadImp);
         editAsunto=findViewById(R.id.editAsunto);
         editJustificacion=findViewById(R.id.editJustificacion);
-        editAprobado=findViewById(R.id.editAprobado);
+        editAprobadoCheck=findViewById(R.id.checkbox);
         editFechaSolicitud=findViewById(R.id.editFechaSolicitud);
         editPaginasAnexas=findViewById(R.id.editPaginasAnexas);
         editCodImpresion=findViewById(R.id.editCodImpresion);
@@ -80,7 +81,8 @@ public class SolicitudImpresaInsertarActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                editFechaSolicitud.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                               //editFechaSolicitud.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                                editFechaSolicitud.setText(year + "-" + (monthOfYear + 1) + "-" + dayOfMonth);
                             }
                         }, year, month, day);
                 picker.show();
@@ -91,18 +93,21 @@ public class SolicitudImpresaInsertarActivity extends AppCompatActivity {
     public void insertarSolicitudImpresa(View view) throws ParseException {
         SolicitudImpresaDB solicitudImpresaDB= new SolicitudImpresaDB(this);
         SolicitudImpresa solicitudImpresa= new SolicitudImpresa();
-        SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy");
 
+        //SimpleDateFormat simpleDateFormat= new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat simpleDateFormat= new SimpleDateFormat("yyyy-MM-dd");
+
+        Boolean aprobado=editAprobadoCheck.isChecked();
         String cantidad;
 
         solicitudImpresa.setIdDocente(Integer.valueOf(nombresSolicitudesMapeo.get(spinnerDocente.getSelectedItem().toString())));
         solicitudImpresa.setCantidadImpresiones(Integer.parseInt(editCantidadImp.getText().toString()));
         solicitudImpresa.setAsunto(editAsunto.getText().toString());
         solicitudImpresa.setJustificacion(editJustificacion.getText().toString());
-        solicitudImpresa.setAprobado(Boolean.parseBoolean(editAprobado.getText().toString()));
+        solicitudImpresa.setAprobado(Boolean.parseBoolean(editAprobadoCheck.getText().toString()));
         solicitudImpresa.setCodigoImpresion(editCodImpresion.getText().toString());
         solicitudImpresa.setFechasolicitud(simpleDateFormat.parse(editFechaSolicitud.getText().toString()));
-
+        solicitudImpresa.setPaginasAnexas(Integer.parseInt(editPaginasAnexas.getText().toString()));
         //solicitudImpresaDB.insertar(solicitudImpresa);
 
         cantidad=solicitudImpresaDB.insertar(solicitudImpresa);
@@ -111,11 +116,11 @@ public class SolicitudImpresaInsertarActivity extends AppCompatActivity {
 
 
     public void limpiarTexto(View v) {
-
+        editAprobadoCheck.setChecked(false);
         editCantidadImp.setText("");
         editAsunto.setText("");
         editJustificacion.setText("");
-        editAprobado.setText("");
+        //editAprobado.setText("");
         editFechaSolicitud.setText("");
         editPaginasAnexas.setText("");
         editCodImpresion.setText("");

@@ -185,7 +185,7 @@ id_dias              integer              not null,
 idciclo              integer,
 nombre               varchar(10)          not null,
 descripcion          char(254),
-fecha       date,
+fecha                date,
 primary key (id_dias),
 foreign key (idciclo)
       references ciclo (idciclo) on delete restrict
