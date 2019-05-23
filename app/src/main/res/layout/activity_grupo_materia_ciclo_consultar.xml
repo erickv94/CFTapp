@@ -8,7 +8,7 @@
     tools:context=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloConsultarActivity">
 
     <EditText
-        android:id="@+id/busquedagrupo"
+        android:id="@+id/busqueda_grupo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/idgrupo"

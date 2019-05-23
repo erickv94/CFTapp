@@ -33,20 +33,20 @@ public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
     EditText cantidadText;
     EditText capacidadText;
 
-    List<String> nombredocente = new ArrayList<String>();
+    /*List<String> nombredocente = new ArrayList<String>();
     HashMap<String,Integer> nombredocenteMapeo = new HashMap<String, Integer>();
     List<String> informacionmatc = new ArrayList<String>();
     HashMap<String,Integer> informacionmatcMapeo = new HashMap<String, Integer>();
     List<String> nombretipo = new ArrayList<String>();
     HashMap<String,Integer> nombretipoMapeo = new HashMap<String, Integer>();
-
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grupo_materia_ciclo_consultar);
         setTitle(R.string.grupomateriacicloread);
 
-        idtargetText = findViewById(R.id.busquedagrupo);
+        idtargetText = findViewById(R.id.busqueda_grupo);
         idText = findViewById(R.id.idgrupo);
         docentetext = findViewById(R.id.iddocente);
         matcText = findViewById(R.id.idmatciclo);
@@ -72,7 +72,7 @@ public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
             capacidadText.setText(String.valueOf(grupoMateriaCiclo.getCapacidadAlumnos()));
             cantidadText.setText(String.valueOf(grupoMateriaCiclo.getCantidadAlumnos()));
         }
-        Toast.makeText(this,"Esta consulta no existe",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Esta consulta con id grupo: " + idtargetText.getText().toString() + " no existe",Toast.LENGTH_SHORT).show();
     }
 
     public void limpiar(View v){
