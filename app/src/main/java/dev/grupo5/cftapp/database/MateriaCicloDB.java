@@ -113,7 +113,7 @@ public class MateriaCicloDB {
                 if (materia.moveToFirst()){
                     informacion+=materia.getString(0);
                 }
-                mapeo.put(c.getInt(3),informacion);
+                mapeo.put(c.getInt(2),informacion);
             } while (c.moveToNext());
         }
         dbHelper.close();
