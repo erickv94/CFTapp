@@ -59,8 +59,8 @@ public class MateriaCicloConsultarActivity extends AppCompatActivity {
             materiaText.setText(String.valueOf(materiaCiclo.getIdMateria()));
             idmatcText.setText(String.valueOf(materiaCiclo.getIdMatCiclo()));
             return;
-        }
-        Toast.makeText(this, "Materia Ciclo con id materia ciclo: " +materiaCiclo.getIdMatCiclo() + " no existe", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this, "Materia Ciclo con id materia ciclo: " +idtargetText + " no existe", Toast.LENGTH_SHORT).show();
     }
 
     public void limpiarMateriaCiclo(View v){

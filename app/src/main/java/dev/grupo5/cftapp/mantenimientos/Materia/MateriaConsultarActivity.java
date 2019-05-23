@@ -39,9 +39,9 @@ public class MateriaConsultarActivity extends AppCompatActivity {
             nombremateriaText.setText(materia.getNombre());
             uvsText.setText(String.valueOf(materia.getUvs()));
             return;
-        }
-        Toast.makeText(this, "Materia con codigo materia" + codigomateriaTargetText.getText().toString()
-        + "no existe", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this, "Materia con codigo materia" + codigomateriaTargetText.getText().toString()
+            + "no existe", Toast.LENGTH_SHORT).show();
     }
 
     public void limpiarMateria(View v){

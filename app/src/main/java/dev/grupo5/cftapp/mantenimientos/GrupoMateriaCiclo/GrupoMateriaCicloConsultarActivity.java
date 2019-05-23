@@ -71,8 +71,8 @@ public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
             codText.setText(grupoMateriaCiclo.getCodgrupo());
             capacidadText.setText(String.valueOf(grupoMateriaCiclo.getCapacidadAlumnos()));
             cantidadText.setText(String.valueOf(grupoMateriaCiclo.getCantidadAlumnos()));
-        }
-        Toast.makeText(this,"Esta consulta con id grupo: " + idtargetText.getText().toString() + " no existe",Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this,"Esta consulta con id grupo: " + idtargetText.getText().toString() + " no existe",Toast.LENGTH_SHORT).show();
     }
 
     public void limpiar(View v){

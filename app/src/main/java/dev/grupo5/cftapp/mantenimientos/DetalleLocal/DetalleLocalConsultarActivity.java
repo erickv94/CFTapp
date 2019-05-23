@@ -79,8 +79,8 @@ public class DetalleLocalConsultarActivity extends AppCompatActivity {
             localtext.setText(spinnerlocal.getSelectedItem().toString());
             evaluacionText.setText(spinnerevaluacion.getSelectedItem().toString());
             cantidadText.setText(String.valueOf(detalleLocal.getCantidadAlumnos()));
-        }
-        Toast.makeText(this, "Esta consulta oon id local: " + detalleLocal.getIdLocal() +
-                " and id evaluacion: " + detalleLocal.getIdEvaluacion() + " no existe", Toast.LENGTH_SHORT).show();
+        } else
+        Toast.makeText(this, "Esta consulta oon id local: " + idLocal +
+                " and id evaluacion: " + idEvaluacion + " no existe", Toast.LENGTH_SHORT).show();
     }
 }
