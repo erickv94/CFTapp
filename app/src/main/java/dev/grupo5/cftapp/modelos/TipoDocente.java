@@ -4,7 +4,10 @@ public class TipoDocente {
     private int idTipoDocente;
     private String nombre;
 
-    public TipoDocente( String nombre) {
+    public TipoDocente() {
+    }
+
+    public TipoDocente(String nombre) {
         this.nombre = nombre;
     }
 

@@ -8,7 +8,10 @@ public class Ciclo {
     private int ciclo;
     private int anio;
 
-    public Ciclo( int ciclo, int anio) {
+    public Ciclo() {
+    }
+
+    public Ciclo(int ciclo, int anio) {
 
         this.ciclo = ciclo;
         this.anio = anio;

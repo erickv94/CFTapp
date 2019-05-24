@@ -2,10 +2,19 @@ package dev.grupo5.cftapp.mantenimientos.Ciclo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.database.CicloDB;
+import dev.grupo5.cftapp.modelos.Ciclo;
 
 public class CicloConsultarActivity extends AppCompatActivity {
+
+    EditText editIdCiclo;
+    EditText editCiclo;
+    EditText editAnio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,5 +22,32 @@ public class CicloConsultarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ciclo_consultar);
         setTitle(R.string.cicloread);
 
+        editIdCiclo=findViewById(R.id.editIdCiclo);
+        editCiclo=findViewById(R.id.editCiclo);
+        editAnio=findViewById(R.id.editAnio);
+    }
+
+    public void consultarCiclo(View view) {
+        CicloDB cicloDB = new CicloDB(this);
+        Ciclo ciclo = cicloDB.consultar(editIdCiclo.getText().toString());
+      /*  try {
+            System.out.println(ciclo.getIdTipoDocente() + "," + ciclo.getNombre());
+        }catch (Exception e){
+            e.printStackTrace();
+        }*/
+
+        if(ciclo!=null){
+            editCiclo.setText(String.valueOf(ciclo.getCiclo()));
+            editAnio.setText(String.valueOf(ciclo.getAnio()));
+            return;
+        }
+
+        Toast.makeText(this,"Resultado no existe" ,Toast.LENGTH_SHORT).show();
+    }
+
+    public void limpiarTexto(View v) {
+        editIdCiclo.setText("");
+        editCiclo.setText("");
+        editAnio.setText("");
     }
 }

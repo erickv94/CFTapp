@@ -9,6 +9,9 @@ public class DiasNoHabiles {
     private String descripcion;
     private Date fecha;
 
+    public DiasNoHabiles() {
+    }
+
     public DiasNoHabiles(int idCiclo, String nombre, String descripcion, Date fecha) {
         this.idCiclo = idCiclo;
         this.nombre = nombre;

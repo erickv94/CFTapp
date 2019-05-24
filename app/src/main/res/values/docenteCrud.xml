@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="idDocente"> ID Docente: </string>
+    <string name="idTipoDocente"> ID Tipo Docente: </string>
+    <string name="nombreDocente"> Nombre Docente: </string>
+    <string name="apellidoDocente"> Apellido Docente: </string>
+    <string name="codDocente"> Codigo Docente: </string>
+    <string name="sexoDocente"> Sexo Docente: </string>
+    <string name="eliminar">Eliminar</string>
+    <string name="consultar">Consultar</string>
+    <string-array name="docente_array">
+        <item>Ingeniero</item>
+        <item>Licenciado</item>
+        <item>Doctor</item>
+
+    </string-array>
+</resources>

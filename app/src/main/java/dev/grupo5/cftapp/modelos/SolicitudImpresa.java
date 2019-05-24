@@ -13,7 +13,10 @@ public class SolicitudImpresa {
     private int paginasAnexas;
     private String codigoImpresion;
 
-    public SolicitudImpresa( int idDocente, int cantidadImpresiones, String asunto, String justificacion, boolean aprobado, Date fechasolicitud, int paginasAnexas, String codigoImpresion) {
+    public SolicitudImpresa() {
+    }
+
+    public SolicitudImpresa(int idDocente, int cantidadImpresiones, String asunto, String justificacion, boolean aprobado, Date fechasolicitud, int paginasAnexas, String codigoImpresion) {
         this.idDocente = idDocente;
         this.cantidadImpresiones = cantidadImpresiones;
         this.asunto = asunto;

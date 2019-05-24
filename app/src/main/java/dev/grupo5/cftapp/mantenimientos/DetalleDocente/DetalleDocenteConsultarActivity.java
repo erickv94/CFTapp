@@ -63,7 +63,7 @@ public class DetalleDocenteConsultarActivity extends AppCompatActivity {
         HashMap<Integer,String> tramites= tramiteDB.getTramites();
 
         DocenteDB docenteDB= new DocenteDB(this);
-        List<Docente> docentes= docenteDB.getDocentes();
+        List<Docente> docentes= docenteDB.getDocentesListado();
 
         RolRevisionDB rolRevisionDB = new RolRevisionDB(this);
         List<RolRevision> roles= rolRevisionDB.getRoles();

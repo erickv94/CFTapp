@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".mantenimientos.Ciclo.CicloInsertarActivity">
-
-</android.support.constraint.ConstraintLayout>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="30dip"
+    android:stretchColumns="1" >
+    <TableRow>
+        <TextView android:text="@string/Ciclo"/>
+        <EditText
+            android:id="@+id/editCiclo"
+            android:inputType="text"
+            android:maxLength="20" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/year"/>
+        <EditText
+            android:id="@+id/editAnio"
+            android:inputType="text"
+            android:maxLength="20" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:onClick="insertarCiclo"
+            android:text="@string/cicloinsert" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:onClick="limpiarTexto"
+            android:text="@string/limpiar" />
+    </TableRow>
+</TableLayout>

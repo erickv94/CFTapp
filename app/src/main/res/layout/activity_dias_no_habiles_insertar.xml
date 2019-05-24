@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".mantenimientos.DiasNoHabiles.DiasNoHabilesInsertarActivity">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dip"
+    android:stretchColumns="1" >
+    <TableRow>
+        <TextView android:text="@string/idCiclo" />
+        <Spinner
+            android:id="@+id/idCiclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/nombreDia" />
+        <EditText
+            android:id="@+id/editNombreDia"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/descripcion" />
+        <EditText
+            android:id="@+id/editDescripcion"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="@string/fechaSoli" />
+        <EditText
+            android:id="@+id/fechasolicitud"
+            android:inputType="text"
+            android:maxLength="8" />
+    </TableRow>
 
-</android.support.constraint.ConstraintLayout>
+    <TableRow>
+        <Button
+            android:onClick="insertarDiaNoHabil"
+            android:text="@string/diasinsert" />
+
+    </TableRow>
+    <TableRow>
+        <Button
+            android:onClick="limpiarTexto"
+            android:text="Limpiar" />
+    </TableRow>
+</TableLayout>
