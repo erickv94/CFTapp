@@ -4,6 +4,8 @@ public class Parametro {
     private String parametro;
     private int diasHabiles;
 
+    public Parametro(){}
+
     public Parametro(String parametro, int diasHabiles) {
         this.parametro = parametro;
         this.diasHabiles = diasHabiles;

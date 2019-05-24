@@ -2,7 +2,11 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dev.grupo5.cftapp.modelos.GrupoMateriaCiclo;
 
@@ -37,5 +41,24 @@ public class GrupoMateriaCicloDB {
         return regInsertados;
 
     }
+
+    public List<GrupoMateriaCiclo> getGruposMateriasCiclos(){
+        String[] camposTry = {"idgrupo", "codgrupo"};
+        db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.query("grupomateriaciclo", camposTry, null, null, null, null, null);
+        List<GrupoMateriaCiclo> grupoMateriaCiclos = new ArrayList<GrupoMateriaCiclo>();
+
+        if (cursor.moveToFirst()){
+            do {
+                GrupoMateriaCiclo grupoMateriaCiclo = new GrupoMateriaCiclo();
+                grupoMateriaCiclo.setIdGrupo(cursor.getInt(0));
+                grupoMateriaCiclo.setCodgrupo(cursor.getString(1));
+                grupoMateriaCiclos.add(grupoMateriaCiclo);
+            } while (cursor.moveToNext());
+        }
+        dbHelper.close();
+        return grupoMateriaCiclos;
+    }
+
 
 }

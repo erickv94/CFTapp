@@ -1,9 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mantenimientos.MateriaCiclo.MateriaCicloActualizarActivity">
 
-</android.support.constraint.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/idmatciclo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/idmatciclo"
+            android:inputType="number"
+            android:paddingTop="20dp"/>
+        <EditText
+            android:id="@+id/editIdCiclo"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="@string/idciclo"
+            android:inputType="number"
+            android:paddingTop="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/materiaCiclo"
+            android:paddingTop="20dp"/>
+        <Spinner
+            android:id="@+id/editIdMateria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="actualizarMateriaCiclo"
+            android:id="@+id/actualizar"
+            android:text="@string/materiacicloupdate"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="limpiarTextoMateriaCiclo"
+            android:id="@+id/limpiar"
+            android:text="@string/limpiar"/>
+
+</LinearLayout>

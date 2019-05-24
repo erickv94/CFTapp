@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="idmatciclo">Id Materia Ciclo</string>
+    <string name="busquedamateriaciclo">Busqueda</string>
+    <string name="idciclo">Id Ciclo</string>
+    <string name="idmateria">Id Materia</string>
+</resources>

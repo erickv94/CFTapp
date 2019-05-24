@@ -155,7 +155,7 @@ sexo                 varchar(1)           not null,
 primary key (idestudiante)
 );
 
-create table detallerevision (
+ create table detallerevision (
 idtramite            integer              not null,
 idestudiante         integer              not null,
 resultado            integer,

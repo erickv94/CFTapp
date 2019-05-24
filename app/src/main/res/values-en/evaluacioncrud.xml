@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="idevaluacion">Evaluation Id</string>
+    <string name="idgrupo">Group Id</string>
+    <string name="idtipoevaluacion">Type Evaluation Id</string>
+    <string name="nombreevaluacion">Evaluation Name</string>
+    <string name="fecha">Date</string>
+    <string name="grupoevaluacion">Evaluation Group</string>
+    <string name="tipoevaluacionevaluacion">Type Evaluation </string>
+</resources>

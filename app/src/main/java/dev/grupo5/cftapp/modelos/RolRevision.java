@@ -1,9 +1,12 @@
 package dev.grupo5.cftapp.modelos;
 
 public class RolRevision {
-private int idRol;
+
+
+    private int idRol;
 private String nombre;
 private String descripcion;
+
 
     public RolRevision( String nombre, String descripcion) {
 

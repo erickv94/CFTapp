@@ -49,7 +49,7 @@ public class EstadoEvaluacionInsertarActivity extends AppCompatActivity {
         List<Estudiante> estudiantes=estudianteDB.getEstudiantes();
 
         EvaluacionDB evaluacionDB= new EvaluacionDB(this);
-        List<Evaluacion> evaluaciones= evaluacionDB.getEvaluaciones();
+        List<Evaluacion> evaluaciones= evaluacionDB.getEvaluacionesList();
 
         for(Estudiante estudiante: estudiantes){
             nombresEstudiantes.add(estudiante.getNombres()+" "+estudiante.getApellidos());

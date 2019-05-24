@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mantenimientos.MateriaCiclo.MateriaCicloInsertarActivity">
+    
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/editIdCiclo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/idciclo"
+        android:inputType="text"
+        android:padding="45dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/materiaCiclo"
+        android:paddingTop="20dp"/>
+
+    <Spinner
+        android:id="@+id/editIdMateria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+
+    <Button
+        android:id="@+id/insertar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/materiacicloinsert"
+        android:onClick="insertarMateriaCiclo"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/limpiar"
+        android:text="@string/limpiar"
+        android:onClick="limpiarTextoMateriaCiclo"/>
+
+</LinearLayout>

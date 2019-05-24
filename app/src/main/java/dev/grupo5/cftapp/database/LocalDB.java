@@ -38,6 +38,7 @@ public class LocalDB {
         return regInsertados;
     }
 
+
     public Local consultar(String codigoLocal){
         db = dbHelper.getWritableDatabase();
         String[] id = {codigoLocal};
@@ -102,6 +103,7 @@ public class LocalDB {
         }
         return regAfectados;
     }
+
 
     public List<Local> getLocales(){
 

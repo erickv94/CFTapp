@@ -2,6 +2,7 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import dev.grupo5.cftapp.modelos.Parametro;
@@ -9,6 +10,7 @@ import dev.grupo5.cftapp.modelos.Parametro;
 public class ParametroDB {
     private SQLiteDatabase db;
     private DBHelper dbHelper;
+
 
     public ParametroDB(Context context) {
         dbHelper = DBHelper.getSingleton(context);
@@ -35,4 +37,6 @@ public class ParametroDB {
         return regInsertados;
 
     }
+
+
 }

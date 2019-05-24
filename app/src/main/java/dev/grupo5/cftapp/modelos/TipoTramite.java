@@ -5,7 +5,11 @@ public class TipoTramite {
     private String nombre;
     private String descripcion;
 
-    public TipoTramite(){}
+
+
+    public TipoTramite(){
+
+    }
 
     public TipoTramite(String nombre, String descripcion) {
         this.nombre = nombre;

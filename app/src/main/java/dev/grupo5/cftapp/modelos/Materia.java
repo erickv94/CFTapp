@@ -6,6 +6,8 @@ public class Materia {
     private String codigoMateria;
     private int uvs;
 
+    public Materia(){}
+
     public Materia( String nombre, String codigoMateria, int uvs) {
         this.nombre = nombre;
         this.codigoMateria = codigoMateria;

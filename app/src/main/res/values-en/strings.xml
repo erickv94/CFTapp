@@ -138,5 +138,6 @@
     <string name="testigoread">Read Witness</string>
     <string name="testigodelete">Delete Witness</string>
 
+    <string name="limpiar">Clean</string>
 
 </resources>

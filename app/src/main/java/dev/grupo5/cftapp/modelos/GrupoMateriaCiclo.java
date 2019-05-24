@@ -9,6 +9,7 @@ public class GrupoMateriaCiclo {
     private int cantidadAlumnos;
     private int capacidadAlumnos;
 
+    public GrupoMateriaCiclo(){}
     public GrupoMateriaCiclo( int idDocente, int idMatCiclo, int idTipoGrupo, String codgrupo, int cantidadAlumnos, int capacidadAlumnos) {
         this.idDocente = idDocente;
         this.idMatCiclo = idMatCiclo;
