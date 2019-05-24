@@ -2,6 +2,7 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import dev.grupo5.cftapp.modelos.TipoEvaluacion;
@@ -34,6 +35,27 @@ public class UsuarioDB {
 
 
         return regInsertados;
+
+    }
+
+    public Usuario getAuth(String user, String pass){
+        db = dbHelper.getWritableDatabase();
+        String[] id = {user,pass};
+        Cursor c = db.query("usuario", new String[]{"nombre","idusuario"}, "nombre=? and password=?", id, null, null, null);
+
+        if (c.moveToFirst()) {
+
+            Usuario usuario = new Usuario();
+
+            usuario.setNombre(c.getString(0));
+            usuario.setId(c.getInt(1));
+
+            dbHelper.close();
+            return usuario;
+        } else {
+            dbHelper.close();
+            return null;
+        }
 
     }
 

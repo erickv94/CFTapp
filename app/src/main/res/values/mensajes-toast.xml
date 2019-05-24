@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="consulta_no_existe">
-        El registro no existe
-    </string>
-    <string name="bd_llena">
-        La base de datos fue llenada con datos prueba
-    </string>
-    <string name="limpiar">
-        Limpiar Formulario
-    </string>
-    <string name="limpiado">
-        Formulario fue limpiado
-    </string>
-
+    <string name="consulta_no_existe">El registro no existe</string>
+    <string name="bd_llena">La base de datos fue llenada con datos prueba</string>
+    <string name="limpiar">Limpiar Formulario</string>
+    <string name="limpiado">Formulario fue limpiado</string>
     <string name="already_exist">Registro ya ha sido insertado</string>
+    <string name="user_no_existe">Usuario no existe en la aplicacion</string>
+    <string name="campos_no_vacios">Campos no deben estar vacios</string>
 </resources>

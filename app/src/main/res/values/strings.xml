@@ -152,4 +152,8 @@
     <string name="username">Nombre de usuario</string>
     <string name="password">Contraseña</string>
     <string name="iniciar">Iniciar Sesion</string>
+    <string name="logout">Cerrar Sesion</string>
+    <string name="parametro">Parametros</string>
+    <string name="despedida">Hasta la proxima</string>
+    <string name="bienvenida">Bienvenido </string>
 </resources>

@@ -1,5 +1,8 @@
 package dev.grupo5.cftapp;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.UserHandle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,8 +31,23 @@ public class AuthActivity extends AppCompatActivity {
         userTxt= findViewById(R.id.username);
         passwordTxt= findViewById(R.id.password);
 
+        ExistUserWithAuth();
+
+
     }
 
+    public void ExistUserWithAuth(){
+        SharedPreferences preferences= getSharedPreferences("auth",Context.MODE_PRIVATE);
+        int loginExist=preferences.getInt("userid",0);
+        if(loginExist!=0){
+            String username=preferences.getString("username","incognito");
+
+            Intent intent= new Intent(this,MainActivity.class);
+            startActivity(intent);
+            Toast.makeText(this,getResources().getString(R.string.bienvenida)+" "
+                    +username,Toast.LENGTH_LONG).show();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -49,13 +67,53 @@ public class AuthActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    public void iniciarSesion(View view){
+        String pass;
+        String username;
+        Usuario user;
+        pass=passwordTxt.getText().toString();
+        username=userTxt.getText().toString();
+
+        if(passwordTxt.getText().toString().isEmpty() || userTxt.getText().toString().isEmpty()){
+
+            Toast.makeText(this,getResources().getString(R.string.campos_no_vacios).toString(),Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        UsuarioDB usuarioDB= new UsuarioDB(this);
+        user=usuarioDB.getAuth(username,pass);
+
+        if(user!=null){
+
+            redireccionarMainActivity(user);
+
+        }else{
+            Toast.makeText(this,getResources().getString(R.string.user_no_existe),Toast.LENGTH_LONG).show();
+        }
+
+    }
+
+    public  void redireccionarMainActivity(Usuario user){
+        SharedPreferences sharedPreferences= getSharedPreferences("auth", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        editor.putInt("userid",user.getId());
+        editor.putString("username",user.getNombre());
+        editor.commit();
+        Intent intent= new Intent(this,MainActivity.class);
+        startActivity(intent);
+        Toast.makeText(this,getResources().getString(R.string.bienvenida)+" "
+                +sharedPreferences.getString("username","incognito"),Toast.LENGTH_LONG).show();
+
+    }
+
     private void cargarDatos(){
         UsuarioDB usuarioDB= new UsuarioDB(this);
         OpcionCrudDB opcionCrudDB= new OpcionCrudDB(this);
         AcessoUsuarioDB acessoUsuarioDB= new AcessoUsuarioDB(this);
 
-        usuarioDB.insertar(new Usuario("admin","holamundo"));
-        usuarioDB.insertar(new Usuario("docente","holadocente"));
+        usuarioDB.insertar(new Usuario("Admin","admin123"));
+        usuarioDB.insertar(new Usuario("Docente","docente123"));
 
 
         opcionCrudDB.insertar(new OpcionCrud("Agregar Ciclo",1));
@@ -209,9 +267,6 @@ public class AuthActivity extends AppCompatActivity {
 
 
         Toast.makeText(this, getResources().getString(R.string.bd_llena),Toast.LENGTH_LONG).show();
-
-    }
-    public void iniciarSesion(View view){
 
     }
 }

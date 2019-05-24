@@ -2,8 +2,12 @@ package dev.grupo5.cftapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -78,7 +82,28 @@ public class MainActivity extends AppCompatActivity {
         clickEventoListView(listViewMain);
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.logout, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.log_out:
+                SharedPreferences sharedPreferences= getSharedPreferences("auth", Context.MODE_PRIVATE);
+                sharedPreferences.edit().remove("userid").remove("username").commit();
+                Intent intent= new Intent(this,AuthActivity.class);
+                startActivity(intent);
+                Toast.makeText(this,getResources().getString(R.string.despedida),Toast.LENGTH_LONG).show();
+            case R.id.parametro:
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
     private void clickEventoListView(ListView listViewMain) {
 
         listViewMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
