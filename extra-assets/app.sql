@@ -164,7 +164,7 @@ primary key (idestudiante)
  create table detallerevision (
 idtramite            integer              not null,
 idestudiante         integer              not null,
-resultado            integer,
+resultado            float,
 motivo               char(254),
 asistencia           smallint,
 primary key (idtramite, idestudiante),
@@ -259,7 +259,7 @@ create table tipoevaluacion ( idtipoevaluacion integer not null, nombre varchar(
 create table evaluacion ( idevaluacion integer not null, idgrupo integer, idtipoevaluacion integer, nombreevaluacion varchar(20) not null, fecha date not null, primary key (idevaluacion), foreign key (idgrupo) references grupomateriaciclo (idgrupo) on delete restrict, foreign key (idtipoevaluacion) references tipoevaluacion (idtipoevaluacion) on delete restrict );
 create table detallelocal ( idlocal integer not null, idevaluacion integer not null, cantidadalumnos integer, primary key (idlocal, idevaluacion), foreign key (idlocal) references local (idlocal) on delete restrict, foreign key (idevaluacion) references evaluacion (idevaluacion) on delete restrict );
 create table estudiante ( idestudiante integer not null, nombres varchar(60) not null, apelllidos varchar(60) not null, carnet varchar(7) not null, sexo varchar(1) not null, primary key (idestudiante) );
-create table detallerevision ( idtramite integer not null, idestudiante integer not null, resultado integer, motivo char(254), asistencia smallint, primary key (idtramite, idestudiante), foreign key (idtramite) references tramite (idtramite) on delete restrict, foreign key (idestudiante) references estudiante (idestudiante) on delete restrict );
+create table detallerevision ( idtramite integer not null, idestudiante integer not null, resultado float, motivo char(254), asistencia smallint, primary key (idtramite, idestudiante), foreign key (idtramite) references tramite (idtramite) on delete restrict, foreign key (idestudiante) references estudiante (idestudiante) on delete restrict );
 create table detallesolicitud ( idtramite integer not null, idestudiante integer not null, motivo char(254), esrechazado smallint, primary key (idtramite, idestudiante), foreign key (idtramite) references tramite (idtramite) on delete restrict, foreign key (idestudiante) references estudiante (idestudiante) on delete restrict );
 create table diasnohabiles ( id_dias integer not null, idciclo integer, nombre varchar(10) not null, descripcion char(254), fecha date, primary key (id_dias), foreign key (idciclo) references ciclo (idciclo) on delete restrict );
 create table estadoevaluacion ( idestado integer not null, idevaluacion integer, idestudiante integer, nota float not null, primary key (idestado), foreign key (idestudiante) references estudiante (idestudiante) on delete restrict, foreign key (idevaluacion) references evaluacion (idevaluacion) on delete restrict );

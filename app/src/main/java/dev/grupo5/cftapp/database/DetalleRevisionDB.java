@@ -84,7 +84,7 @@ public class DetalleRevisionDB {
         ContentValues contentValues = new ContentValues();
         contentValues.put("motivo",detalleRevision.getMotivo());
         contentValues.put("asistencia",detalleRevision.getAsistencia());
-
+        contentValues.put("resultado",detalleRevision.getResultado());
 
         contador = db.update("detallerevision", contentValues, "idtramite=? and idestudiante=?", id);
         dbHelper.close();

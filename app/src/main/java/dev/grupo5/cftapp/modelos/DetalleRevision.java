@@ -3,13 +3,13 @@ package dev.grupo5.cftapp.modelos;
 public class DetalleRevision {
     private int idTramite;
     private int idEstudiante;
-    private int resultado;
+    private double resultado;
     private String motivo;
     private boolean asistencia;
 
     public DetalleRevision(){}
 
-    public DetalleRevision(int idTramite, int idEstudiante, int resultado, String motivo, boolean asistencia) {
+    public DetalleRevision(int idTramite, int idEstudiante, double resultado, String motivo, boolean asistencia) {
         this.idTramite = idTramite;
         this.idEstudiante = idEstudiante;
         this.resultado = resultado;
@@ -33,11 +33,11 @@ public class DetalleRevision {
         this.idEstudiante = idEstudiante;
     }
 
-    public int getResultado() {
+    public double getResultado() {
         return resultado;
     }
 
-    public void setResultado(int resultado) {
+    public void setResultado(double resultado) {
         this.resultado = resultado;
     }
 

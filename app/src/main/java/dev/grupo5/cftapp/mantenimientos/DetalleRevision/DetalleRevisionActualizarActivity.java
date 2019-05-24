@@ -27,6 +27,7 @@ public class DetalleRevisionActualizarActivity extends AppCompatActivity {
     Spinner spinnerEstudiante;
     EditText motivoText;
     CheckBox rechazadoCheck;
+    EditText resultadoText;
     private static final int permiso = 67;
 
 
@@ -52,7 +53,7 @@ public class DetalleRevisionActualizarActivity extends AppCompatActivity {
         spinnerEstudiante= findViewById(R.id.detalle_sol_estudiante);
         motivoText= findViewById(R.id.detalle_sol_motivo);
         rechazadoCheck= findViewById(R.id.checkBox);
-
+        resultadoText=findViewById(R.id.resultado);
         //filling spinners
         EstudianteDB estudianteDB= new EstudianteDB(this);
         TramiteDB tramiteDB= new TramiteDB(this);
@@ -108,6 +109,7 @@ public class DetalleRevisionActualizarActivity extends AppCompatActivity {
         detalleRevision.setIdEstudiante(idEstudiante);
         detalleRevision.setMotivo(motivoText.getText().toString());
         detalleRevision.setAsistencia(rechazadoCheck.isChecked());
+        detalleRevision.setResultado(Double.valueOf(resultadoText.getText().toString()));
 
         String resultado=detalleRevisionDB.actualizar(detalleRevision);
 

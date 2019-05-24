@@ -45,7 +45,13 @@
         android:hint="@string/motivorevision"
         />
 
-
+    <EditText
+        android:id="@+id/resultado"
+        android:layout_width="match_parent"
+        android:inputType="numberDecimal"
+        android:layout_height="wrap_content"
+        android:hint="@string/resultadorevision"
+        />
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="match_parent"
