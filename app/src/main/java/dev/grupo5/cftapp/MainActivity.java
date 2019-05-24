@@ -3,6 +3,7 @@ package dev.grupo5.cftapp;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -18,7 +19,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.CicloDB;
+import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.DetalleDocenteDB;
 import dev.grupo5.cftapp.database.DetalleLocalDB;
 import dev.grupo5.cftapp.database.DetalleRevisionDB;
@@ -41,6 +44,7 @@ import dev.grupo5.cftapp.database.TipoEvaluacionDB;
 import dev.grupo5.cftapp.database.TipoGrupoDB;
 import dev.grupo5.cftapp.database.TipoTramiteDB;
 import dev.grupo5.cftapp.database.TramiteDB;
+import dev.grupo5.cftapp.mantenimientos.Parametros.Parametros;
 import dev.grupo5.cftapp.modelos.Ciclo;
 import dev.grupo5.cftapp.modelos.DetalleDocente;
 import dev.grupo5.cftapp.modelos.DetalleLocal;
@@ -99,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 Toast.makeText(this,getResources().getString(R.string.despedida),Toast.LENGTH_LONG).show();
             case R.id.parametro:
+                Intent intentParameter= new Intent(this, Parametros.class);
+                startActivity(intentParameter);
 
             default:
                 return super.onOptionsItemSelected(item);
@@ -151,7 +157,12 @@ public class MainActivity extends AppCompatActivity {
                     ParametroDB parametroDB= new ParametroDB(context);
                     SolicitudImpresaDB solicitudImpresaDB= new SolicitudImpresaDB(context);
                     TestigoDB testigoDB= new TestigoDB(context);
+                    DBHelper dbHelper= DBHelper.getSingleton(context);
 
+                    SQLiteDatabase writableDatabase = dbHelper.getWritableDatabase();
+                    writableDatabase.execSQL("insert into parametro(parametro,diashabiles) values('repetido',5);");
+                    writableDatabase.execSQL("insert into parametro(parametro,diashabiles) values('diferido',3);");
+                    writableDatabase.execSQL("insert into parametro(parametro,diashabiles) values('revision',3);");
 
 
                     //ciclo seeders

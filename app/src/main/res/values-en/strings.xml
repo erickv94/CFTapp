@@ -148,5 +148,8 @@
     <string name="despedida">See you soon</string>
     <string name="bienvenida">Welcome </string>
     <string name="no_permisos">You dont any permissions for:</string>
+    <string name="parametro1">Extension for repeated tes</string>
+    <string name="parametro2">Extension for deferred test</string>
+    <string name="parametro3">Extension for reviewed test</string>
 
 </resources>

@@ -157,5 +157,7 @@
     <string name="despedida">Hasta la proxima</string>
     <string name="bienvenida">Bienvenido </string>
     <string name="no_permisos">No tiene permisos para:</string>
-
+    <string name="parametro1">Prorroga repetido</string>
+    <string name="parametro2">Prorroga diferido</string>
+    <string name="parametro3">Prorroga revision</string>
 </resources>
