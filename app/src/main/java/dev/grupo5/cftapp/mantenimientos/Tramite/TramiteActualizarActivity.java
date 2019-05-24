@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.LocalDB;
 import dev.grupo5.cftapp.database.TipoTramiteDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -48,7 +49,10 @@ public class TramiteActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tramite_actualizar);
         setTitle(R.string.tramiteupdate);
+        verificarPermisos();
+
         idText=findViewById(R.id.idtramite);
+
         fechaText= findViewById(R.id.fechasolicitud);
         localSpinner= findViewById(R.id.idlocaltramite);
         tipoTramiteSpinner=findViewById(R.id.idtipotramite);
@@ -94,6 +98,16 @@ public class TramiteActualizarActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.tramiteupdate), Toast.LENGTH_LONG).show();
+        }
 
     }
 

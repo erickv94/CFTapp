@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.TramiteDB;
 import dev.grupo5.cftapp.modelos.Tramite;
 
@@ -19,7 +20,19 @@ public class TramiteEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tramite_eliminar);
         setTitle(R.string.tramitedelete);
+        verificarPermisos();
+
         idText= findViewById(R.id.idtramite);
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.tramitedelete), Toast.LENGTH_LONG).show();
+        }
 
     }
 

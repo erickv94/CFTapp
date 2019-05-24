@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.TipoTramiteDB;
 import dev.grupo5.cftapp.modelos.TipoTramite;
 
@@ -23,12 +24,24 @@ public class TipoTramiteInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_tramite_insertar);
         setTitle(R.string.tipotramiteinsert);
+        verificarPermisos();
 
         helper = new TipoTramiteDB(this);
 
         editNombre = (EditText) findViewById(R.id.editNombre);
         editDescripcion = (EditText) findViewById(R.id.editDescripcion);
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.tipotramiteinsert), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 
     public void insertarTipoTramite(View v){
         String tipotramitenombre = editNombre.getText().toString();

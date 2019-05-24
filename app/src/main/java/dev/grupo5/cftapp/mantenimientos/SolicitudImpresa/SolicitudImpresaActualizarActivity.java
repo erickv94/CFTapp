@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DocenteDB;
 import dev.grupo5.cftapp.database.SolicitudImpresaDB;
 import dev.grupo5.cftapp.modelos.Docente;
@@ -38,6 +39,7 @@ public class SolicitudImpresaActualizarActivity extends AppCompatActivity {
     EditText editFechaSolicitud;
     EditText editPaginasAnexas;
     EditText editCodImpresion;
+    private static final int permiso = 83;
 
     ArrayList<String> nombresSolicitudes= new ArrayList<String>();
     HashMap<String,String> nombresSolicitudesMapeo= new HashMap<String, String>();
@@ -49,6 +51,7 @@ public class SolicitudImpresaActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitud_impresa_actualizar);
         setTitle(R.string.solicitudesupdate);
+        verificarPermisos();
 
         spinnerDocente=findViewById(R.id.idDocente);
         editIdSolicitudImp=findViewById(R.id.idSolicitudes);
@@ -90,6 +93,16 @@ public class SolicitudImpresaActualizarActivity extends AppCompatActivity {
                 picker.show();
             }
         });
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.solicitudesupdate), Toast.LENGTH_LONG).show();
+        }
 
     }
 

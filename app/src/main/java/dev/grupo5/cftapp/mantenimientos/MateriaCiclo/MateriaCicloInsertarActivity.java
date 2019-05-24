@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.CicloDB;
 import dev.grupo5.cftapp.database.MateriaCicloDB;
 import dev.grupo5.cftapp.database.MateriaDB;
@@ -37,6 +38,7 @@ public class MateriaCicloInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_ciclo_insertar);
         setTitle(R.string.materiacicloinsert);
+        verificarPermisos();
         spinnerciclo = findViewById(R.id.editIdCiclo);
         materiaSpinner = findViewById(R.id.editIdMateria);
 
@@ -62,6 +64,15 @@ public class MateriaCicloInsertarActivity extends AppCompatActivity {
 
     }
 
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.materiacicloinsert), Toast.LENGTH_LONG).show();
+        }
+
+    }
 
 
     public void insertarMateriaCiclo(View v){

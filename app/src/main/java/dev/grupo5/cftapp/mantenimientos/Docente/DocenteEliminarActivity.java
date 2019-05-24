@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DocenteDB;
 import dev.grupo5.cftapp.modelos.Docente;
 
@@ -19,8 +20,17 @@ public class DocenteEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_eliminar);
         setTitle(R.string.docentedelete);
-
+        verificarPermisos();
         editIdDocente = findViewById(R.id.editIdDocente);
+    }
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.docentedelete), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void eliminarDocente(View view) {

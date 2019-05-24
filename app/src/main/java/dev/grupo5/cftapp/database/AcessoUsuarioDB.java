@@ -2,7 +2,11 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dev.grupo5.cftapp.modelos.AccesoUsuario;
 import dev.grupo5.cftapp.modelos.OpcionCrud;
@@ -35,6 +39,25 @@ public class AcessoUsuarioDB {
 
     }
 
+    public List<AccesoUsuario> getAccesos(int idUser){
+        db = dbHelper.getWritableDatabase();
+        String[] id = {String.valueOf(idUser)};
+        Cursor c = db.query("accesousuario", new String[]{"idopcion","idusuario"}, "idusuario=?", id, null, null, null);
+        List<AccesoUsuario> permisos= new ArrayList<AccesoUsuario>();
 
+        if (c.moveToFirst()) {
+            do{
+                AccesoUsuario accesoUsuario= new AccesoUsuario();
+                accesoUsuario.setIdOpcionCrud(c.getInt(0));
+                accesoUsuario.setIdUsuario(c.getInt(1));
+                permisos.add(accesoUsuario);
+            }while (c.moveToNext());
+
+        }else {
+            permisos=null;
+        }
+
+     return permisos;
+    }
 
 }

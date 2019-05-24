@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleSolicitudDB;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -27,6 +28,7 @@ public class DetalleSolicitudConsultarActivity extends AppCompatActivity {
     EditText estudianteText;
     EditText motivoText;
     EditText rechazadoText;
+    private static final int permiso = 70;
 
 
 
@@ -46,7 +48,7 @@ public class DetalleSolicitudConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_solicitud_consultar);
         setTitle(R.string.detallesolicitudread);
-
+        verificarPermisos();
         //initializing
         spinnerTramite= findViewById(R.id.busqueda1);
         spinnerEstudiante= findViewById(R.id.busqueda2);
@@ -85,6 +87,17 @@ public class DetalleSolicitudConsultarActivity extends AppCompatActivity {
 
 
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detallesolicitudread), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     public void consultarDetalleSol(View view){
 
 

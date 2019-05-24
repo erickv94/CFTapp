@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.MateriaCicloDB;
 import dev.grupo5.cftapp.modelos.MateriaCiclo;
 
@@ -19,7 +20,19 @@ public class MateriaCicloEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_ciclo_eliminar);
         setTitle(R.string.materiaciclodelete);
+        verificarPermisos();
+
         idmatcText = findViewById(R.id.idmatciclo);
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.materiaciclodelete), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void eliminarMateriaCiclo(View v){

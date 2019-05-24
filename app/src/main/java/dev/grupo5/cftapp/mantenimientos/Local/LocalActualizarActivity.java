@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.LocalDB;
 import dev.grupo5.cftapp.modelos.Local;
 
@@ -23,6 +24,7 @@ public class LocalActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_actualizar);
         setTitle(R.string.localupdate);
+        verificarPermisos();
 
         codigoEdificioText= findViewById(R.id.codigoedificio);
         nombreText= findViewById(R.id.nombrelocal);
@@ -30,6 +32,17 @@ public class LocalActualizarActivity extends AppCompatActivity {
         capacidadText=findViewById(R.id.capacidad);
 
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.localupdate), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     public void limpiar(View view){
         codigoLocalText.setText("");
         codigoEdificioText.setText("");

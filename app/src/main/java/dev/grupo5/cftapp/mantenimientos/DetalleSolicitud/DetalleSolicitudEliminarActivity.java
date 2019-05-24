@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleSolicitudDB;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -22,7 +23,7 @@ public class DetalleSolicitudEliminarActivity extends AppCompatActivity {
 
     Spinner spinnerTramite;
     Spinner spinnerEstudiante;
-
+    private static final int permiso = 72;
 
     //mapeo para los arrayadapters
     List<String> nombresEstudiantes= new ArrayList<String>();
@@ -37,7 +38,7 @@ public class DetalleSolicitudEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_solicitud_eliminar);
         setTitle(R.string.detallesolicituddelete);
-
+        verificarPermisos();
 
 
         //initializing
@@ -71,6 +72,16 @@ public class DetalleSolicitudEliminarActivity extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTramite.setAdapter(adapter2);
 
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detalledocentedelete), Toast.LENGTH_LONG).show();
+        }
 
     }
 

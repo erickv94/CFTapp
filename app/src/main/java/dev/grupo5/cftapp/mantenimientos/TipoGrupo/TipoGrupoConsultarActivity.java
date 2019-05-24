@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.TipoGrupoDB;
 import dev.grupo5.cftapp.modelos.TipoGrupo;
 import dev.grupo5.cftapp.R;
@@ -21,9 +22,20 @@ public class TipoGrupoConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_grupo_consultar);
         setTitle(R.string.tipogruporead);
+        verificarPermisos();
 
         editIdTipoGrupo=findViewById(R.id.editIdTipoGrupo);
         editNombre=findViewById(R.id.editNombre);
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.tipogruporead), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void consultarTipoGrupo(View view) {

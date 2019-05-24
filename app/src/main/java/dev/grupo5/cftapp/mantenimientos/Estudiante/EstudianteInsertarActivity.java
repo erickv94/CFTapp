@@ -8,6 +8,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.modelos.Estudiante;
 
@@ -17,6 +18,8 @@ public class EstudianteInsertarActivity extends AppCompatActivity {
     EditText carnetText;
     EditText nombreText;
     EditText apellidoText;
+    private static final int permiso = 61;
+
 
 
 
@@ -28,6 +31,17 @@ public class EstudianteInsertarActivity extends AppCompatActivity {
         carnetText=findViewById(R.id.carnetestudiante);
         nombreText=findViewById(R.id.nombreestudiante);
         apellidoText=findViewById(R.id.apellidoestudiante);
+        verificarPermisos();
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.estudiantesinsert), Toast.LENGTH_LONG).show();
+        }
 
     }
 

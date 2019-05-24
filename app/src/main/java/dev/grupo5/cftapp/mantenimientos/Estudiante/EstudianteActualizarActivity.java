@@ -8,6 +8,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.modelos.Estudiante;
 
@@ -17,16 +18,30 @@ public class EstudianteActualizarActivity extends AppCompatActivity {
     EditText apellidoText;
     private boolean masculino=true;
     private  boolean femenimo=false;
+    private static final int permiso = 63;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estudiante_actualizar);
         setTitle(R.string.estudiantesupdate);
+        verificarPermisos();
+
         carnetText=findViewById(R.id.carnetestudiante);
         nombreText=findViewById(R.id.nombreestudiante);
         apellidoText=findViewById(R.id.apellidoestudiante);
 
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.estudiantesupdate), Toast.LENGTH_LONG).show();
+        }
 
     }
 

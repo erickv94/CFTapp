@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.database.TestigoDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -23,6 +24,7 @@ public class TestigoInsertarActivity extends AppCompatActivity {
     Spinner spinnerEstudiante;
     Spinner spinnerTramites;
     EditText justificacionText;
+    private static final int permiso = 85;
 
     //mapeo para los arrayadapters
     List<String> nombresEstudiantes= new ArrayList<String>();
@@ -37,6 +39,7 @@ public class TestigoInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testigo_insertar);
         setTitle(R.string.testigoinsert);
+        verificarPermisos();
 
         spinnerEstudiante= findViewById(R.id.estudiante_testigo);
         spinnerTramites= findViewById(R.id.tramite_testigo);
@@ -72,6 +75,16 @@ public class TestigoInsertarActivity extends AppCompatActivity {
 
 
     }
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.testigoinsert), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     public void insertarTestigo(View view){
         TestigoDB testigoDB= new TestigoDB(this);
 

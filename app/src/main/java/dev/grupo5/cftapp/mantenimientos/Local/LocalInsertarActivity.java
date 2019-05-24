@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.LocalDB;
 import dev.grupo5.cftapp.modelos.Local;
@@ -23,13 +24,23 @@ public class LocalInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_insertar);
         setTitle(R.string.localinsert);
-
+        verificarPermisos();
         codigoEdificioText= findViewById(R.id.codigoedificio);
         nombreText= findViewById(R.id.nombrelocal);
         codigoLocalText= findViewById(R.id.codigolocal);
         capacidadText=findViewById(R.id.capacidad);
 
 
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.localinsert), Toast.LENGTH_LONG).show();
+        }
 
     }
 

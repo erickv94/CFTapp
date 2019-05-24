@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.CicloDB;
 import dev.grupo5.cftapp.database.MateriaCicloDB;
 import dev.grupo5.cftapp.modelos.Ciclo;
@@ -40,6 +41,7 @@ public class MateriaCicloActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_ciclo_actualizar);
         setTitle(R.string.materiacicloupdate);
+        verificarPermisos();
 
         helper = new MateriaCicloDB(this);
 
@@ -65,6 +67,16 @@ public class MateriaCicloActualizarActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,numerociclo);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ciclospinner.setAdapter(adapter);
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.materiacicloupdate), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void actualizarMateriaCiclo (View v) {

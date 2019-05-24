@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.CicloDB;
 import dev.grupo5.cftapp.modelos.Ciclo;
 
@@ -22,12 +23,23 @@ public class CicloActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ciclo_actualizar);
         setTitle(R.string.cicloupdate);
-
+        verificarPermisos();
         editIdCiclo=findViewById(R.id.editIdCiclo);
         editCiclo= findViewById(R.id.editCiclo);
         editAnio= findViewById(R.id.editAnio);
 
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.cicloupdate), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     public void actualizarCiclo(View view){
         Ciclo ciclo= new Ciclo();
         String registros;

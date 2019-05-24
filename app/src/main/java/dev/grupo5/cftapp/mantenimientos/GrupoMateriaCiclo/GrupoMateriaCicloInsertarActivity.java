@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.GrupoMateriaCicloDB;
 import dev.grupo5.cftapp.modelos.Docente;
 import dev.grupo5.cftapp.modelos.GrupoMateriaCiclo;
@@ -46,6 +47,7 @@ public class GrupoMateriaCicloInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grupo_materia_ciclo_insertar);
         setTitle(R.string.grupomateriacicloinsert);
+        verificarPermisos();
 
         docentespinner = findViewById(R.id.grupo_docente_id);
         matciclospinner = findViewById(R.id.grupo_materia_id);
@@ -85,6 +87,16 @@ public class GrupoMateriaCicloInsertarActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nombretipos);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipospinner.setAdapter(adapter3);
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.grupomateriacicloinsert), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void insertarGrupoMatCiclo(View v) {

@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleRevisionDB;
 import dev.grupo5.cftapp.database.DetalleSolicitudDB;
 import dev.grupo5.cftapp.database.EstudianteDB;
@@ -23,6 +24,7 @@ import dev.grupo5.cftapp.modelos.Estudiante;
 public class DetalleRevisionEliminarActivity extends AppCompatActivity {
     Spinner spinnerTramite;
     Spinner spinnerEstudiante;
+    private static final int permiso = 68;
 
 
     //mapeo para los arrayadapters
@@ -37,6 +39,7 @@ public class DetalleRevisionEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_revision_eliminar);
         setTitle(R.string.detallerevisiondelete);
+        verificarPermisos();
         //initializing
         spinnerTramite= findViewById(R.id.detalle_sol_tramite);
         spinnerEstudiante= findViewById(R.id.detalle_sol_estudiante);
@@ -70,6 +73,16 @@ public class DetalleRevisionEliminarActivity extends AppCompatActivity {
 
 
     }
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detallerevisiondelete), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 
     public void eliminarDetalleRevision(View view){
         DetalleRevisionDB detalleRevisionDB= new DetalleRevisionDB(this);

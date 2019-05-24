@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleSolicitudDB;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -25,6 +26,8 @@ public class DetalleSolicitudInsertarActivity extends AppCompatActivity {
     Spinner spinnerEstudiante;
     EditText motivoText;
     CheckBox rechazadoCheck;
+    private static final int permiso = 69;
+
 
 
 
@@ -44,7 +47,7 @@ public class DetalleSolicitudInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_solicitud_insertar);
         setTitle(R.string.detallesolicitudinsert);
-
+        verificarPermisos();
         //initializing
         spinnerTramite= findViewById(R.id.detalle_sol_tramite);
         spinnerEstudiante= findViewById(R.id.detalle_sol_estudiante);
@@ -78,6 +81,15 @@ public class DetalleSolicitudInsertarActivity extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTramite.setAdapter(adapter2);
 
+
+    }
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detallesolicitudinsert), Toast.LENGTH_LONG).show();
+        }
 
     }
 

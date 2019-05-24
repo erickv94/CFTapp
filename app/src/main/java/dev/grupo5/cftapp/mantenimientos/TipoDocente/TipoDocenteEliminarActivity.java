@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.TipoDocenteDB;
 import dev.grupo5.cftapp.modelos.TipoDocente;
 
@@ -19,11 +20,21 @@ public class TipoDocenteEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_docente_eliminar);
         setTitle(R.string.tipodocentedelete);
-
+        verificarPermisos();
         editIdTipoDocente=findViewById(R.id.editIdTipoDocente);
 
     }
-    
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.tipodocentedelete), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     public void eliminarTipoDocente(View view){
         TipoDocente tipoDocente= new TipoDocente();
         TipoDocenteDB tipoDocenteDB= new TipoDocenteDB(this);

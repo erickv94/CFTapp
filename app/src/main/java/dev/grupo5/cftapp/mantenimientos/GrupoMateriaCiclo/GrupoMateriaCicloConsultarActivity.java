@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.GrupoMateriaCicloDB;
 import dev.grupo5.cftapp.modelos.GrupoMateriaCiclo;
 
@@ -34,6 +35,7 @@ public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grupo_materia_ciclo_consultar);
         setTitle(R.string.grupomateriacicloread);
+        verificarPermisos();
 
         idtargetText = findViewById(R.id.busqueda_grupo);
         idText = findViewById(R.id.idgrupo);
@@ -43,6 +45,16 @@ public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
         codText = findViewById(R.id.codgrupo);
         cantidadText = findViewById(R.id.cantidad);
         capacidadText = findViewById(R.id.capacidad);
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.grupomateriacicloread), Toast.LENGTH_LONG).show();
+        }
 
     }
 

@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.database.TestigoDB;
@@ -31,6 +32,7 @@ public class TestigoConsultarActivity extends AppCompatActivity {
     EditText informacionTramiteText;
     EditText justificacionText;
     EditText idText;
+    private static final int permiso = 86;
     //mapeo para los arrayadapters
     List<String> nombresEstudiantes= new ArrayList<String>();
     HashMap<String,Integer> nombresEstudiantesMapeo= new HashMap<String, Integer>();
@@ -45,6 +47,7 @@ public class TestigoConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testigo_consultar);
         setTitle(R.string.testigoread);
+        verificarPermisos();
 
         spinnerEstudiante= findViewById(R.id.busqueda1);
         spinnerTramite=findViewById(R.id.busqueda2);
@@ -82,6 +85,16 @@ public class TestigoConsultarActivity extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTramite.setAdapter(adapter2);
 
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.testigoread), Toast.LENGTH_LONG).show();
+        }
 
     }
 

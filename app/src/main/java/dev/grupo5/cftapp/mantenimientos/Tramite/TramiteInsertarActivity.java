@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.LocalDB;
 import dev.grupo5.cftapp.database.TipoTramiteDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -45,6 +47,8 @@ public class TramiteInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tramite_insertar);
         setTitle(R.string.tramiteinsert);
+        verificarPermisos();
+
         fechaText= findViewById(R.id.fechasolicitud);
         localSpinner= findViewById(R.id.idlocaltramite);
         tipoTramiteSpinner=findViewById(R.id.idtipotramite);
@@ -89,6 +93,16 @@ public class TramiteInsertarActivity extends AppCompatActivity {
                 picker.show();
             }
         });
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.tramiteinsert), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void limpiar(View view){

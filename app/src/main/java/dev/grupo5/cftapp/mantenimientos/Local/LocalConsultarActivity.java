@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.CicloDB;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.LocalDB;
@@ -26,12 +27,22 @@ public class LocalConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_consultar);
         setTitle(R.string.localread);
+        verificarPermisos();
 
         codigoLocalTargetText= findViewById(R.id.idbusqueda);
         codigoEdificioText= findViewById(R.id.codigoedificio);
         codigoLocalText= findViewById(R.id.codigolocal);
         capacidadText=findViewById(R.id.capacidad);
         nombreText=findViewById(R.id.nombrelocal);
+
+    }
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.localread), Toast.LENGTH_LONG).show();
+        }
 
     }
 

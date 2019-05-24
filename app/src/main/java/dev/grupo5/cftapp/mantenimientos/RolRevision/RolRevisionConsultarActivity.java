@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.RolRevisionDB;
 import dev.grupo5.cftapp.modelos.RolRevision;
 
@@ -22,10 +23,21 @@ public class RolRevisionConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rol_revision_consultar);
         setTitle(R.string.rolrevisionread);
+        verificarPermisos();
 
         idRolText = (EditText) findViewById(R.id.idbusqueda);
         nombre = (EditText) findViewById(R.id.nombre);
         descripcion = (EditText) findViewById(R.id.descripcion);
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.rolrevisionread), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void consultarRolRevision(View v){

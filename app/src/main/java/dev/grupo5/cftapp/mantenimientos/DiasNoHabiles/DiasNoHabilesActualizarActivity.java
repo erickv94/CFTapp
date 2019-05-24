@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.CicloDB;
 import dev.grupo5.cftapp.database.DiasNoHabilesDB;
 import dev.grupo5.cftapp.modelos.Ciclo;
@@ -32,7 +33,7 @@ public class DiasNoHabilesActualizarActivity extends AppCompatActivity {
     EditText editNombre;
     EditText editDescripcion;
     EditText editFecha;
-
+    private static final int permiso = 75;
     ArrayList<String> nombresCiclos= new ArrayList<String>();
     HashMap<String,String> nombresCiclosMapeo= new HashMap<String, String>();
 
@@ -42,6 +43,7 @@ public class DiasNoHabilesActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dias_no_habiles_actualizar);
         setTitle(R.string.diasupdate);
+        verificarPermisos();
 
         spinnerCiclo = findViewById(R.id.idCiclo);
         editIdDia=findViewById(R.id.editIdDia);
@@ -79,6 +81,17 @@ public class DiasNoHabilesActualizarActivity extends AppCompatActivity {
         });
 
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.diasupdate), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     public void actualizarDiaNoHabil(View view){
         DiasNoHabilesDB diasNoHabilesDB= new DiasNoHabilesDB(this);
         DiasNoHabiles diasNoHabiles= new DiasNoHabiles();

@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DocenteDB;
 import dev.grupo5.cftapp.database.TipoDocenteDB;
 import dev.grupo5.cftapp.modelos.Docente;
@@ -40,6 +41,7 @@ public class DocenteActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_actualizar);
         setTitle(R.string.docenteupdate);
+        verificarPermisos();
         helper = new DocenteDB(this);
         editIdDocente = (EditText) findViewById(R.id.editIdDocente);
         tipoDocenteSpinner = (Spinner) findViewById(R.id.editIdTipoDocente);
@@ -81,6 +83,16 @@ public class DocenteActualizarActivity extends AppCompatActivity {
         String resultado=docenteDB.actualizar(docente);
 
         Toast.makeText(this,resultado,Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.docenteupdate), Toast.LENGTH_LONG).show();
+        }
 
     }
 

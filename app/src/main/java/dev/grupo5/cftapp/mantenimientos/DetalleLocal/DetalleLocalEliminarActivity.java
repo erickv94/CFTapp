@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleLocalDB;
 import dev.grupo5.cftapp.database.EvaluacionDB;
 import dev.grupo5.cftapp.database.LocalDB;
@@ -22,6 +23,8 @@ public class DetalleLocalEliminarActivity extends AppCompatActivity {
     DetalleLocalDB detalleLocalDB;
     Spinner spinnerlocal;
     Spinner spinnereval;
+    private static final int permiso = 60;
+
 
     List<String> nombrelocales = new ArrayList<String>();
     HashMap<String,Integer> nombrelocalesMapeo = new HashMap<String, Integer>();
@@ -33,7 +36,7 @@ public class DetalleLocalEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_local_eliminar);
         setTitle(R.string.detallelocaldelete);
-
+        verificarPermisos();
         spinnerlocal = findViewById(R.id.detalle_local);
         spinnereval = findViewById(R.id.detalle_evalua);
 
@@ -57,6 +60,15 @@ public class DetalleLocalEliminarActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,informacionevaluaciones);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnereval.setAdapter(adapter2);
+    }
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detallelocaldelete), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void eliminarDetalleLocal(View v){

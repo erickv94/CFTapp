@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.CicloDB;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.MateriaCicloDB;
@@ -45,10 +46,22 @@ public class MateriaCicloConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_ciclo_consultar);
         setTitle(R.string.materiacicloread);
+        verificarPermisos();
+
         cicloText = findViewById(R.id.editIdCiclo);
         materiaText = findViewById(R.id.editIdMateria);
         idmatcText = findViewById(R.id.idmatciclo);
         idtargetText = findViewById(R.id.busqueda_mat);
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.materiacicloread), Toast.LENGTH_LONG).show();
+        }
 
     }
 

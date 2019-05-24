@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DocenteDB;
 import dev.grupo5.cftapp.database.TipoDocenteDB;
 import dev.grupo5.cftapp.modelos.Docente;
@@ -40,7 +41,7 @@ public class DocenteInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_insertar);
         setTitle(R.string.docenteinsert);
-
+        verificarPermisos();
         //editIdDocente = (EditText) findViewById(R.id.editIdDocente);
         //editIdTipoDocente = (EditText) findViewById(R.id.editIdTipoDocente);
         tipoDocenteSpinner= (Spinner) findViewById(R.id.editIdTipoDocente);
@@ -61,6 +62,17 @@ public class DocenteInsertarActivity extends AppCompatActivity {
         tipoDocenteSpinner.setAdapter(adapterTipoDocente);
 
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.docenteinsert), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     public void insertarDocente(View v) {
 
         DocenteDB docenteDB=new DocenteDB(this);

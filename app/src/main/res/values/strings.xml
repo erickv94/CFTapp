@@ -156,4 +156,6 @@
     <string name="parametro">Parametros</string>
     <string name="despedida">Hasta la proxima</string>
     <string name="bienvenida">Bienvenido </string>
+    <string name="no_permisos">No tiene permisos para:</string>
+
 </resources>

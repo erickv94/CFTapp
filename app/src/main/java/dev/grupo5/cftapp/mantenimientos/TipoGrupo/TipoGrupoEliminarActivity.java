@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.TipoGrupoDB;
 import dev.grupo5.cftapp.modelos.TipoGrupo;
 
@@ -20,8 +21,19 @@ public class TipoGrupoEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_grupo_eliminar);
         setTitle(R.string.tipogrupodelete);
+        verificarPermisos();
 
         editIdTipoGrupo=findViewById(R.id.editIdTipoGrupo);
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.tipogrupodelete), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void eliminarTipoGrupo(View view){

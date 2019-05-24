@@ -2,7 +2,11 @@ package dev.grupo5.cftapp.database;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import dev.grupo5.cftapp.modelos.OpcionCrud;
 import dev.grupo5.cftapp.modelos.Usuario;
@@ -32,6 +36,23 @@ public class OpcionCrudDB {
 
 
         return regInsertados;
+
+    }
+
+    public OpcionCrud getOpcion(int idOpcion){
+        db = dbHelper.getWritableDatabase();
+        String[] id = {String.valueOf(idOpcion)};
+        Cursor c = db.query("opcioncrud", new String[]{"numcrud","descripcion"}, "numcrud=?", id, null, null, null);
+
+        if (c.moveToFirst()) {
+                OpcionCrud opcionCrud= new OpcionCrud();
+                opcionCrud.setNumCrud(c.getInt(0));
+                opcionCrud.setDescripcion(c.getString(1));
+
+                return  opcionCrud;
+        }else {
+            return null;
+        }
 
     }
 

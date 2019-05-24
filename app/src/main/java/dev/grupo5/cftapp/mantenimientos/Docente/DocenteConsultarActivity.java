@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.DocenteDB;
 import dev.grupo5.cftapp.database.TipoDocenteDB;
@@ -43,13 +44,22 @@ public class DocenteConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_docente_consultar);
         setTitle(R.string.docenteread);
-
+        verificarPermisos();
         editIdDocente = (EditText) findViewById(R.id.editIdDocente);
         editIdTipoDocente = (EditText) findViewById(R.id.editIdTipoDocente);
         editNombre = (EditText) findViewById(R.id.editNombre);
         editApellido = (EditText) findViewById(R.id.editApellido);
         editCodDocente = (EditText) findViewById(R.id.editCodDocente);
         editSexo = (EditText) findViewById(R.id.editSexo);
+
+    }
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.docenteread), Toast.LENGTH_LONG).show();
+        }
 
     }
 

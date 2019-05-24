@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.SolicitudImpresaDB;
 import dev.grupo5.cftapp.modelos.SolicitudImpresa;
@@ -30,12 +31,14 @@ public class SolicitudImpresaConsultarActivity extends AppCompatActivity {
     EditText editFecha;
     EditText editPaginasAnexas;
     EditText editCodImpresion;
+    private static final int permiso = 82;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_solicitud_impresa_consultar);
         setTitle(R.string.solicitudesread);
-
+        verificarPermisos();
         editIdSoli=findViewById(R.id.editIdSoli);
         editIdDocente=findViewById(R.id.editIdDocente);
         editCantidadImp=findViewById(R.id.editCantidadImp);
@@ -46,6 +49,17 @@ public class SolicitudImpresaConsultarActivity extends AppCompatActivity {
         editPaginasAnexas=findViewById(R.id.editPaginasAnexas);
         editCodImpresion=findViewById(R.id.editCodImpresion);
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.solicitudesread), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 
     public void consultarSolicitudes(View view) throws ParseException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");

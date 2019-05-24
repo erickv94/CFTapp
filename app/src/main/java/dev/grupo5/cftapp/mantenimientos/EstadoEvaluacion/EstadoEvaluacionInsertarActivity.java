@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.EstadoEvaluacionDB;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.database.EvaluacionDB;
@@ -27,7 +28,7 @@ public class EstadoEvaluacionInsertarActivity extends AppCompatActivity {
     Spinner spinnerEvaluacion ;
 
     EditText notaText;
-
+    private static final int permiso = 77;
     //mapeo para los arrayadapters
     List<String> nombresEstudiantes= new ArrayList<String>();
     HashMap<String,Integer> nombresEstudiantesMapeo= new HashMap<String, Integer>();
@@ -40,6 +41,7 @@ public class EstadoEvaluacionInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estado_evaluacion_insertar);
         setTitle(R.string.estadoinsert);
+        verificarPermisos();
         spinnerEstudiante= findViewById(R.id.estudiante_estado);
         spinnerEvaluacion=findViewById(R.id.evaluacion_estado);
 
@@ -69,6 +71,16 @@ public class EstadoEvaluacionInsertarActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,nombresEvaluaciones);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerEvaluacion.setAdapter(adapter2);
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.estadoinsert), Toast.LENGTH_LONG).show();
+        }
 
     }
 

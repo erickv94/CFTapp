@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleRevisionDB;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -26,6 +27,7 @@ public class DetalleRevisionActualizarActivity extends AppCompatActivity {
     Spinner spinnerEstudiante;
     EditText motivoText;
     CheckBox rechazadoCheck;
+    private static final int permiso = 67;
 
 
 
@@ -43,6 +45,7 @@ public class DetalleRevisionActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_revision_actualizar);
         setTitle(R.string.detallerevisionupdate);
+        verificarPermisos();
 
         //initializing
         spinnerTramite= findViewById(R.id.detalle_sol_tramite);
@@ -76,6 +79,16 @@ public class DetalleRevisionActualizarActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2= new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,informacionTramite);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTramite.setAdapter(adapter2);
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detallerevisionupdate), Toast.LENGTH_LONG).show();
+        }
 
     }
 

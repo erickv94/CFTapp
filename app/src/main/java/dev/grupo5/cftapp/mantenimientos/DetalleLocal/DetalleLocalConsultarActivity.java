@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleLocalDB;
 import dev.grupo5.cftapp.database.EvaluacionDB;
 import dev.grupo5.cftapp.database.LocalDB;
@@ -26,6 +27,8 @@ public class DetalleLocalConsultarActivity extends AppCompatActivity {
     EditText localtext;
     EditText evaluacionText;
     EditText cantidadText;
+    private static final int permiso = 58;
+
 
 
     List<String> nombrelocales = new ArrayList<String>();
@@ -37,7 +40,7 @@ public class DetalleLocalConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_local_consultar);
         setTitle(R.string.detallelocalread);
-
+        verificarPermisos();
         spinnerlocal = findViewById(R.id.busquedalocal);
         spinnerevaluacion = findViewById(R.id.busquedaeval);
         localtext = findViewById(R.id.idlocal);
@@ -66,6 +69,17 @@ public class DetalleLocalConsultarActivity extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerevaluacion.setAdapter(adapter2);
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detallelocalread), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 
     public void consultarDetalleLocal(View v){
         detalleLocalDB = new DetalleLocalDB(this);

@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleLocalDB;
 import dev.grupo5.cftapp.modelos.DetalleLocal;
 import dev.grupo5.cftapp.modelos.Local;
@@ -24,6 +25,8 @@ public class DetalleLocalActualizarActivity extends AppCompatActivity {
     Spinner spinnerlocal;
     Spinner spinnereval;
     EditText cantidadText;
+    private static final int permiso = 59;
+
 
     List<String> nombreslocales = new ArrayList<String>();
     HashMap<String,Integer> nombrelocalMapeo = new HashMap<String, Integer>();
@@ -36,6 +39,7 @@ public class DetalleLocalActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_local_actualizar);
         setTitle(R.string.detallelocalupdate);
+        verificarPermisos();
         spinnerlocal = findViewById(R.id.detalle_local);
         spinnereval = findViewById(R.id.detalle_evalua);
         cantidadText = findViewById(R.id.cantidad);
@@ -59,6 +63,16 @@ public class DetalleLocalActualizarActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,informacioneval);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnereval.setAdapter(adapter2);
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detallelocalupdate), Toast.LENGTH_LONG).show();
+        }
 
     }
 

@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.LocalDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -52,6 +53,8 @@ public class TramiteConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tramite_consultar);
         setTitle(R.string.tramiteread);
+        verificarPermisos();
+
         //seteando elementos del view
         spinnerlocal=(Spinner) findViewById(R.id.busqueda1);
         fechaBusqueda=findViewById(R.id.busqueda2);
@@ -90,6 +93,16 @@ public class TramiteConsultarActivity extends AppCompatActivity {
                 picker.show();
             }
         });
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.tramiteread), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void consultarTramite(View view) throws ParseException {

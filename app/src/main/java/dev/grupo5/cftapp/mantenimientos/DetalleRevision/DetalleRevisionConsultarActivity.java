@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleRevisionDB;
 import dev.grupo5.cftapp.database.EstudianteDB;
 import dev.grupo5.cftapp.database.TramiteDB;
@@ -26,6 +27,7 @@ public class DetalleRevisionConsultarActivity extends AppCompatActivity {
     EditText estudianteText;
     EditText motivoText;
     EditText asistenciaText;
+    private static final int permiso = 66;
 
     //mapeo para los arrayadapters
     List<String> nombresEstudiantes= new ArrayList<String>();
@@ -40,8 +42,7 @@ public class DetalleRevisionConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_revision_consultar);
         setTitle(R.string.detallerevisionread);
-
-
+        verificarPermisos();
 
         //initializing
         spinnerTramite= findViewById(R.id.busqueda1);
@@ -80,6 +81,17 @@ public class DetalleRevisionConsultarActivity extends AppCompatActivity {
 
 
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detallerevisionread), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 
     public void consultarDetalleRev(View view){
 

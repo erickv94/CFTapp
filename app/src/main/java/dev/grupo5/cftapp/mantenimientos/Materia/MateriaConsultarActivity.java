@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.MateriaDB;
 import dev.grupo5.cftapp.modelos.Materia;
 
@@ -24,12 +25,23 @@ public class MateriaConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_consultar);
         setTitle(R.string.materiaread);
+        verificarPermisos();
 
         codigomateriaTargetText = (EditText) findViewById(R.id.idbusqueda);
 
         codigomateriaText = (EditText) findViewById(R.id.codigomateria);
         nombremateriaText = (EditText) findViewById(R.id.nombremateria);
         uvsText = (EditText) findViewById(R.id.uvs);
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.materiaread), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void consultarMateria(View v){

@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.RolRevisionDB;
 import dev.grupo5.cftapp.modelos.RolRevision;
 
@@ -20,9 +21,21 @@ public class RolRevisionEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rol_revision_eliminar);
         setTitle(R.string.rolrevisiondelete);
+        verificarPermisos();
 
         idrolText = (EditText) findViewById(R.id.idrol);
     }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.rolrevisiondelete), Toast.LENGTH_LONG).show();
+        }
+
+    }
+
 
     public void eliminarRolRevision(View v){
         rolRevisionDB = new RolRevisionDB(this);

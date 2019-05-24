@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.EvaluacionDB;
 import dev.grupo5.cftapp.database.GrupoMateriaCicloDB;
 import dev.grupo5.cftapp.database.TipoEvaluacionDB;
@@ -31,6 +32,7 @@ public class EvaluacionInsertarActivity extends AppCompatActivity {
     Spinner grupoSpinner;
     Spinner tipoEvaluacionSpinner;
     DatePickerDialog picker;
+    private static final int permiso = 53;
 
     ArrayList<String> codgrupos= new ArrayList<String>();
     HashMap<String,String> codgruposMapeo= new HashMap<String, String>();
@@ -45,6 +47,8 @@ public class EvaluacionInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluacion_insertar);
         setTitle(R.string.evaluacioninsert);
+         verificarPermisos();
+
         nombreevaluacionText = (EditText) findViewById(R.id.nombreevaluacion);
         fechaText = (EditText) findViewById(R.id.fecha);
         grupoSpinner = findViewById(R.id.idgrupo);
@@ -90,6 +94,16 @@ public class EvaluacionInsertarActivity extends AppCompatActivity {
                 picker.show();
             }
         });
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.evaluacioninsert), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void limpiarEvaluacion(View v){

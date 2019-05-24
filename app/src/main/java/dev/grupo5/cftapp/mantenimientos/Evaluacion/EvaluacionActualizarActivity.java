@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.EvaluacionDB;
 import dev.grupo5.cftapp.database.GrupoMateriaCicloDB;
 import dev.grupo5.cftapp.database.TipoEvaluacionDB;
@@ -32,6 +33,8 @@ public class EvaluacionActualizarActivity extends AppCompatActivity {
     Spinner spinnerGrupo;
     Spinner spinnerTipo;
     DatePickerDialog picker;
+    private static final int permiso = 55;
+
 
     ArrayList<String> codgrupos = new ArrayList<String>();
     HashMap<String,String> codgruposMapeo = new HashMap<String, String>();
@@ -46,7 +49,7 @@ public class EvaluacionActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluacion_actualizar);
         setTitle(R.string.evalucionupdate);
-
+        verificarPermisos();
         idText = findViewById(R.id.idevaluacion);
         nombreText = findViewById(R.id.nombreevaluacion);
         fechaText = findViewById(R.id.fecha);
@@ -92,6 +95,16 @@ public class EvaluacionActualizarActivity extends AppCompatActivity {
                 picker.show();
             }
         });
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.evalucionupdate), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void actualizarEvaluacion(View v){

@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.EvaluacionDB;
 import dev.grupo5.cftapp.database.TipoEvaluacionDB;
@@ -38,6 +39,7 @@ public class EvaluacionConsultarActivity extends AppCompatActivity {
     EditText fechaText;
     EditText tipoevaluacionText;
     DatePickerDialog picker;
+    private static final int permiso = 54;
 
     ArrayList<String> nombreTipos = new ArrayList<String>();
     HashMap<String,String> nombretiposMapeo = new HashMap<String,String>();
@@ -50,6 +52,7 @@ public class EvaluacionConsultarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluacion_consultar);
         setTitle(R.string.evaluacionread);
+        verificarPermisos();
         spinnerTipo = (Spinner) findViewById(R.id.busqueda1);
         fechaBusqueda = findViewById(R.id.busqueda2);
         idgrupoText = findViewById(R.id.idgrupo);
@@ -86,6 +89,16 @@ public class EvaluacionConsultarActivity extends AppCompatActivity {
                 picker.show();
             }
         });
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.evaluacionread), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void consultarEvaluacion(View v) throws ParseException {

@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.MateriaDB;
 import dev.grupo5.cftapp.modelos.Materia;
 
@@ -21,8 +22,19 @@ public class MateriaEliminarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_eliminar);
         setTitle(R.string.materiadelete);
+        verificarPermisos();
 
         codigomatText = (EditText) findViewById(R.id.codigomateria);
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.materiadelete), Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void eliminarMateria(View v){

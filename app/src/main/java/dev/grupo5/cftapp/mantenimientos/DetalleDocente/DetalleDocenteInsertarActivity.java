@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DetalleDocenteDB;
 import dev.grupo5.cftapp.database.DocenteDB;
 import dev.grupo5.cftapp.database.RolRevisionDB;
@@ -48,6 +49,7 @@ public class DetalleDocenteInsertarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle_docente_insertar);
         setTitle(R.string.detalledocenteinsert);
+        verificarPermisos();
 
         spinnerRol= findViewById(R.id.idrol);
         spinnerDocente=findViewById(R.id.iddocente);
@@ -97,6 +99,16 @@ public class DetalleDocenteInsertarActivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.detalledocenteinsert), Toast.LENGTH_LONG).show();
+        }
 
     }
 

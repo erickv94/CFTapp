@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import dev.grupo5.cftapp.R;
+import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DocenteDB;
 import dev.grupo5.cftapp.database.GrupoMateriaCicloDB;
 import dev.grupo5.cftapp.database.MateriaCicloDB;
@@ -22,7 +23,7 @@ import dev.grupo5.cftapp.modelos.GrupoMateriaCiclo;
 import dev.grupo5.cftapp.modelos.TipoGrupo;
 
 public class GrupoMateriaCicloActualizarActivity extends AppCompatActivity {
-    private static final int permiso=48;
+    private static final int permiso=47;
     GrupoMateriaCicloDB grupoMateriaCicloDB;
     Spinner spinnerdocente;
     Spinner spinnermatc;
@@ -44,6 +45,8 @@ public class GrupoMateriaCicloActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grupo_materia_ciclo_actualizar);
         setTitle(R.string.grupomateriacicloupdate);
+        verificarPermisos();
+
         spinnertipo = findViewById(R.id.grupo_tipo_id);
         idText = findViewById(R.id.idgrupo);
         spinnerdocente = findViewById(R.id.grupo_docente_id);
@@ -82,6 +85,16 @@ public class GrupoMateriaCicloActualizarActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nombretipo);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnertipo.setAdapter(adapter3);
+
+    }
+
+    public void verificarPermisos(){
+
+        if(!Auth.userHasPermission(Auth.guard(this),this,permiso)){
+            finish();
+            Toast.makeText(this,getResources().getString(R.string.no_permisos)+" "
+                    +getResources().getString(R.string.grupomateriacicloupdate), Toast.LENGTH_LONG).show();
+        }
 
     }
 
