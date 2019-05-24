@@ -36,8 +36,8 @@ public class RolRevisionConsultarActivity extends AppCompatActivity {
             nombre.setText(rolRevision.getNombre());
             descripcion.setText(rolRevision.getDescripcion());
             return;
-        }
-        Toast.makeText(this,"Rol Revision con idrol" + idRolText.getText().toString() + "no existe",
+        } else
+            Toast.makeText(this,"Rol Revision con idrol" + idRolText.getText().toString() + "no existe",
                 Toast.LENGTH_SHORT).show();
         }
 

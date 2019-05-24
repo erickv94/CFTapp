@@ -9,6 +9,13 @@
 
 
     <EditText
+        android:id="@+id/idrol"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idrolrevision"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
+    <EditText
         android:id="@+id/nombrerolrevision"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

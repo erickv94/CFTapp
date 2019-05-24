@@ -1,9 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloActualizarActivity">
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/idgrupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idgrupo"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/grupo_docente"
+        android:paddingTop="20dp"/>
+    <Spinner
+        android:id="@+id/grupo_docente_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/grupo_materia"
+        android:paddingTop="20dp"/>
+    <Spinner
+        android:id="@+id/grupo_materia_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/grupo_tipo"
+        android:paddingTop="20dp"/>
+    <Spinner
+        android:id="@+id/grupo_tipo_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"/>
+    <EditText
+        android:id="@+id/codgrupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/codgrupo"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/cantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cantidadalumnos"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/capacidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/capacidadalumnos"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grupomateriacicloupdate"
+            android:id="@+id/actualizar"
+            android:onClick="actualizarGrupoMatCiclo"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/limpiar"
+            android:id="@+id/limpiar"
+            android:onClick="limpiar"/>
 
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+</LinearLayout>

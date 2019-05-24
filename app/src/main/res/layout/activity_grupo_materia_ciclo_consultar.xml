@@ -1,9 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.GrupoMateriaCiclo.GrupoMateriaCicloConsultarActivity">
+    android:orientation="vertical"
+   >
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/busqueda_grupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idgrupo"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grupomateriacicloread"
+            android:id="@+id/consultar"
+            android:onClick="consultarGrupoMatCiclo"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/idgrupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idgrupo"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/iddocente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/iddocente"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/idmatciclo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idmatciclo"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/idtipogrupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idtipogrupo"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/codgrupo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/codgrupo"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/cantidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cantidadalumnos"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/capacidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/capacidadalumnos"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/limpiar"
+        android:id="@+id/limpiar"
+        android:onClick="limpiar"/>
+</LinearLayout>

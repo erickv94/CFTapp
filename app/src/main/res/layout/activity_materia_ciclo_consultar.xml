@@ -7,22 +7,19 @@
     android:orientation="vertical"
     tools:context=".mantenimientos.MateriaCiclo.MateriaCicloConsultarActivity">
 
-<TextView
 
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="@string/materiaCiclo"
-    android:paddingTop="20dp"/>
-
-    <Spinner
-        android:id="@+id/idbusqueda"
+    <EditText
+        android:id="@+id/busqueda_mat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"/>
+        android:hint="@string/idmatciclo"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingTop="10dp">
 
@@ -41,27 +38,36 @@
         android:layout_height="wrap_content"
         android:hint="@string/idmatciclo"
         android:inputType="text"
-        android:paddingTop="20dp"/>
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:cursorVisible="false" />
+
     <EditText
         android:id="@+id/editIdCiclo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/idciclo"
         android:inputType="text"
-        android:paddingTop="20dp"/>
-
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:cursorVisible="false" />
     <EditText
         android:id="@+id/editIdMateria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/idmateria"
         android:inputType="text"
-        android:paddingTop="20dp"/>
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:cursorVisible="false" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/limpiar"
         android:id="@+id/limpiar"
+        android:text="@string/limpiar"
         android:onClick="limpiarMateriaCiclo"/>
 </LinearLayout>

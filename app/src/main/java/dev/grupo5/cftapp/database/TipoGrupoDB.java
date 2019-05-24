@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +34,7 @@ public class TipoGrupoDB {
         return regInsertados;
 
     }
+
 
     public TipoGrupo consultar(String idtipogrupo){
         db = dbHelper.getWritableDatabase();
@@ -92,10 +92,10 @@ public class TipoGrupoDB {
         return regAfectados;
     }
     
-    public List<TipoGrupo> getTipoGrupos(){
+    public List<TipoGrupo> getTipoGrupos() {
 
-        db=dbHelper.getWritableDatabase();
-        Cursor c= db.query("tipogrupo",camposTipoGrupo,null,null,null,null,null);
+        db = dbHelper.getWritableDatabase();
+        Cursor c = db.query("tipogrupo", camposTipoGrupo, null, null, null, null, null);
         List<TipoGrupo> tipoGrupoList = new ArrayList<TipoGrupo>();
         if (c.moveToFirst()) {
             do {
@@ -110,6 +110,7 @@ public class TipoGrupoDB {
         dbHelper.close();
 
         return tipoGrupoList;
-
     }
+
+
 }

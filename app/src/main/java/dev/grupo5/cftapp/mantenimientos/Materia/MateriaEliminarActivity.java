@@ -32,4 +32,8 @@ public class MateriaEliminarActivity extends AppCompatActivity {
         String resul = materiaDB.eliminar(materia);
         Toast.makeText(this, resul, Toast.LENGTH_SHORT).show();
     }
+
+    public void limpiarMateria(View v){
+        codigomatText.setText("");
+    }
 }

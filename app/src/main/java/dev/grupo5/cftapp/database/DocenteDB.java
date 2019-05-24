@@ -12,66 +12,71 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import dev.grupo5.cftapp.modelos.Docente;
 
 public class DocenteDB {
 
     private SQLiteDatabase db;
     private DBHelper dbHelper;
-    private String[] camposDocente = {"iddocente", "idtipodocente","nombre","apellidos","cod_docente","sexo"};
+    private String[] camposDocente = {"iddocente", "idtipodocente", "nombre", "apellidos", "cod_docente", "sexo"};
 
-    public DocenteDB(Context context){
+    public DocenteDB(Context context) {
 
-        dbHelper=DBHelper.getSingleton(context);
+        dbHelper = DBHelper.getSingleton(context);
     }
 
-    public String insertar(Docente docente){
+    public String insertar(Docente docente) {
 
-        String regInsertados="Registros Insertados No: ";
-        long contador=0;
+        String regInsertados = "Registros Insertados No: ";
+        long contador = 0;
 
-        ContentValues contentValues= new ContentValues();
+        ContentValues contentValues = new ContentValues();
         //contentValues.put("iddocente",docente.getIdDocente());
-        contentValues.put("idtipodocente",docente.getIdTipoDocente());
-        contentValues.put("nombre",docente.getNombre());
-        contentValues.put("apellidos",docente.getApellidos());
-        contentValues.put("cod_docente",docente.getCodDocente());
-        contentValues.put("sexo",docente.getSexo());
+        contentValues.put("idtipodocente", docente.getIdTipoDocente());
+        contentValues.put("nombre", docente.getNombre());
+        contentValues.put("apellidos", docente.getApellidos());
+        contentValues.put("cod_docente", docente.getCodDocente());
+        contentValues.put("sexo", docente.getSexo());
 
 
-        db=dbHelper.getWritableDatabase();
-        contador=db.insert("docente",null,contentValues);
-        regInsertados=regInsertados+contador;
+        db = dbHelper.getWritableDatabase();
+        contador = db.insert("docente", null, contentValues);
+        regInsertados = regInsertados + contador;
 
         return regInsertados;
-        
+
     }
 
     public void abrir() throws SQLException {
         db = dbHelper.getWritableDatabase();
         return;
     }
-    public void cerrar(){
+
+    public void cerrar() {
         dbHelper.close();
     }
 
     public String actualizar(Docente docente) {
-        int contador=0;
+        int contador = 0;
         db = dbHelper.getWritableDatabase();
 
         String[] id = {String.valueOf(docente.getIdDocente())};
         ContentValues contentValues = new ContentValues();
-        contentValues.put("idtipodocente",docente.getIdTipoDocente());
+        contentValues.put("idtipodocente", docente.getIdTipoDocente());
         contentValues.put("nombre", docente.getNombre());
-        contentValues.put("apellidos",docente.getApellidos());
-        contentValues.put("cod_docente",docente.getCodDocente());
-        contentValues.put("sexo",docente.getSexo());
+        contentValues.put("apellidos", docente.getApellidos());
+        contentValues.put("cod_docente", docente.getCodDocente());
+        contentValues.put("sexo", docente.getSexo());
 
 
         contador = db.update("docente", contentValues, "iddocente=?", id);
         dbHelper.close();
 
-        if(contador > 0)
+        if (contador > 0)
             return "Registro Actualizado Correctamente";
 
         else
@@ -79,7 +84,7 @@ public class DocenteDB {
 
     }
 
-    public String eliminar(Docente docente){
+    public String eliminar(Docente docente) {
 
 
         String regAfectados = "filas afectadas";
@@ -87,24 +92,23 @@ public class DocenteDB {
 
         try {
             db = dbHelper.getWritableDatabase();
-            contador += db.delete("docente", "iddocente='" +docente.getIdDocente()+ "'", null);
+            contador += db.delete("docente", "iddocente='" + docente.getIdDocente() + "'", null);
             regAfectados += contador;
             dbHelper.close();
-        }catch (SQLiteConstraintException e){
+        } catch (SQLiteConstraintException e) {
             e.printStackTrace();
         }
         return regAfectados;
     }
 
 
-
     public Docente consultar(String idtipodocente) {
-        db=dbHelper.getWritableDatabase();
+        db = dbHelper.getWritableDatabase();
         String[] id = {idtipodocente};
-        Cursor cursor = db.query("docente",camposDocente , "iddocente=?", id,
+        Cursor cursor = db.query("docente", camposDocente, "iddocente=?", id,
                 null, null, null);
-        if(cursor.moveToFirst()){
-            Docente docente= new Docente();
+        if (cursor.moveToFirst()) {
+            Docente docente = new Docente();
 
             docente.setIdDocente(cursor.getInt(0));
             docente.setIdTipoDocente(cursor.getInt(1));
@@ -119,17 +123,17 @@ public class DocenteDB {
 
             dbHelper.close();
             return docente;
-        }else{
+        } else {
             dbHelper.close();
             return null;
         }
     }
 
 
-    public List<Docente> getListaDocentes(){
+    public List<Docente> getListaDocentes() {
 
-        db=dbHelper.getWritableDatabase();
-        Cursor c= db.query("docente",camposDocente,null,null,null,null,null);
+        db = dbHelper.getWritableDatabase();
+        Cursor c = db.query("docente", camposDocente, null, null, null, null, null);
         List<Docente> docenteList = new ArrayList<Docente>();
         if (c.moveToFirst()) {
             do {
@@ -147,13 +151,11 @@ public class DocenteDB {
 
     }
 
-    public List<Docente> getDocentesListado(){
+    public List<Docente> getDocentesListado() {
 
 
-        db=dbHelper.getReadableDatabase();
-        Cursor c= db.query("docente",new String[]{"nombre","apellidos","iddocente"},null,null,null,null,null);
-
-
+        db = dbHelper.getReadableDatabase();
+        Cursor c = db.query("docente", new String[]{"nombre", "apellidos", "iddocente"}, null, null, null, null, null);
 
         List<Docente> docentesList = new ArrayList<Docente>();
         if (c.moveToFirst()) {
@@ -168,50 +170,48 @@ public class DocenteDB {
 
             } while (c.moveToNext());
         }
-            dbHelper.close();
+        dbHelper.close();
 
-            return docentesList;
-        }
+        return docentesList;
+    }
 
-    public HashMap<Integer,String> getDocentes() {
-        db=dbHelper.getReadableDatabase();
-        Cursor c= db.query("docente",camposDocente,null,null,null,null,null);
+    public HashMap<Integer, String> getDocentes() {
+        db = dbHelper.getReadableDatabase();
+        Cursor c = db.query("docente", camposDocente, null, null, null, null, null);
         Cursor tipo;
 
-        HashMap<Integer,String> mapeo= new HashMap<Integer, String>();
+        HashMap<Integer, String> mapeo = new HashMap<Integer, String>();
         String informacion;
 
         if (c.moveToFirst()) {
             do {
                 Docente docente = new Docente();
-                informacion="";
-                informacion=c.getString(0);
-                informacion+=" - ";
+                informacion = "";
+                informacion = c.getString(0);
+                informacion += " - ";
 
 
                 //tipo Docente
-                tipo=db.query("tipodocente",new String[]{"nombre"},"idtipodocente=?"
-                        ,new String[]{String.valueOf(c.getInt(1))},null,null,null);
+                tipo = db.query("tipodocente", new String[]{"nombre"}, "idtipodocente=?"
+                        , new String[]{String.valueOf(c.getInt(1))}, null, null, null);
 
-                if(tipo.moveToFirst()){
-                    informacion+=tipo.getString(0);
+                if (tipo.moveToFirst()) {
+                    informacion += tipo.getString(0);
                 }
                 //informacion += " - ";
                 //has
-                mapeo.put(c.getInt(2),informacion);
+                mapeo.put(c.getInt(2), informacion);
+
 
             } while (c.moveToNext());
 
         }
 
         dbHelper.close();
-
-
         return mapeo;
-
-
     }
 
-
-
 }
+
+
+

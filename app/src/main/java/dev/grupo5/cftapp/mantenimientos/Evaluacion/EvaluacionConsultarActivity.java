@@ -114,10 +114,9 @@ public class EvaluacionConsultarActivity extends AppCompatActivity {
             nombreText.setText(cursor.getString(1));
             fechaText.setText(simpleDateFormat.format(evaluacion.getFecha()));
             return;
-        }
-
-        Toast.makeText(this, "fecha: " + fechaseleccionada + ", tipo: " + tiposeleccionado
-        + "no existe", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this, "fecha: " + fechaseleccionada + ", tipo: " + tiposeleccionado
+            + "no existe", Toast.LENGTH_SHORT).show();
 
     }
 

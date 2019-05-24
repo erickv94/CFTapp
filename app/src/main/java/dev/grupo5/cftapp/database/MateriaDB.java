@@ -64,18 +64,18 @@ public class MateriaDB {
         int contador = 0;
         db = dbHelper.getWritableDatabase();
 
-        String[] id = {String.valueOf(materia.getCodigoMateria())};
+        String[] id = {String.valueOf(materia.getIdMateria())};
         ContentValues contentValues = new ContentValues();
         contentValues.put("nombre", materia.getNombre());
         contentValues.put("codigo_materia", materia.getCodigoMateria());
         contentValues.put("uvs", materia.getUvs());
-        contador = db.update("materia", contentValues, "codigo_materia=?", id);
+        contador = db.update("materia", contentValues, "idmateria=?", id);
         dbHelper.close();
 
         if (contador > 0)
             return "Registro actualizado correctamente";
         else
-            return "Registro con codigo materia: " + materia.getCodigoMateria() + "no existe";
+            return "Registro con codigo materia: " + materia.getIdMateria() + "no existe";
     }
 
     public String eliminar(Materia materia){

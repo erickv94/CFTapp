@@ -6,8 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import dev.grupo5.cftapp.modelos.Materia;
 import dev.grupo5.cftapp.modelos.MateriaCiclo;
 
 public class MateriaCicloDB {
@@ -38,11 +41,11 @@ public class MateriaCicloDB {
 
     }
 
-    public MateriaCiclo consultar(String idmateria){
+    public MateriaCiclo consultar(String idmatciclo){
         db = dbHelper.getWritableDatabase();
-        String[] id = {idmateria};
+        String[] id = {idmatciclo};
 
-        Cursor cursor = db.query("materiaciclo", campos, "idmateria=?", id, null, null, null);
+        Cursor cursor = db.query("materiaciclo", campos, "idmatciclo=?", id, null, null, null);
         if (cursor.moveToFirst()){
             MateriaCiclo materiaCiclo = new MateriaCiclo();
             materiaCiclo.setIdMatCiclo(cursor.getInt(0));
@@ -87,35 +90,33 @@ public class MateriaCicloDB {
         return regafectadas;
     }
 
-    public HashMap<Integer,String> getMateriasCiclos(){
-        db = dbHelper.getWritableDatabase();
-        Cursor cursor = db.query("materiaciclo", campos, null, null, null, null, null);
-        Cursor materia;
-
-        HashMap<Integer,String> map = new HashMap<Integer, String>();
+    public HashMap<Integer,String> getMateriaCiclos() {
+        db = dbHelper.getReadableDatabase();
+        Cursor c = db.query("materiaciclo",campos,null,null,null,null,null);
+        Cursor ciclo, materia;
+        HashMap<Integer,String> mapeo = new HashMap<Integer,String>();
         String informacion;
-        if (cursor.moveToFirst()){
+        if (c.moveToFirst()){
             do {
                 MateriaCiclo materiaCiclo = new MateriaCiclo();
-                informacion = " ";
-                informacion = cursor.getString(0);
-                informacion += " - ";
+                informacion=c.getString(0);
+                informacion+="- ";
 
-                //grupo
-                materia = db.query("materia", new String[]{"nombre"},"idmateria=?",
-                        new String[]{String.valueOf(cursor.getInt(1))}, null, null, null);
-
-                if (materia.moveToFirst()){
-                    informacion += materia.getString(0);
+                ciclo=db.query("ciclo",new String[]{"ciclo"},"idciclo=?",
+                        new String[]{String.valueOf(c.getInt(1))},null,null,null);
+                if (ciclo.moveToFirst()){
+                    informacion+=ciclo.getString(0);
                 }
-                informacion += " - ";
-
-                //has
-                map.put(cursor.getInt(3), informacion);
-            } while (cursor.moveToNext());
+                informacion+=" - ";
+                materia=db.query("materia",new String[]{"nombre"},"idmateria=?",
+                        new String[]{String.valueOf(c.getInt(2))},null,null,null);
+                if (materia.moveToFirst()){
+                    informacion+=materia.getString(0);
+                }
+                mapeo.put(c.getInt(2),informacion);
+            } while (c.moveToNext());
         }
-
         dbHelper.close();
-        return map;
+        return mapeo;
     }
 }

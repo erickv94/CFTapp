@@ -12,6 +12,7 @@ import dev.grupo5.cftapp.modelos.Materia;
 
 public class MateriaActualizarActivity extends AppCompatActivity {
     MateriaDB materiaDB;
+    EditText idmatText;
     EditText codigomateriaText;
     EditText nombremateriaText;
     EditText uvsText;
@@ -22,7 +23,7 @@ public class MateriaActualizarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_actualizar);
         setTitle(R.string.materiaupdate);
-
+        idmatText = findViewById(R.id.editIdMateria);
         codigomateriaText = (EditText) findViewById(R.id.codigomateria);
         nombremateriaText = (EditText) findViewById(R.id.nombremateria);
         uvsText = (EditText) findViewById(R.id.uvs);
@@ -32,6 +33,7 @@ public class MateriaActualizarActivity extends AppCompatActivity {
         Materia materia = new Materia();
         materiaDB = new MateriaDB(this);
         String resultado;
+        materia.setIdMateria(Integer.parseInt(idmatText.getText().toString()));
         materia.setCodigoMateria(codigomateriaText.getText().toString());
         materia.setNombre(nombremateriaText.getText().toString());
         materia.setUvs(Integer.parseInt(uvsText.getText().toString()));
