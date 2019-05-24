@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AuthActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".mantenimientos.Testigo.TestigoConsultarActivity"
             android:screenOrientation="sensorPortrait" />
@@ -364,11 +371,7 @@
             android:name=".MainActivity"
             android:screenOrientation="sensorPortrait"
             android:theme="@style/menuActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

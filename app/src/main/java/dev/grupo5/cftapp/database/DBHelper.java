@@ -55,9 +55,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("create table solicitudimpresa ( idsolicitudimp integer not null, iddocente integer not null, cantidadimpresiones integer not null, asunto varchar(20) not null, justificacion char(254), aprobado smallint, fechasolicitud date, paginasanexas integer, codigoimpresion varchar(5), primary key (idsolicitudimp), foreign key (iddocente) references docente (iddocente) on delete restrict );");
         db.execSQL("create table testigo ( idtestigo integer not null, idtramite integer, idestudiante integer, justificacion char(254) not null, primary key (idtestigo), foreign key (idestudiante) references estudiante (idestudiante) on delete restrict, foreign key (idtramite) references tramite (idtramite) on delete restrict );");
 
-        //auth-role-permissions
+        //auth
 
-
+        db.execSQL("create table usuario ( idusuario integer not null, nombre varchar(30) not null, password varchar(10) not null, primary key (idusuario) );");
+        db.execSQL("create table opcioncrud ( idopcion integer not null, descripcion varchar(30) not null, numcrud integer not null, primary key (idopcion) );");
+        db.execSQL("create table accesousuario ( idusuario integer not null, idopcion integer not null, primary key (idusuario, idopcion), foreign key (idusuario) references usuario (idusuario), foreign key (idopcion) references opcioncrud (idopcion) );");
         //triggers
 
     }
