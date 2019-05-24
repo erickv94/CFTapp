@@ -16,6 +16,7 @@ public class TipoTramiteInsertarActivity extends AppCompatActivity {
     TipoTramiteDB helper;
     EditText editNombre;
     EditText editDescripcion;
+    private static final int  permiso=21;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

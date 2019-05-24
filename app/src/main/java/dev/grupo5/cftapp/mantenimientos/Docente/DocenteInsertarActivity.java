@@ -29,6 +29,7 @@ public class DocenteInsertarActivity extends AppCompatActivity {
     EditText editApellido;
     EditText editCodDocente;
     EditText editSexo;
+    private static final int  permiso=13;
 
     ArrayList<String> nombresTipoDocente= new ArrayList<String>();
     HashMap<String,String> nombresTipoDocenteMapeo= new HashMap<String, String>();

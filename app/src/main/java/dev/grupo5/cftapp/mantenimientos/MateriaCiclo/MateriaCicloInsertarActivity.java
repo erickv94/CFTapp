@@ -21,6 +21,7 @@ import dev.grupo5.cftapp.modelos.MateriaCiclo;
 public class MateriaCicloInsertarActivity extends AppCompatActivity {
     EditText idcicloText;
     Spinner materiaSpinner;
+    private static final int permiso=41;
 
     ArrayList<String> nombresmaterias = new ArrayList<String>();
     HashMap<String,String> nombresmateriasMapeo = new HashMap<String, String>();

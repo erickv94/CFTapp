@@ -29,6 +29,7 @@ public class DocenteActualizarActivity extends AppCompatActivity {
     EditText editApellido;
     EditText editCodDocente;
     EditText editSexo;
+    private static final int  permiso=15;
     /** Called when the activity is first created. */
     ArrayList<String> nombresTipoDocentes= new ArrayList<String>();
     HashMap<String,String> nombresTipoDocentesMapeo= new HashMap<String, String>();

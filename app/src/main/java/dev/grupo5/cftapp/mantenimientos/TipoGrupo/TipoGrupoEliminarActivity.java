@@ -13,6 +13,7 @@ import dev.grupo5.cftapp.modelos.TipoGrupo;
 public class TipoGrupoEliminarActivity extends AppCompatActivity {
 
     EditText editIdTipoGrupo;
+    private static final int permiso=36;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

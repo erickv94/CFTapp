@@ -16,7 +16,7 @@ public class LocalInsertarActivity extends AppCompatActivity {
     EditText nombreText;
     EditText codigoLocalText;
     EditText capacidadText;
-
+    private static final int  permiso=17;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,6 +14,8 @@ import dev.grupo5.cftapp.modelos.TipoTramite;
 public class TipoTramiteEliminarActivity extends AppCompatActivity {
     TipoTramiteDB tipoTramiteDB;
     EditText idtipoText;
+    private static final int  permiso=24;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

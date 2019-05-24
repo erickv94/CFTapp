@@ -30,6 +30,7 @@ public class DetalleDocenteInsertarActivity extends AppCompatActivity {
 
     CheckBox asisCheckBox;
     EditText motivoTxt;
+    private static final int  permiso=29;
 
 
     List<String> informacionTramite= new ArrayList<String>();

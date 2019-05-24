@@ -6,6 +6,7 @@ import android.os.Bundle;
 import dev.grupo5.cftapp.R;
 
 public class GrupoMateriaCicloConsultarActivity extends AppCompatActivity {
+    private static final int permiso=46;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -18,7 +18,7 @@ public class TipoDocenteInsertarActivity extends AppCompatActivity {
     TipoDocenteDB helper;
     EditText editIdTipoDocente;
     EditText editNombre;
-
+    private static final int  permiso=9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

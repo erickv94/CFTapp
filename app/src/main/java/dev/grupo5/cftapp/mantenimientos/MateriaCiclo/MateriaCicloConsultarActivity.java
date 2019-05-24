@@ -26,6 +26,7 @@ public class MateriaCicloConsultarActivity extends AppCompatActivity {
     EditText idcText;
     Spinner materiaSpinner;
     EditText materiaText;
+    private static final int permiso=42;
 
 
 

@@ -13,6 +13,7 @@ import dev.grupo5.cftapp.modelos.Ciclo;
 public class CicloEliminarActivity extends AppCompatActivity {
 
     EditText editIdCiclo;
+    private static final int  permiso=4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

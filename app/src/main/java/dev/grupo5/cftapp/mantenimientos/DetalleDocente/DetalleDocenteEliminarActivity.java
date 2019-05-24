@@ -25,6 +25,7 @@ public class DetalleDocenteEliminarActivity extends AppCompatActivity {
     Spinner spinnerRol;
     Spinner spinnerDocente;
     Spinner spinnerTramite;
+    private static final int  permiso=32;
 
     List<String> informacionTramite= new ArrayList<String>();
     HashMap<String,Integer> informacionTramiteMapeo= new HashMap<String, Integer>();

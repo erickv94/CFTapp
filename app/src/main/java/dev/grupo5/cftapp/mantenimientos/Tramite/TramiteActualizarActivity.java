@@ -31,6 +31,7 @@ public class TramiteActualizarActivity extends AppCompatActivity {
     Spinner localSpinner;
     Spinner tipoTramiteSpinner;
     DatePickerDialog picker;
+    private static final int  permiso=27;
 
 
     ArrayList<String> nombresLocales= new ArrayList<String>();

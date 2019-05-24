@@ -14,7 +14,7 @@ public class RolRevisionInsertarActivity extends AppCompatActivity {
     RolRevisionDB rolRevisionDB;
     EditText nombrerolrevisionText;
     EditText descripcionText;
-
+    private static final int  permiso=5;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

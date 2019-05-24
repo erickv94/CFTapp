@@ -14,6 +14,8 @@ public class TipoGrupoActualizarActivity extends AppCompatActivity {
 
     EditText editIdTipoGrupo;
     EditText editNombre;
+    private static final int permiso=35;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

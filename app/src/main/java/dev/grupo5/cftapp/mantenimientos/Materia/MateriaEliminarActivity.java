@@ -13,6 +13,8 @@ import dev.grupo5.cftapp.modelos.Materia;
 public class MateriaEliminarActivity extends AppCompatActivity {
     MateriaDB materiaDB;
     EditText codigomatText;
+    private static final int permiso=40;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

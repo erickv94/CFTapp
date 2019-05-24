@@ -16,6 +16,7 @@ public class CicloInsertarActivity extends AppCompatActivity {
     EditText editIdCiclo;
     EditText editCiclo;
     EditText editAnio;
+    private static final int  permiso=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

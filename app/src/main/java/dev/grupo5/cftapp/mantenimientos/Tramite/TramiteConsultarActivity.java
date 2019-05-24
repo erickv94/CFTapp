@@ -38,6 +38,7 @@ public class TramiteConsultarActivity extends AppCompatActivity {
     EditText tipoTramiteText;
     EditText fechaText;
     EditText idText;
+    private static final int  permiso=26;
 
     ArrayList<String> nombresLocales= new ArrayList<String>();
     HashMap<String,String> nombresLocalesMapeo= new HashMap<String, String>();

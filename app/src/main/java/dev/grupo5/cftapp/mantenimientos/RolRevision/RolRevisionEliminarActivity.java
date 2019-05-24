@@ -14,7 +14,7 @@ import dev.grupo5.cftapp.modelos.RolRevision;
 public class RolRevisionEliminarActivity extends AppCompatActivity {
     RolRevisionDB rolRevisionDB;
     EditText idrolText;
-
+    private static final int  permiso=8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

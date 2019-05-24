@@ -16,6 +16,8 @@ public class MateriaConsultarActivity extends AppCompatActivity {
     EditText nombremateriaText;
     EditText codigomateriaText;
     EditText uvsText;
+    private static final int permiso=38;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

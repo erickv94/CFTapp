@@ -7,6 +7,8 @@ import dev.grupo5.cftapp.R;
 
 public class GrupoMateriaCicloInsertarActivity extends AppCompatActivity {
 
+    private static final int permiso=45;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

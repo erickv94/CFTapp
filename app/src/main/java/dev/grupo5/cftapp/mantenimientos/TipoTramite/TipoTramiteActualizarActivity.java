@@ -16,6 +16,7 @@ public class TipoTramiteActualizarActivity extends AppCompatActivity {
 
     EditText nombretipotramite;
     EditText descripcion;
+    private static final int  permiso=23;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

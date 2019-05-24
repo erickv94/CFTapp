@@ -15,7 +15,7 @@ public class TipoTramiteConsultarActivity extends AppCompatActivity {
     EditText idtipotramite;
     EditText nombretipotramite;
     EditText descripcion;
-
+    private static final int  permiso=22;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

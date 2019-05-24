@@ -12,12 +12,15 @@ import dev.grupo5.cftapp.modelos.Tramite;
 
 public class TramiteEliminarActivity extends AppCompatActivity {
     EditText idText;
+    private static final int  permiso=28;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tramite_eliminar);
         setTitle(R.string.tramitedelete);
         idText= findViewById(R.id.idtramite);
+
     }
 
     public  void eliminarTramite(View view){

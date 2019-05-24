@@ -13,7 +13,7 @@ import dev.grupo5.cftapp.modelos.Docente;
 public class DocenteEliminarActivity extends AppCompatActivity {
 
     EditText editIdDocente;
-
+    private static final int  permiso=16;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

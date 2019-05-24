@@ -13,6 +13,7 @@ import dev.grupo5.cftapp.modelos.TipoDocente;
 public class TipoDocenteConsultarActivity extends AppCompatActivity {
     EditText editIdTipoDocente;
     EditText editNombre;
+    private static final int  permiso=10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

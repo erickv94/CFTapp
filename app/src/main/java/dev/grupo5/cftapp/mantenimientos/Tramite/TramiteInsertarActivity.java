@@ -29,7 +29,7 @@ public class TramiteInsertarActivity extends AppCompatActivity {
     Spinner localSpinner;
     Spinner tipoTramiteSpinner;
     DatePickerDialog picker;
-
+    private static final int  permiso=25;
 
     ArrayList<String> nombresLocales= new ArrayList<String>();
     HashMap<String,String> nombresLocalesMapeo= new HashMap<String, String>();

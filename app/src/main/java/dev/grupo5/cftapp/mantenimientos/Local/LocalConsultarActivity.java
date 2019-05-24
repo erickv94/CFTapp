@@ -19,6 +19,8 @@ public class LocalConsultarActivity extends AppCompatActivity {
     EditText nombreText;
     EditText codigoLocalText;
     EditText capacidadText;
+    private static final int  permiso=18;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

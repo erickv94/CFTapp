@@ -15,6 +15,7 @@ public class RolRevisionConsultarActivity extends AppCompatActivity {
     EditText idRolText;
     EditText nombre;
     EditText descripcion;
+    private static final int  permiso=6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -15,6 +15,7 @@ public class MateriaActualizarActivity extends AppCompatActivity {
     EditText codigomateriaText;
     EditText nombremateriaText;
     EditText uvsText;
+    private static final int permiso=39;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,7 +12,7 @@ import dev.grupo5.cftapp.modelos.Local;
 
 public class LocalEliminarActivity extends AppCompatActivity {
     EditText codigolocalText;
-
+    private static final int  permiso=20;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

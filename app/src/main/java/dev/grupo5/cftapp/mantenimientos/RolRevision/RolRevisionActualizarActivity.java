@@ -15,6 +15,7 @@ public class RolRevisionActualizarActivity extends AppCompatActivity {
 
     EditText nombreText;
     EditText descripcionText;
+    private static final int  permiso=7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

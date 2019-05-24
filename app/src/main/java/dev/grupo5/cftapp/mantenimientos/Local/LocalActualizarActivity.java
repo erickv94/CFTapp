@@ -17,7 +17,7 @@ public class LocalActualizarActivity extends AppCompatActivity {
     EditText nombreText;
     EditText codigoLocalText;
     EditText capacidadText;
-
+    private static final int  permiso=19;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -34,6 +34,8 @@ public class DocenteConsultarActivity extends AppCompatActivity {
     EditText editApellido;
     EditText editCodDocente;
     EditText editSexo;
+    private static final int  permiso=14;
+
     /** Called when the activity is first created. */
 
     @Override

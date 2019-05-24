@@ -14,6 +14,7 @@ public class TipoGrupoInsertarActivity extends AppCompatActivity {
     TipoGrupoDB helper;
     EditText editIdTipoGrupo;
     EditText editNombre;
+    private static final int  permiso=33;
 
 
     @Override

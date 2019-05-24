@@ -23,6 +23,8 @@ public class MateriaCicloActualizarActivity extends AppCompatActivity {
     EditText editIdCiclo;
     Spinner materiaSpinner;
     EditText idmatcicloText;
+    private static final int permiso=43;
+
 
     ArrayList<String> nombresmaterias = new ArrayList<String>();
     HashMap<String,String> nombresmateriasMapeo = new HashMap<String, String>();

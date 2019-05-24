@@ -33,6 +33,7 @@ public class DetalleDocenteConsultarActivity extends AppCompatActivity {
     EditText tramiteTxt;
     EditText asistenciaTxt;
     EditText motivoInasistenciaTxt;
+    private static final int  permiso=30;
 
 
     List<String> informacionTramite= new ArrayList<String>();

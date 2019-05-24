@@ -14,6 +14,7 @@ public class TipoDocenteActualizarActivity extends AppCompatActivity {
 
     EditText editIdTipoDocente;
     EditText editNombre;
+    private static final int  permiso=11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,6 +12,7 @@ import dev.grupo5.cftapp.modelos.MateriaCiclo;
 
 public class MateriaCicloEliminarActivity extends AppCompatActivity {
     EditText idmatcText;
+    private static final int permiso=44;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
