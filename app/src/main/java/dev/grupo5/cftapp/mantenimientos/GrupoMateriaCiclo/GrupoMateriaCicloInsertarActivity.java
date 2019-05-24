@@ -61,7 +61,7 @@ public class GrupoMateriaCicloInsertarActivity extends AppCompatActivity {
         TipoGrupoDB tipoGrupoDB = new TipoGrupoDB(this);
         tipoGrupos = tipoGrupoDB.getTipoGrupos();
         HashMap<Integer,String> materiaCiclos = materiaCicloDB.getMateriaCiclos();
-        List<Docente> docentes = docenteDB.getListaDocentes();
+        List<Docente> docentes = docenteDB.getDocentesListado();
 
         for (TipoGrupo tipoGrupo : tipoGrupos) {
             nombretipos.add(tipoGrupo.getNombre());
