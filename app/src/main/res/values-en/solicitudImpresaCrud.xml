@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="idSolicitudes">ID Request</string>
+    <string name="cantidadImpresa">Amout of printing test:</string>
+    <string name="asunto"> Subject: </string>
+    <string name="justificacion"> Justification: </string>
+    <string name="aprobado"> Approved: </string>
+    <string name="fechaSoli"> Request date: </string>
+    <string name="paginasAnexas">Attached page:</string>
+    <string name="codimpresion">Printing code:</string>
+</resources>

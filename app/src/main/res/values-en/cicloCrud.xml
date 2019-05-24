@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="idCiclo">ID:</string>
+    <string name="Ciclo">Semester:</string>
+    <string name="year">Year:</string>
+</resources>

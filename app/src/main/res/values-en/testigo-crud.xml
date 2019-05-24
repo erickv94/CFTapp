@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tramite_testigo">Procedure</string>
+    <string name="estudiante_testigo">Student</string>
+    <string name="justificacion_testigo">Justification</string>
+</resources>

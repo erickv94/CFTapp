@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="motivorevision">Reason for grade reviewed</string>
+    <string name="estudianterevision">Studente</string>
+    <string name="tramiterevision">Procedure</string>
+    <string name="asistenciarevision">Attendance</string>
+    <string name="resultadorevision">Result</string>
+
+</resources>

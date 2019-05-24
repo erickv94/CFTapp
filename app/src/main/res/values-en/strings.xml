@@ -140,4 +140,13 @@
 
     <string name="limpiar">Clean</string>
 
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="iniciar">Login</string>
+    <string name="logout">Logout</string>
+    <string name="parametro">Parameters</string>
+    <string name="despedida">See you soon</string>
+    <string name="bienvenida">Welcome </string>
+    <string name="no_permisos">You dont any permissions for:</string>
+
 </resources>

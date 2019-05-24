@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="consulta_no_existe">The register doesnt exist</string>
+    <string name="bd_llena">Database was filled with test data</string>
+    <string name="limpiado">Form was cleaned</string>
+    <string name="already_exist">The register already exists</string>
+    <string name="user_no_existe">The user doesnt exist</string>
+    <string name="campos_no_vacios">Fields must be filled</string>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="idDocente"> ID Professor: </string>
+    <string name="idTipoDocente"> ID Professor type: </string>
+    <string name="nombreDocente"> Professor Name: </string>
+    <string name="apellidoDocente"> Lastname professor: </string>
+    <string name="codDocente"> Professor code: </string>
+    <string name="sexoDocente"> Profesor gender: </string>
+    <string name="eliminar">Delete</string>
+    <string name="consultar">Read</string>
+    <string-array name="docente_array">
+        <item>Engineer</item>
+        <item>Degree</item>
+        <item>Doctor</item>
+
+    </string-array>
+</resources>

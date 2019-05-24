@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rol_detalledocente">Role</string>
+    <string name="docente_detalledocente">Professor</string>
+    <string name="tramite_detalledocente">Procedure</string>
+    <string name="asistencia_detalledocente">Attendance</string>
+    <string name="motivo_detalledocente">Reason for non-attendance</string>
+</resources>
