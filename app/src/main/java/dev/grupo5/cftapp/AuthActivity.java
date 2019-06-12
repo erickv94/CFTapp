@@ -46,6 +46,7 @@ public class AuthActivity extends AppCompatActivity {
             startActivity(intent);
             Toast.makeText(this,getResources().getString(R.string.bienvenida)+" "
                     +username,Toast.LENGTH_LONG).show();
+            finish();
         }
     }
 

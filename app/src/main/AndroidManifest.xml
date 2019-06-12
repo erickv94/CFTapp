@@ -9,7 +9,47 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mantenimientos.Parametros.Parametros"></activity>
+        <activity android:name=".mantenimientos.DiasNoHabileswbs.DiasActualizarWbsActivity"></activity>
+        <activity android:name=".mantenimientos.DiasNoHabileswbs.DiasConsultarWbsActivity" />
+        <activity android:name=".mantenimientos.DiasNoHabileswbs.DiasEliminarWbsActivity" />
+        <activity android:name=".mantenimientos.DiasNoHabileswbs.DiasInsertarWbsActivity" />
+        <activity android:name=".mantenimientos.TipoEvaluacionwbs.TipoEvaluacionConsultarWbsActivity" />
+        <activity android:name=".mantenimientos.TipoEvaluacionwbs.TipoEvaluacionEliminarWbsActivity" />
+        <activity android:name=".mantenimientos.TipoEvaluacionwbs.TipoEvaluacionActualizarWbsActivity" />
+        <activity android:name=".mantenimientos.TipoEvaluacionwbs.TipoEvaluacionInsertarWbsActivity" />
+        <activity android:name=".mantenimientos.TipoDocentewbs.TipoDocenteActualizarWbsActivity" />
+        <activity android:name=".mantenimientos.TipoDocentewbs.TipoDocenteConsultarWbsActivity" />
+        <activity android:name=".mantenimientos.TipoDocentewbs.TipoDocenteEliminarWbsActivity" />
+        <activity android:name=".mantenimientos.TipoDocentewbs.TipoDocenteInsertarWbsActivity" />
+        <activity android:name=".mantenimientos.Ciclowbs.CicloConsultarWbsActivity" />
+        <activity android:name=".mantenimientos.Ciclowbs.CicloActualizarWbsActivity" />
+        <activity android:name=".mantenimientos.Ciclowbs.CicloEliminarWbsActivity" />
+        <activity android:name=".mantenimientos.Ciclowbs.CicloInsertarWbsActivity" />
+        <activity android:name=".mantenimientos.Materiawbs.MateriaEliminarWbsActivity" />
+        <activity android:name=".mantenimientos.Materiawbs.MateriaActualizarWbsActivity" />
+        <activity android:name=".mantenimientos.Materiawbs.MateriaConsultarWbsActivity" />
+        <activity android:name=".mantenimientos.Materiawbs.MateriaInsertarWbsActivity" />
+        <activity android:name=".mantenimientos.Estudiantewbs.EstudianteActualizarWbsActivity" />
+        <activity android:name=".mantenimientos.Estudiantewbs.EstudianteConsultarWbsActivity" />
+        <activity android:name=".mantenimientos.Estudiantewbs.EstudianteInsertarWbsActivity" />
+        <activity android:name=".mantenimientos.Estudiantewbs.EstudianteEliminarWbsActivity" />
+        <activity android:name=".mantenimientos.Docentewbs.DocenteConsultarWbsActivity" />
+        <activity android:name=".mantenimientos.Docentewbs.DocenteActualizarWbsActivity" />
+        <activity android:name=".mantenimientos.Docentewbs.DocenteEliminarWbsActivity" />
+        <activity android:name=".mantenimientos.Docentewbs.DocenteInsertarWbsActivity" />
+        <activity android:name=".mantenimientos.Localwbs.LocalEliminarWbsActivity" />
+        <activity android:name=".mantenimientos.Localwbs.LocalActualizarWbsActivity" />
+        <activity android:name=".mantenimientos.Localwbs.LocalConsultarWbsActivity" />
+        <activity android:name=".mantenimientos.Localwbs.LocalInsertarWbsActivity" />
+        <activity android:name=".menu.DiasNoHabilesWbsActivity" />
+        <activity android:name=".menu.TipoEvaluacionWbsActivity" />
+        <activity android:name=".menu.TipoDocenteWbsActivity" />
+        <activity android:name=".menu.CicloWbsActivity" />
+        <activity android:name=".menu.MateriaWbsActivity" />
+        <activity android:name=".menu.EstudianteWbsActivity" />
+        <activity android:name=".menu.DocenteWbsActivity" />
+        <activity android:name=".menu.LocalWbsActivity" />
+        <activity android:name=".mantenimientos.Parametros.Parametros" />
         <activity android:name=".AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -371,7 +411,7 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="sensorPortrait"
-            android:theme="@style/menuActivity"></activity>
+            android:theme="@style/menuActivity" />
     </application>
 
 </manifest>

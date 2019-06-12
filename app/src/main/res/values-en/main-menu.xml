@@ -23,7 +23,17 @@
         <item>Test Status Managment</item>
         <item>Requests for printing Managment</item>
         <item>Witnesses Managment</item>
+
+        <item>Local Webservice</item>
+        <item>Professor Webservice</item>
+        <item>Student Webservice</item>
+        <item>Course Webservice</item>
+        <item>Semester Webservice</item>
+        <item>Professor Type Webservice</item>
+        <item>Test Type Webservice</item>
+        <item>No avaible days Webservice</item>
         <item>Fill database</item>
+
 
     </string-array>
 </resources>

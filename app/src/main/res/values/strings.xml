@@ -26,6 +26,15 @@
     <string name="solicitudImpresa">Mantenimiento solicitudes Impresas</string>
     <string name="testigo">Mantenimiento Testigos</string>
 
+    <string name="localwbs">Mantenimiento local Webservice</string>
+    <string name="docentewbs">Mantenimiento docente Webservice</string>
+    <string name="estudiantewbs">Mantenimiento estudiante Webservice</string>
+    <string name="materiawbs">Mantenimiento materia Webservice</string>
+    <string name="ciclowbs">Mantenimiento ciclo Webservice</string>
+    <string name="tipodocentewbs">Mantenimiento tipo docente Webservice</string>
+    <string name="tipoevaluacionwbs">Mantenimiento tipo evaluacion Webservice</string>
+    <string name="diasnohabileswbs">Mantenimiento dias no habiles Webservice</string>
+
     <!--Titulos cruds-->
 
     <string name="cicloupdate">Actualizar Ciclo</string>

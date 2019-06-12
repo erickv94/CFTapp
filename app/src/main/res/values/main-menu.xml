@@ -23,8 +23,15 @@
         <item>Mantenimiento Estados de evaluaciones</item>
         <item>Mantenimiento Solicitudes Impresas</item>
         <item>Mantenimiento Testigos</item>
-        <item>LLenar base de datos</item>
-
+        <item>Local Webservice</item>
+        <item>Docente Webservice</item>
+        <item>Estudiante Webservice</item>
+        <item>Materia Webservice</item>
+        <item>Ciclo Webservice</item>
+        <item>Tipo Docente Webservice</item>
+        <item>Tipo Evaluacion Webservice</item>
+        <item>Dias no habiles Webservice</item>
+        <item>LLenar base de datos Local</item>
     </string-array>
 
     <string-array name="activities">
@@ -51,5 +58,15 @@
         <item>SolicitudImpresaActivity</item>
         <item>TestigoActivity</item>
 
+        <item>LocalWbsActivity</item>
+        <item>DocenteWbsActivity</item>
+        <item>EstudianteWbsActivity</item>
+        <item>MateriaWbsActivity</item>
+        <item>CicloWbsActivity</item>
+        <item>TipoDocenteWbsActivity</item>
+        <item>TipoEvaluacionWbsActivity</item>
+        <item>DiasNoHabilesWbsActivity</item>
+
+        <item>LLenar base de datos Local</item>
     </string-array>
 </resources>

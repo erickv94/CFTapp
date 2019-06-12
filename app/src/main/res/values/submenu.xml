@@ -153,4 +153,59 @@
         <item>EvaluacionEliminarActivity</item>
     </string-array>
 
+    <string-array name="activitiesLocalwbs">
+        <item>LocalInsertarWbsActivity</item>
+        <item>LocalConsultarWbsActivity</item>
+        <item>LocalActualizarWbsActivity</item>
+        <item>LocalEliminarWbsActivity</item>
+    </string-array>
+
+    <string-array name="activitiesDocentewbs">
+        <item>DocenteInsertarWbsActivity</item>
+        <item>DocenteConsultarWbsActivity</item>
+        <item>DocenteActualizarWbsActivity</item>
+        <item>DocenteEliminarWbsActivity</item>
+    </string-array>
+
+    <string-array name="activitiesEstudiantewbs">
+        <item>EstudianteInsertarWbsActivity</item>
+        <item>EstudianteConsultarWbsActivity</item>
+        <item>EstudianteActualizarWbsActivity</item>
+        <item>EstudianteEliminarWbsActivity</item>
+    </string-array>
+
+    <string-array name="activitiesMateriawbs">
+        <item>MateriaInsertarWbsActivity</item>
+        <item>MateriaConsultarWbsActivity</item>
+        <item>MateriaActualizarWbsActivity</item>
+        <item>MateriaEliminarWbsActivity</item>
+    </string-array>
+
+    <string-array name="activitiesCiclowbs">
+        <item>CicloInsertarWbsActivity</item>
+        <item>CicloConsultarWbsActivity</item>
+        <item>CicloActualizarWbsActivity</item>
+        <item>CicloEliminarWbsActivity</item>
+    </string-array>
+
+    <string-array name="activitiesTipoDocentewbs">
+        <item>TipoDocenteInsertarWbsActivity</item>
+        <item>TipoDocenteConsultarWbsActivity</item>
+        <item>TipoDocenteActualizarWbsActivity</item>
+        <item>TipoDocenteEliminarWbsActivity</item>
+    </string-array>
+
+    <string-array name="activitiesTipoEvaluacionwbs">
+        <item>TipoEvaluacionInsertarWbsActivity</item>
+        <item>TipoEvaluacionConsultarWbsActivity</item>
+        <item>TipoEvaluacionActualizarWbsActivity</item>
+        <item>TipoEvaluacionEliminarWbsActivity</item>
+    </string-array>
+
+    <string-array name="activitiesDiaswbs">
+        <item>DiasInsertarWbsActivity</item>
+        <item>DiasConsultarWbsActivity</item>
+        <item>DiasActualizarWbsActivity</item>
+        <item>DiasEliminarWbsActivity</item>
+    </string-array>
 </resources>

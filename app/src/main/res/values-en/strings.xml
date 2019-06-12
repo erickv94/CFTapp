@@ -25,6 +25,17 @@
     <string name="solicitudImpresa">Requests for printing Managment</string>
     <string name="testigo">Witnesses Managment</string>
 
+
+    <string name="localwbs">Managment local Webservice</string>
+    <string name="docentewbs">Managment professor Webservice</string>
+    <string name="estudiantewbs">Managment student Webservice</string>
+    <string name="materiawbs">Managment course Webservice</string>
+    <string name="ciclowbs">Managment semester Webservice</string>
+    <string name="tipodocentewbs">Managment professor type Webservice</string>
+    <string name="tipoevaluacionwbs">Managment test type Webservice</string>
+    <string name="diasnohabileswbs">Managment no avaible days Webservice</string>
+
+
     <!--titles about some crud-->
     <string name="cicloupdate">Update Semester</string>
     <string name="cicloinsert">Insert Semester</string>
