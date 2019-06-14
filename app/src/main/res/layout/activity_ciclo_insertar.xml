@@ -5,6 +5,13 @@
     android:paddingTop="30dip"
     android:stretchColumns="1" >
     <TableRow>
+        <TextView android:text="ID Ciclo:"/>
+        <EditText
+            android:id="@+id/editIdCiclo"
+            android:inputType="text"
+            android:maxLength="20" />
+    </TableRow>
+    <TableRow>
         <TextView android:text="@string/Ciclo"/>
         <EditText
             android:id="@+id/editCiclo"
@@ -25,7 +32,13 @@
     </TableRow>
     <TableRow>
         <Button
+            android:onClick="insertarCicloWS"
+            android:text="Insertar Ciclo WS" />
+    </TableRow>
+    <TableRow>
+        <Button
             android:onClick="limpiarTexto"
             android:text="@string/limpiar" />
     </TableRow>
+
 </TableLayout>
