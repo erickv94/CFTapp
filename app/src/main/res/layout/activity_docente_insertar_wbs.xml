@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".mantenimientos.Docentewbs.DocenteInsertarWbsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/iddocente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idDocente"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/editIdTipoDocente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idTipoDocente"
+        android:inputType="number"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/editNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombreDocente"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/editApellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/apellidoDocente"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/editCodDocente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/codDocente"
+        android:inputType="text"
+        android:paddingTop="20dp"/>
+    <EditText
+        android:id="@+id/editSexo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/sexoDocente"
+        android:inputType="text"
+        android:maxLength="1"
+        android:paddingTop="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/insertar"
+        android:text="@string/docenteinsert"
+        android:onClick="insertarDocente"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/insertarWS"
+        android:text="Insertar Docente WS"
+        android:onClick="insertarDocenteServidor"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/limpiar"
+        android:text="@string/limpiar"
+        android:onClick="limpiar"/>
+</LinearLayout>
