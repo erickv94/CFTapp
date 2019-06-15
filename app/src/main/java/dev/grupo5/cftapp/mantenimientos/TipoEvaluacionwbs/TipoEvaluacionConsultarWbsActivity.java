@@ -45,7 +45,7 @@ public class TipoEvaluacionConsultarWbsActivity extends AppCompatActivity {
 
     }
     public void consultarTipoEvaluacionWS(View v){
-        String url="http://192.168.0.21/ws_tipo_evaluacion_query.php?" +
+        String url="http://192.168.1.2/ws_tipo_evaluacion_query.php?" +
                 "nombre="+editNombreCons.getText().toString();
         String json = TipoEvaluacionWS.consultaTipoEvaluacion(url,this);
         if (json==null){

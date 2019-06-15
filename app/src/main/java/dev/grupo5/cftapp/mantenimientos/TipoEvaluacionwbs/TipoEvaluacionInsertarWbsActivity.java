@@ -42,7 +42,7 @@ public class TipoEvaluacionInsertarWbsActivity extends AppCompatActivity {
 
     }
     public void insertarTipoEvaluacionWS(View v){
-        String url="http://192.168.0.21/ws_tipo_evaluacion_insert.php?" +
+        String url="https://eisi.fia.ues.edu.sv/GPO10/MS15050/ws_tipo_evaluacion_insert.php?" +
                 "nombre=" +editNombre.getText().toString()+
                 "&descripcion="+editDescripcion.getText().toString();
         String mensaje=TipoEvaluacionWS.insertarTipoEvaluacion(url,this);
