@@ -71,5 +71,14 @@ public class TipoEvaluacionWS {
             return parseado5;
         }
     }
+    public static String actualizarTipoEvaluacion(String peticion, Context ctx){
+        String json = obtenerRespuestaPeticion(peticion,ctx);
+        String [] resultado=json.split(";");
+        if (resultado[1].equals("{\"resultado\":1}")){
+            return "Se actualizo con exito en el servidor";
+        }else{
+            return "No se pudo actualizar";
+        }
+    }
 
 }
