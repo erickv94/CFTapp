@@ -69,4 +69,15 @@ public class LocalWS {
         }
     }
 
+    public  static  String EliminarLocalServidor(String peticion, Context ctx){
+        String json=obtenerRespuestaPeticion(peticion,ctx);
+        String [] resultado = json.split(";");
+        if(resultado[1].equals("{\"resultado\":1}")){
+            return "LOCAL ELIMINADO CON EXITO";
+        }
+        else {
+            return "LOCAL NO ELIMINADO";
+        }
+    }
+
 }
