@@ -1,7 +1,6 @@
 package dev.grupo5.cftapp.mantenimientos.TipoEvaluacion;
 
-import android.annotation.SuppressLint;
-import android.os.StrictMode;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,10 +11,10 @@ import dev.grupo5.cftapp.R;
 import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.TipoEvaluacionDB;
-import dev.grupo5.cftapp.databaseWS.TipoEvaluacionWS;
+
 import dev.grupo5.cftapp.modelos.TipoEvaluacion;
 
-@SuppressLint("NewApi")
+
 public class TipoEvaluacionInsertarActivity extends AppCompatActivity {
 
 
@@ -24,13 +23,12 @@ public class TipoEvaluacionInsertarActivity extends AppCompatActivity {
     EditText editNombre;
     EditText editDescripcion;
     private static final int permiso = 49;
-    @SuppressLint("NewApi")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_evaluacion_insertar);
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+
         setTitle(R.string.tipoevaluacioninsert);
         verificarPermisos();
 
@@ -61,17 +59,6 @@ public class TipoEvaluacionInsertarActivity extends AppCompatActivity {
         cantidad=tipoEvaluacionDB.insertar(tipoEvaluacion);
         Toast.makeText(this,cantidad,Toast.LENGTH_SHORT).show();
 
-    }
-    public void insertarTipoEvaluacionWS(View v){
-        String url="http://192.168.0.16/ws_tipo_evaluacion_insert.php?" +
-                "nombre=" +editNombre.getText().toString()+
-                "&descripcion="+editDescripcion.getText().toString();
-        String mensaje=TipoEvaluacionWS.insertarTipoEvaluacion(url,this);
-        if(mensaje == "No se pudo insertar"){
-            Toast.makeText(this,"No se pudo insertar",Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(this, "Tipo Evaluacion ingresado con exito", Toast.LENGTH_SHORT).show();
-        }
     }
 
     public void limpiarTexto(View v) {

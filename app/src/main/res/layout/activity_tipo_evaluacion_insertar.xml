@@ -28,9 +28,4 @@
             android:onClick="limpiarTexto"
             android:text="@string/limpiar" />
     </TableRow>
-    <TableRow>
-        <Button
-            android:onClick="insertarTipoEvaluacionWS"
-            android:text="Insertar WS" />
-    </TableRow>
 </TableLayout>
