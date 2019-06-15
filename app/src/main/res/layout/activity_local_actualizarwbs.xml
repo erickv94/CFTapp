@@ -1,9 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mantenimientos.Localwbs.LocalActualizarWbsActivity">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/idlocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idlocal"
+        android:inputType="number"
+        android:paddingTop="20dp" />
+    <EditText
+        android:id="@+id/codigolocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/codigolocal"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+    <EditText
+        android:id="@+id/codigoedificio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/codigoedificiolocal"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+    <EditText
+        android:id="@+id/nombrelocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/nombrelocal"
+        android:inputType="text"
+        android:paddingTop="20dp" />
+
+
+
+    <EditText
+        android:id="@+id/capacidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/capacidadlocal"
+        android:inputType="number"
+        android:paddingTop="20dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="actualizarLocalServidor"
+        android:text="Actualizar Local Servidor"
+        android:drawableRight="@drawable/ic_create"
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="limpiar"
+        android:text="@string/limpiar"
+        android:drawableRight="@drawable/ic_clean"
+
+        />
+
+
+
+
+</LinearLayout>
