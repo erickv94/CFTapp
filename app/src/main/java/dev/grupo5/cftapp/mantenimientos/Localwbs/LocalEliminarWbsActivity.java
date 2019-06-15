@@ -47,7 +47,7 @@ public class LocalEliminarWbsActivity extends AppCompatActivity {
 
         String url;
         String mensaje;
-        url="http://192.168.1.89:8080/ws_local_delete.php?" +
+        url="http://192.168.1.5:8080/ws_local_delete.php?" +
                 "idlocal="+idlocalText.getText().toString();
 
         mensaje= LocalWS.EliminarLocalServidor(url,this);

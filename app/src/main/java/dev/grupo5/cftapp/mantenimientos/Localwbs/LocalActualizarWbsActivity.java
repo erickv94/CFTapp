@@ -59,7 +59,7 @@ public class LocalActualizarWbsActivity extends AppCompatActivity {
 
         String url;
         String mensaje;
-        url="http://192.168.1.89:8080/ws_local_update.php?" +
+        url="http://192.168.1.5:8080/ws_local_update.php?" +
                 "idlocal=" +idlocalText.getText().toString()+
                 "&codigoedificio=" +codigoEdificioText.getText().toString()+
                 "&nombrelocal=" +nombreText.getText().toString()+

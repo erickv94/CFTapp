@@ -47,37 +47,50 @@ public class LocalWS {
     }
 
 
-    public static String InsertarLocalServidor(String peticion, Context ctx){
-        String json=obtenerRespuestaPeticion(peticion,ctx);
-        String [] resultado = json.split(";");
-        if(resultado[1].equals("{\"resultado\":1}")){
+    public static String InsertarLocalServidor(String peticion, Context ctx) {
+        String json = obtenerRespuestaPeticion(peticion, ctx);
+        String[] resultado = json.split(";");
+        if (resultado[1].equals("{\"resultado\":1}")) {
             return "LOCAL INSERTADO CON EXITO";
-        }
-        else {
+        } else {
             return "LOCAL NO INSERTADO";
         }
     }
 
-    public  static  String ActualizarLocalServidor(String peticion, Context ctx){
-        String json=obtenerRespuestaPeticion(peticion,ctx);
-        String [] resultado = json.split(";");
-        if(resultado[1].equals("{\"resultado\":1}")){
+    public static String ActualizarLocalServidor(String peticion, Context ctx) {
+        String json = obtenerRespuestaPeticion(peticion, ctx);
+        String[] resultado = json.split(";");
+        if (resultado[1].equals("{\"resultado\":1}")) {
             return "LOCAL ACTUALIZADO CON EXITO";
-        }
-        else {
+        } else {
             return "LOCAL NO ACTUALIZADO";
         }
     }
 
-    public  static  String EliminarLocalServidor(String peticion, Context ctx){
-        String json=obtenerRespuestaPeticion(peticion,ctx);
-        String [] resultado = json.split(";");
-        if(resultado[1].equals("{\"resultado\":1}")){
+    public static String EliminarLocalServidor(String peticion, Context ctx) {
+        String json = obtenerRespuestaPeticion(peticion, ctx);
+        String[] resultado = json.split(";");
+        if (resultado[1].equals("{\"resultado\":1}")) {
             return "LOCAL ELIMINADO CON EXITO";
-        }
-        else {
+        } else {
             return "LOCAL NO ELIMINADO";
         }
     }
 
+    public static String ConsultarLocalServidor(String peticion, Context ctx) {
+        String Json=obtenerRespuestaPeticion(peticion,ctx);
+        String parseado1=Json.replace("{","");
+        String parseado2=parseado1.replace("}","");
+        String parseado3=parseado2.replace("[","");
+        String parseado4=parseado3.replace("]","");
+        String parseado5=parseado4.replace("\"","");
+
+        String[] resultado=parseado5.split(",");
+        if(resultado[0].equals("No existe")){//esto funsiona si en el archivo.php va partido por coma
+            return  null;
+        }else {
+            return parseado5;
+        }
+
+    }
 }

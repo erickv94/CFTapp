@@ -53,7 +53,7 @@ public class LocalInsertarWbsActivity extends AppCompatActivity {
     public void insertarLocalServidor(View v){
         String url;
         String mensaje;
-        url="http://192.168.1.89:8080/ws_local_insert.php?" +
+        url="http://192.168.1.5:8080/ws_local_insert.php?" +
                 "codigoedificio=" +codigoEdificioText.getText().toString()+
                 "&nombrelocal=" +nombreText.getText().toString()+
                 "&codigolocal=" +codigoLocalText.getText().toString()+
