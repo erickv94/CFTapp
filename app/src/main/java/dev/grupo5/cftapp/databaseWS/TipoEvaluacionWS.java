@@ -56,4 +56,20 @@ public class TipoEvaluacionWS {
 
     }
 
+    public static String consultaTipoEvaluacion(String peticion, Context ctx){
+
+        String json = obtenerRespuestaPeticion(peticion,ctx);
+        String parseado = json.replace("{","");
+        String parseado2 = parseado.replace("}","");
+        String parseado3 = parseado2.replace("[","");
+        String parseado4 = parseado3.replace("]","");
+        String parseado5 = parseado4.replace("\"","");
+        String [] resultado = parseado5.split(",");
+        if (resultado[0].equals("No existe")){
+            return null;
+        }else{
+            return parseado5;
+        }
+    }
+
 }

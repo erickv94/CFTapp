@@ -26,7 +26,7 @@ public class TipoEvaluacionInsertarWbsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tipo_evaluacion_insertar_wbs);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        setTitle(R.string.tipoevaluacioninsert);
+        setTitle(R.string.tipoevaluacioninsert + "WebService");
         verificarPermisos();
 
         editNombre = findViewById(R.id.editNombre);
