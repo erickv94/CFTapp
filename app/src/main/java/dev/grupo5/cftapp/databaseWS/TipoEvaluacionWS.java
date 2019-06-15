@@ -80,5 +80,15 @@ public class TipoEvaluacionWS {
             return "No se pudo actualizar";
         }
     }
+    public static String eliminarTipoEvaluacion(String peticion, Context ctx){
+        String json = obtenerRespuestaPeticion(peticion,ctx);
+        String [] resultado=json.split(";");
+        if(resultado[1].equals("{\"resultado\":1}")){
+            return "Se elimino correctamente";
+        }
+        else{
+            return "No se pudo eliminar";
+        }
+    }
 
 }
