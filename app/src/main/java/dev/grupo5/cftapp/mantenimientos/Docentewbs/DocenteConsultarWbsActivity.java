@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import dev.grupo5.cftapp.R;
 import dev.grupo5.cftapp.database.DocenteDB;
-import dev.grupo5.cftapp.database.DocenteDBWS;
+import dev.grupo5.cftapp.databaseWS.DocenteDBWS;
 import dev.grupo5.cftapp.modelos.Docente;
 
 @SuppressLint("NewApi")

@@ -1,4 +1,4 @@
-package dev.grupo5.cftapp.database;
+package dev.grupo5.cftapp.databaseWS;
 
 import android.content.Context;
 import android.util.Log;
