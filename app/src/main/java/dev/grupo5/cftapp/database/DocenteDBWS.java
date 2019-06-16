@@ -46,16 +46,30 @@ public class DocenteDBWS {
         return respuesta;
     }
 
-    public static  String insertarDocenteServidor(String peticion, Context ctx){
-        //siempre retorna Json
-
-        String Json=obtenerRespuestaPeticion(peticion,ctx);
-        String [] Resultado=Json.split(";");
-        if(Resultado[1].equals("{\"resultado\":1}")){
-            return  "Se inserto con exito en el servidor";
+    public static String insertarDocenteServidor(String peticion, Context ctx) {
+        String json = obtenerRespuestaPeticion(peticion, ctx);
+        String[] resultado = json.split(";");
+        if (resultado[1].equals("{\"resultado\":1}")) {
+            return "Se inserto con exito en el servidor";
+        } else {
+            return "No se pudo insertar";
         }
-        else{
-            return "No se inserto en el servidor";
+    }
+
+    public static String consultarDocenteServidor(String peticion, Context ctx){
+        //invocar obtener respuesta el cual siempre retorna un json
+        String Json=obtenerRespuestaPeticion(peticion,ctx);
+        String parseado1=Json.replace("{","");
+        String parseado2=parseado1.replace("}","");
+        String parseado3=parseado2.replace("[","");
+        String parseado4=parseado3.replace("]","");
+        String parseado5=parseado4.replace("\"","");
+
+        String[] resultado=parseado5.split(",");
+        if(resultado[0].equals("No existe")){//esto funsiona si en el archivo.php va partido por coma
+            return  null;
+        }else {
+            return parseado5;
         }
 
     }

@@ -35,12 +35,12 @@ public class DocenteInsertarWbsActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
 
         helper = new DocenteDB(this);
-        idtext = findViewById(R.id.iddocente);
-        idtipotext = findViewById(R.id.editIdTipoDocente);
-        nomtext = findViewById(R.id.editNombre);
-        apellidotext = findViewById(R.id.editApellido);
-        coddoctext = findViewById(R.id.editCodDocente);
-        sexotext = findViewById(R.id.editSexo);
+        idtext = (EditText) findViewById(R.id.iddocente);
+        idtipotext = (EditText) findViewById(R.id.editIdTipoDocente);
+        nomtext = (EditText) findViewById(R.id.editNombre);
+        apellidotext = (EditText) findViewById(R.id.editApellido);
+        coddoctext = (EditText) findViewById(R.id.editCodDocente);
+        sexotext = (EditText) findViewById(R.id.editSexo);
     }
 
     public void insertarDocente(View v) {
@@ -64,19 +64,15 @@ public class DocenteInsertarWbsActivity extends AppCompatActivity {
     }
 
     public void insertarDocenteServidor(View v) {
-        String url;
-        String mensaje;
-
-        url = "http://192.168.56.1:8081/ws_docente_insert.php?" +
-                "iddocente=" + idtext.getText().toString() +
-                "&idtipodocente=" + idtipotext.getText().toString() +
+        String url="http://192.168.1.12:8081/ws_docente_insert.php?" +
+                "iddocente=" +idtext.getText().toString()+
+                "&idtipodocente=" + idtipotext.getText().toString()+
                 "&nombre=" + nomtext.getText().toString() +
                 "&apellidos=" + apellidotext.getText().toString() +
-                "&cod_docente=" + coddoctext.getText().toString() +
+                "&coddocente=" + coddoctext.getText().toString() +
                 "&sexo=" + sexotext.getText().toString();
-
-        mensaje = DocenteDBWS.insertarDocenteServidor(url, this);
-        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show();
+        String mensaje= DocenteDBWS.insertarDocenteServidor(url,this);
+        Toast.makeText(this,mensaje,Toast.LENGTH_SHORT).show();
 
     }
 
