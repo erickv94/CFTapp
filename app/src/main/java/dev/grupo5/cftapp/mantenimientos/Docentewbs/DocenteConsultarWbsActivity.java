@@ -63,7 +63,7 @@ public class DocenteConsultarWbsActivity extends AppCompatActivity {
 
     public void consultarDocenteServidor(View v){
         jsontext.setText("");
-        String url="http://192.168.1.12:8081/ws_docente_query.php?" +
+        String url="http://eisi.fia.ues.edu.sv/GPO10/CF13001/ws_docente_query.php?" +
                 "&idtipodocente="+idtipotext.getText().toString().toUpperCase();
         String json=DocenteDBWS.consultarDocenteServidor(url,this);
 
