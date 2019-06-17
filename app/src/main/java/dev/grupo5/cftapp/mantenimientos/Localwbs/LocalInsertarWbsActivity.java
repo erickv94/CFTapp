@@ -53,13 +53,15 @@ public class LocalInsertarWbsActivity extends AppCompatActivity {
     public void insertarLocalServidor(View v){
         String url;
         String mensaje;
-        url="http://192.168.1.5:8080/ws_local_insert.php?" +
+        String urlparse;
+        url = "https://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_local_insert.php?" +
                 "codigoedificio=" +codigoEdificioText.getText().toString()+
                 "&nombrelocal=" +nombreText.getText().toString()+
                 "&codigolocal=" +codigoLocalText.getText().toString()+
-                "&capacidad="+capacidadText.getText().toString();
+                "&capacidad=" +capacidadText.getText().toString();
 
-        mensaje= LocalWS.InsertarLocalServidor(url,this);
+        urlparse=url.replace(" ","%20");//se hace esto ya que la url no acepta espacios
+        mensaje= LocalWS.InsertarLocalServidor(urlparse,this);
         Toast.makeText(this,mensaje,Toast.LENGTH_LONG).show();
     }
 

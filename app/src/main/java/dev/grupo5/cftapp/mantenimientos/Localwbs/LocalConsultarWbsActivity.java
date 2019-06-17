@@ -57,7 +57,7 @@ public class LocalConsultarWbsActivity extends AppCompatActivity {
 
     public  void consultarEquipoServidor(View v){
         //txtJson.setText("");
-        String url="http://192.168.1.5:8080/ws_local_query.php?" +
+        String url="https://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_local_query.php?" +
                 "idlocal="+codigoLocalTargetText.getText().toString();
         String json=LocalWS.ConsultarLocalServidor(url,this);
 

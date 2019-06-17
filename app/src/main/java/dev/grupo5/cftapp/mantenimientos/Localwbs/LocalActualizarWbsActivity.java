@@ -59,14 +59,16 @@ public class LocalActualizarWbsActivity extends AppCompatActivity {
 
         String url;
         String mensaje;
-        url="http://192.168.1.5:8080/ws_local_update.php?" +
+        String urlparse;
+        url="https://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_local_update.php?" +
                 "idlocal=" +idlocalText.getText().toString()+
                 "&codigoedificio=" +codigoEdificioText.getText().toString()+
                 "&nombrelocal=" +nombreText.getText().toString()+
                 "&codigolocal=" +codigoLocalText.getText().toString()+
                 "&capacidad="+capacidadText.getText().toString();
 
-        mensaje= LocalWS.ActualizarLocalServidor(url,this);
+        urlparse=url.replace(" ","%20");//se hace esto ya que la url no acepta espacios
+        mensaje= LocalWS.ActualizarLocalServidor(urlparse,this);
         Toast.makeText(this,mensaje,Toast.LENGTH_LONG).show();
 
     }
