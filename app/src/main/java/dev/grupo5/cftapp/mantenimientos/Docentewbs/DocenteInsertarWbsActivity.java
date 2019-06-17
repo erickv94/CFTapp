@@ -64,7 +64,7 @@ public class DocenteInsertarWbsActivity extends AppCompatActivity {
     }
 
     public void insertarDocenteServidor(View v) {
-        String url="http://eisi.fia.ues.edu.sv/GPO10/CF13001/ws_docente_insert.php?" +
+        String url="http://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_docente_insert.php?" +
         //        "iddocente=" +idtext.getText().toString()+
                 "&idtipodocente=" + idtipotext.getText().toString()+
                 "&nombre=" + nomtext.getText().toString() +
