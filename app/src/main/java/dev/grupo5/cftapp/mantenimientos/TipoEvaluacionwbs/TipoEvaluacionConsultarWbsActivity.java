@@ -45,10 +45,10 @@ public class TipoEvaluacionConsultarWbsActivity extends AppCompatActivity {
 
     }
     public void consultarTipoEvaluacionWS(View v){
-        String url="http://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_tipo_evaluacion_query.php?" +
+        String url="https://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_tipo_evaluacion_query.php?" +
                 "nombre="+editNombreCons.getText().toString();
         String urlparse = url.replace(" ", "%20");
-        String json = TipoEvaluacionWS.consultaTipoEvaluacion(url,this);
+        String json = TipoEvaluacionWS.consultaTipoEvaluacion(urlparse,this);
         if (json==null){
             editDescripcion.setText("");
             editNombre.setText("");
