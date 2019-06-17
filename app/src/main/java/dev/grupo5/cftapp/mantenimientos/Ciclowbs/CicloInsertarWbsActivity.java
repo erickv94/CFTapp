@@ -51,7 +51,7 @@ public class CicloInsertarWbsActivity extends AppCompatActivity {
         //Codigo para prueba en lcomp4
         //String url="http://192.168.43.62/ws_equipo_insert.php?" +
         //String url="http://192.168.1.20/ws_insertar_ciclo.php?" +
-        String url="https://eisi.fia.ues.edu.sv/GPO10/HV15011/ws_insertar_ciclo.php?" +
+        String url="https://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_insertar_ciclo.php?" +
                 "idciclo=" +editIdCiclo.getText().toString()+
                 "&ciclo=" + editCiclo.getText().toString()+
                 "&anio=" + editAnio.getText().toString();
