@@ -1,5 +1,6 @@
 package dev.grupo5.cftapp.mantenimientos.TipoEvaluacion;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,13 +11,15 @@ import dev.grupo5.cftapp.R;
 import dev.grupo5.cftapp.authguard.Auth;
 import dev.grupo5.cftapp.database.DBHelper;
 import dev.grupo5.cftapp.database.TipoEvaluacionDB;
+
 import dev.grupo5.cftapp.modelos.TipoEvaluacion;
+
 
 public class TipoEvaluacionInsertarActivity extends AppCompatActivity {
 
 
     TipoEvaluacionDB helper;
-    EditText editIdTipoEvaluacion;
+
     EditText editNombre;
     EditText editDescripcion;
     private static final int permiso = 49;
@@ -25,6 +28,7 @@ public class TipoEvaluacionInsertarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tipo_evaluacion_insertar);
+
         setTitle(R.string.tipoevaluacioninsert);
         verificarPermisos();
 
