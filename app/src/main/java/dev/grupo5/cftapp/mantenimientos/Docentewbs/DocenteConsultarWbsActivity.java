@@ -17,7 +17,7 @@ import dev.grupo5.cftapp.modelos.Docente;
 @SuppressLint("NewApi")
 public class DocenteConsultarWbsActivity extends AppCompatActivity {
 
-    DocenteDB helper;
+
     EditText iddoctext;
     EditText idtipotext;
     EditText nomtext;
@@ -35,7 +35,7 @@ public class DocenteConsultarWbsActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        helper = new  DocenteDB(this);
+
         iddoctext = findViewById(R.id.iddocente);
         idtipotext = findViewById(R.id.idtipodocente_busqueda);
         nomtext = findViewById(R.id.editNombre);
@@ -46,20 +46,6 @@ public class DocenteConsultarWbsActivity extends AppCompatActivity {
 
     }
 
-    public void consultarDocente(View v){
-        Docente docente = helper.consultar(idtipotext.getText().toString());
-        if(docente == null)
-            Toast.makeText(this, "Docente con id tipo docente " +
-                    idtipotext.getText().toString() +
-                    " no encontrado", Toast.LENGTH_LONG).show();
-        else{
-            iddoctext.setText(String.valueOf(docente.getIdDocente()));
-            nomtext.setText(docente.getNombre());
-            apellidotext.setText(docente.getApellidos());
-            coddoctext.setText(docente.getCodDocente());
-            sexotext.setText(docente.getSexo());
-        }
-    }
 
     public void consultarDocenteServidor(View v){
         jsontext.setText("");

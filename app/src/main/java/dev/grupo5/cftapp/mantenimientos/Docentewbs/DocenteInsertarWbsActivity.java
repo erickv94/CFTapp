@@ -16,7 +16,7 @@ import dev.grupo5.cftapp.modelos.Docente;
 @SuppressLint("NewApi")
 public class DocenteInsertarWbsActivity extends AppCompatActivity {
 
-    DocenteDB helper;
+
   //  EditText idtext;
     EditText idtipotext;
     EditText nomtext;
@@ -34,7 +34,7 @@ public class DocenteInsertarWbsActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        helper = new DocenteDB(this);
+
     //    idtext = (EditText) findViewById(R.id.iddocente);
         idtipotext = (EditText) findViewById(R.id.editIdTipoDocente);
         nomtext = (EditText) findViewById(R.id.editNombre);
@@ -43,25 +43,7 @@ public class DocenteInsertarWbsActivity extends AppCompatActivity {
         sexotext = (EditText) findViewById(R.id.editSexo);
     }
 
-    public void insertarDocente(View v) {
-      //  String iddocente = idtext.getText().toString();
-        String idtipodocente = idtipotext.getText().toString();
-        String nombre = nomtext.getText().toString();
-        String apellidos = apellidotext.getText().toString();
-        String coddocente = coddoctext.getText().toString();
-        String sexo = sexotext.getText().toString();
-        String regInsertados;
-        Docente docente = new Docente();
-      //  docente.setIdDocente(Integer.parseInt(iddocente));
-        docente.setIdTipoDocente(Integer.parseInt(idtipodocente));
-        docente.setNombre(nombre);
-        docente.setApellidos(apellidos);
-        docente.setCodDocente(coddocente);
-        docente.setSexo(sexo);
-        regInsertados = helper.insertar(docente);
-        Toast.makeText(this, regInsertados, Toast.LENGTH_SHORT).show();
 
-    }
 
     public void insertarDocenteServidor(View v) {
         String url="http://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_docente_insert.php?" +
