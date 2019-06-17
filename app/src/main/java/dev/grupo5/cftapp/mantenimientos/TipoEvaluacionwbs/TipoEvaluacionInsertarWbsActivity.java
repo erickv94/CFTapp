@@ -26,7 +26,7 @@ public class TipoEvaluacionInsertarWbsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tipo_evaluacion_insertar_wbs);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        setTitle(R.string.tipoevaluacioninsert + "WebService");
+        setTitle(getResources().getString(R.string.tipoevaluacioninsert) + "WebService");
         verificarPermisos();
 
         editNombre = findViewById(R.id.editNombre);
@@ -42,10 +42,11 @@ public class TipoEvaluacionInsertarWbsActivity extends AppCompatActivity {
 
     }
     public void insertarTipoEvaluacionWS(View v){
-        String url="https://eisi.fia.ues.edu.sv/GPO10/MS15050/ws_tipo_evaluacion_insert.php?" +
+        String url="https://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_tipo_evaluacion_insert.php?" +
                 "nombre=" +editNombre.getText().toString()+
                 "&descripcion="+editDescripcion.getText().toString();
-        String mensaje=TipoEvaluacionWS.insertarTipoEvaluacion(url,this);
+        String urlparse = url.replace(" ","%20");
+        String mensaje=TipoEvaluacionWS.insertarTipoEvaluacion(urlparse,this);
         if(mensaje == "No se pudo insertar"){
             Toast.makeText(this,"No se pudo insertar",Toast.LENGTH_SHORT).show();
         }else {

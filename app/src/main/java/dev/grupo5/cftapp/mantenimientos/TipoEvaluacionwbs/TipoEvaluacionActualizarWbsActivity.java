@@ -42,11 +42,12 @@ public class TipoEvaluacionActualizarWbsActivity extends AppCompatActivity {
 
     }
     public void actualizarTipoEvaluacionWS(View view){
-        String url="http://192.168.0.21/ws_tipo_evaluacion_update.php?" +
+        String url="http://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_tipo_evaluacion_update.php?" +
                 "idtipoevaluacion=" +editIdTipoEvaluacion.getText().toString()+
                 "&nombre=" +editNombre.getText().toString()+
                 "&descripcion="+editDescripcion.getText().toString();
-        String mensaje=TipoEvaluacionWS.actualizarTipoEvaluacion(url,this);
+        String urlparse = url.replace(" ","%20");
+        String mensaje=TipoEvaluacionWS.actualizarTipoEvaluacion(urlparse,this);
         if (mensaje.equals("No se pudo actualizar")){
             Toast.makeText(this,"No se pudo Actualizar",Toast.LENGTH_SHORT).show();
         }else{
