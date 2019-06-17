@@ -43,7 +43,7 @@ public class TipoEvaluacionEliminarWbsActivity extends AppCompatActivity {
         String url;
         String mensaje;
 
-        url="http://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_tipo_evaluacion_delete.php?" +
+        url="https://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_tipo_evaluacion_delete.php?" +
                 "idtipoevaluacion="+editIdTipoEvaluacion.getText().toString();
         mensaje=TipoEvaluacionWS.eliminarTipoEvaluacion(url,this);
         if(mensaje.equals("No se pudo eliminar")){

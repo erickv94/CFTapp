@@ -42,7 +42,7 @@ public class TipoEvaluacionActualizarWbsActivity extends AppCompatActivity {
 
     }
     public void actualizarTipoEvaluacionWS(View view){
-        String url="http://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_tipo_evaluacion_update.php?" +
+        String url="https://eisi.fia.ues.edu.sv/GPO10/VH14006/ws_tipo_evaluacion_update.php?" +
                 "idtipoevaluacion=" +editIdTipoEvaluacion.getText().toString()+
                 "&nombre=" +editNombre.getText().toString()+
                 "&descripcion="+editDescripcion.getText().toString();

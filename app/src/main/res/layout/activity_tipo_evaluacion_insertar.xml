@@ -16,7 +16,7 @@
         <EditText
             android:id="@+id/editDescripcion"
             android:inputType="text"
-            android:maxLength="20" />
+            android:maxLength="50" />
     </TableRow>
     <TableRow>
         <Button
