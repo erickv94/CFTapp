@@ -31,6 +31,7 @@ public class TipoEvaluacionConsultarWbsActivity extends AppCompatActivity {
         setTitle(getResources().getString(R.string.tipoevaluacionread)+" webservice");
 
         editNombreCons = findViewById(R.id.editNomTipoEvaluacionQ);
+
         editIdTipoEvaluacion=findViewById(R.id.editId);
         editNombre=findViewById(R.id.editNombre);
         editDescripcion=findViewById(R.id.editDescripcion);
