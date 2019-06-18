@@ -7,7 +7,7 @@
     <TableRow>
         <TextView android:text="@string/idCiclo" />
         <EditText
-            android:id="@+id/idciclo"
+            android:id="@+id/editidciclo"
             android:inputType="text"
             android:maxLength="30" />
     </TableRow>

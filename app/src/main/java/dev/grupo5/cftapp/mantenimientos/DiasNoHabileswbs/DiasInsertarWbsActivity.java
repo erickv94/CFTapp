@@ -34,7 +34,7 @@ public class DiasInsertarWbsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dias_insertar_wbs);
         setTitle(getResources().getString(R.string.diasinsert)+" webservice");
-        idcicloText=findViewById(R.id.idciclo);
+        idcicloText=findViewById(R.id.editidciclo);
         editNombre = findViewById(R.id.editNombreDia);
         editDescripcion = findViewById(R.id.editDescripcion);
         editFecha = findViewById(R.id.fechasolicitud);
